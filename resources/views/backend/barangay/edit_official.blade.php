@@ -30,15 +30,13 @@
 
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $types->name }}">
-                @error('name')
-                <span class="text-danger"> {{ $message }}</span>
-                @enderror
+                <input type="text" name="name" class="form-control" value="{{ $types->name }}">
+                
               </div>
 
               <div class="mb-3">
                 <label class="form-label">Position</label>
-                <select name="position" class="form-select mb-3 form-control @error('position') is-invalid @enderror">
+                <select name="position" class="form-select mb-3 form-control">
                   <option value="" disabled>Select position</option>
                   <option value="Barangay Captain" {{ $types->position == 'Barangay Captain' ? 'selected' : '' }}>Barangay Captain</option>
                   <option value="Sangguniang Barangay Member" {{ $types->position == 'Sangguniang Barangay Member' ? 'selected' : '' }}>Sangguniang Barangay Member</option>
@@ -46,21 +44,17 @@
                   <option value="Barangay Treasurer" {{ $types->position == 'Barangay Treasurer' ? 'selected' : '' }}>Barangay Treasurer</option>
                   <option value="Barangay Secretary" {{ $types->position == 'Barangay Secretary' ? 'selected' : '' }}>Barangay Secretary</option>
                 </select>
-                @error('position')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                
               </div>
 
               <div class="mb-3">
                 <label class="form-label">Status</label>
-                <select name="status" class="form-select mb-3 form-control @error('status') is-invalid @enderror">
+                <select name="status" class="form-select mb-3 form-control">
                   <option value="" disabled>Select status</option>
                   <option value="Active" {{ $types->status == 'Active' ? 'selected' : '' }}>Active</option>
                   <option value="Inactive" {{ $types->status == 'Inactive' ? 'selected' : '' }}>Inactive</option>
                 </select>
-                @error('status')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                
               </div>
 
               <div class="mb-3">
@@ -76,9 +70,7 @@
                     </svg>
                   </span>
                 </div>
-                @error('term_start')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                
               </div>
 
               <div class="mb-3">
@@ -94,9 +86,7 @@
                     </svg>
                   </span>
                 </div>
-                @error('term_end')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
+                
               </div>
 
               <button type="submit" class="btn btn-primary me-2">Save Changes</button>
@@ -109,5 +99,61 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                name: {
+                    required : true,
+                }, 
+                position: {
+                    required : true,
+                }, 
+                status: {
+                    required : true,
+                }, 
+                term_start: {
+                    required : true,
+                }, 
+                term_end: {
+                    required : true,
+                }, 
+                
+            },
+            messages :{
+                name: {
+                    required : 'Please enter name.',
+                }, 
+                position: {
+                    required : 'Please select position.',
+                }, 
+                status: {
+                    required : 'Please select status.',
+                }, 
+                term_start: {
+                    required : 'Please enter starting term.',
+                }, 
+                term_end: {
+                    required : 'Please enter ending term.',
+                }, 
+                 
+
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 @endsection

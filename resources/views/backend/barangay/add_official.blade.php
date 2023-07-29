@@ -21,22 +21,20 @@
                         <div class="card-body">
                             <h6 class="card-title">Add barangay official</h6>
 
-                            <form method="POST" action="{{ route('store.official') }}" class="forms-sample">
+                            <form id="myForm" method="POST" action="{{ route('store.official') }}" class="forms-sample">
                                 @csrf
 
                                 <fieldset>
 
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Name</label>
-                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
-                                        @error('name')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        <input type="text" name="name" class="form-control">
+                                        
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label class="form-label">Position</label>
-                                        <select name="position" class="form-select mb-3 form-control @error('position') is-invalid @enderror">
+                                        <select name="position" class="form-select mb-3 form-control">
                                             <option value="" selected disabled>Select position</option>
                                             <option value="Barangay Captain">Barangay Captain</option>
                                             <option value="Sangguniang Barangay Member">Sangguniang Barangay Member</option>
@@ -44,24 +42,20 @@
                                             <option value="Barangay Treasurer">Barangay Treasurer</option>
                                             <option value="Barangay Secretary">Barangay Secretary</option>
                                         </select>
-                                        @error('position')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                    
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label class="form-label">Status</label>
-                                        <select name="status" class="form-select mb-3 form-control @error('status') is-invalid @enderror">
+                                        <select name="status" class="form-select mb-3 form-control">
                                             <option value="" selected disabled>Select status</option>
                                             <option value="Active">Active</option>
                                             <option value="Inactive">Inactive</option>
                                         </select>
-                                        @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="term_start" class="form-label">Term Start</label>
                                         <div class="input-group">
                                             <input type="text" id="term_start" name="term_start" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly">
@@ -74,12 +68,10 @@
                                                 </svg>
                                             </span>
                                         </div>
-                                        @error('term_start')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="term_end" class="form-label">Term End</label>
                                         <div class="input-group">
                                             <input type="text" id="term_end" name="term_end" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly">
@@ -92,9 +84,7 @@
                                                 </svg>
                                             </span>
                                         </div>
-                                        @error('term_end')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        
                                     </div>
 
                                 </fieldset>
@@ -109,5 +99,62 @@
 
         </div>
     </div>
+
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                name: {
+                    required : true,
+                }, 
+                position: {
+                    required : true,
+                }, 
+                status: {
+                    required : true,
+                }, 
+                term_start: {
+                    required : true,
+                }, 
+                term_end: {
+                    required : true,
+                }, 
+                
+            },
+            messages :{
+                name: {
+                    required : 'Please enter name.',
+                }, 
+                position: {
+                    required : 'Please select position.',
+                }, 
+                status: {
+                    required : 'Please select status.',
+                }, 
+                term_start: {
+                    required : 'Please enter starting term.',
+                }, 
+                term_end: {
+                    required : 'Please enter ending term.',
+                }, 
+                 
+
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
 
 @endsection
