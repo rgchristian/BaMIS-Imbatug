@@ -54,13 +54,14 @@
     text-transform: uppercase;
   }
 
+  /* #5864dc, #198754, #DC3545 */
   .status-badge.badge-success {
-    background-color: #5864dc;
+    background-color: #5864dc; 
 	color: white;
   }
 
   .status-badge.badge-danger {
-    background-color: #5864dc;
+    background-color: #5864dc; 
 	color: white;
   }
   .dark-title {

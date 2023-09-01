@@ -10,6 +10,10 @@
     height: 100px; /* Desired height */
     object-fit: cover; /* This ensures the image covers the entire container without distorting the aspect ratio */
     border-radius: 50%; /* To make it a circle, assuming the image is already a square */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    margin: 0 auto; /* To center the container itself (optional if it's already centered in its parent) */
   }
 
   .profile-preview {
@@ -18,32 +22,37 @@
     object-fit: cover; /* This ensures the image covers the entire container without distorting the aspect ratio */
     border-radius: 50%; /* To make it a circle, assuming the image is already a square */
   }
+
 </style>
 
 <div class="page-content">
 
-        
+        <nav class="page-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Admin</li>
+            <li class="breadcrumb-item active" aria-current="page">Profile</li>
+					</ol>
+				</nav>
+
         <div class="row profile-body">
         
           <!-- left wrapper start -->
           <div class="d-none d-md-block col-md-4 col-xl-4 left-wrapper">
             <div class="card rounded">
               <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                  
-                
-
-                <div>
-  <img class="profile-image" 
-       src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" 
-       alt="profile"
-  >
-  <span class="h4 ms-3">{{ $profileData->username }}</span>
+              <div class="d-flex align-items-center justify-content-between mb-2">
+  <div class="profile-image">
+    <img class="profile-image" 
+         src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" 
+         alt="profile">
+  </div>
 </div>
-
-                  
-                </div>
                 
+                <div class="mt-3">
+                  <label class="tx-11 fw-bolder mb-0 text-uppercase">Username</label>
+                  <p class="text-muted">{{ $profileData->username }}</p>
+                </div>
                 <div class="mt-3">
                   <label class="tx-11 fw-bolder mb-0 text-uppercase">Name</label>
                   <p class="text-muted">{{ $profileData->name }}</p>
@@ -65,8 +74,9 @@
             </div>
           </div>
           <!-- left wrapper end -->
+          
           <!-- middle wrapper start -->
-          <div class="col-md-8 col-xl-8 middle-wrapper">
+          <div class="col-md-8 col-xl-7 middle-wrapper">
             <div class="row">
             <div class="card">
               <div class="card-body">
@@ -129,6 +139,8 @@
         </div>
 
 			</div>
+
+      
 
       <!-- Script to preview selected image as new photo -->
       <script type="text/javascript">

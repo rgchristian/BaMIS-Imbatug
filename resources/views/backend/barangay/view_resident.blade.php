@@ -5,12 +5,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div class="page-content">
+
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" title="Back">Back</a>
+            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
         </ol>
     </nav>
-    <div class="row profile-body">
+    
+    
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
@@ -18,13 +20,16 @@
                         <h6 class="card-title">Resident's Information</h6>
                         <fieldset>
                             <div class="row">
-                                <div class="col-sm-6">
+                            <div class="col-sm-12 text-center">
                                     <input type="file" id="image" style="display: none;">
-                                <div class="col-sm-6">
+
+                                <div class="col-sm-6 mx-auto">
                                     <div class="mb-3">
-                                        <img class="wd-500 img-fluid rounded-circle resident-image" src="{{ asset($types->photo) }}" alt="{{ $types->photo }}" readonly style="float: left; margin-left: 430px; margin-bottom: 20px; margin-top: 20px;  width: 300px; height: 300px;">
+                                    <img class="wd-500 img-fluid rounded-circle resident-image" src="{{ asset($types->photo) }}" alt="{{ $types->photo }}" style="max-width: 300px;">
+                                    </div>
                                     </div>
                                 </div><!-- Col -->
+                                
                             </div><!-- Row -->
                             <div class="row">
                             <legend>Personal Information</legend>
@@ -295,7 +300,7 @@
             </div>
         </div>
     </div>
-</div> 
+
 
 <!-- Script to preview selected image as new photo -->
 <script type="text/javascript">

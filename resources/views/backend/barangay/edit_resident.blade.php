@@ -4,33 +4,83 @@
 <!-- jQuery Google CDN via W3schools.com -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+<style>
+    .edit-photo-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .resident-image {
+        max-width: 300px;
+        transition: filter 0.3s;
+    }
+
+    .changed-image:hover {
+        filter: blur(3px);
+    }
+
+    .edit-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+        color: white;
+        opacity: 0;
+        pointer-events: none; /* Prevent the overlay from blocking clicks */
+        transition: opacity 0.3s, transform 0.3s, font-size 0.3s;
+    }
+
+    .edit-text-overlay:hover {
+        transform: translate(-50%, -55%); /* Lift the overlay slightly on hover */
+        font-size: 18px; /* Enlarge the text on hover */
+    }
+
+    .edit-photo-container:hover .edit-text-overlay {
+        opacity: 1;
+    }
+</style>
+
+
+
 <div class="page-content">
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" title="Back">Back</a>
+            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
         </ol>
     </nav>
-    <div class="row profile-body">
+    
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Edit Resident's Information</h6>
                         <form id="myForm" method="POST" action="{{ route('update.resident') }}" class="forms-sample" enctype="multipart/form-data">
+                        
                         @csrf
                         <fieldset>
+                            
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12 text-center">
                                     <input type="hidden" name="id" value="{{ $types->id }}">
-                                <div class="col-sm-6">
-                                <div class="form-group mb-3">
+                                
+                                <!-- <div class="form-group mb-3">
     <label for="photo" class="form-label">Photo</label>
     <input class="form-control" name="photo" type="file" id="image">
+</div> -->
+
+<div class="col-sm-6 mx-auto">
+    <div class="mb-3 position-relative">
+        <div class="edit-photo-container">
+            <a href="#" class="edit-photo-link">
+                <img class="wd-500 img-fluid rounded-circle resident-image changed-image" src="{{ asset($types->photo) }}" alt="{{ $types->photo }}" style="max-width: 300px;">
+            </a>
+            <strong><div class="edit-text-overlay">Upload a new photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
+        </div>
+        <input type="file" name="photo" id="photo-input" style="display: none;">
+    </div>
 </div>
-<div class="mb-3">
-    <img id="showImage" class="wd-500 img-fluid rounded-circle resident-image" src="{{ asset($types->photo) }}" alt="{{ $types->photo }}" style="float: left; margin-left: 430px; margin-bottom: 20px; margin-top: 20px; width: 300px; height: 300px;">
-</div>
-                                </div><!-- Col -->
+                                
                             </div><!-- Row -->
                             <div class="row">
                             <legend>Personal Information</legend>
@@ -307,7 +357,7 @@
             </div>
         </div>
     </div>
-</div> 
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -491,6 +541,28 @@
         });
     });
     
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const editLink = document.querySelector(".edit-photo-link");
+        const fileInput = document.querySelector("#photo-input");
+        const image = document.querySelector(".resident-image");
+
+        editLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function () {
+            const file = fileInput.files[0];
+            if (file) {
+                const imageURL = URL.createObjectURL(file);
+                image.src = imageURL;
+            }
+        });
+    });
 </script>
 
 @endsection

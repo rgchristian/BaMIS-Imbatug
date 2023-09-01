@@ -4,13 +4,52 @@
 <!-- jQuery Google CDN via W3schools.com -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+<style>
+    .add-photo-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .resident-image {
+        max-width: 300px;
+        transition: filter 0.3s;
+    }
+
+    .changed-image:hover {
+        filter: blur(3px);
+    }
+
+    .add-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+        color: white;
+        opacity: 0;
+        pointer-events: none; /* Prevent the overlay from blocking clicks */
+        transition: opacity 0.3s, transform 0.3s, font-size 0.3s;
+    }
+
+    .add-text-overlay:hover {
+        transform: translate(-50%, -55%); /* Lift the overlay slightly on hover */
+        font-size: 18px; /* Enlarge the text on hover */
+    }
+
+    .add-photo-container:hover .add-text-overlay {
+        opacity: 1;
+    }
+</style>
+
 <div class="page-content">
+
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" title="Back">Back</a>
+            <a href="{{ route('barangay.residents') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
         </ol>
     </nav>
-    <div class="row profile-body">
+
+    
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
@@ -18,18 +57,30 @@
                         <h6 class="card-title">Add barangay resident</h6>
                         <form id="myForm" method="POST" action="{{ route('store.resident') }}" class="forms-sample" enctype="multipart/form-data"> @csrf <fieldset>
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="col-sm-6">
+                                    <div class="col-sm-12 text-center">
+
+                                        <!-- <div class="col-sm-6">
                                             <div class="form-group mb-3">
                                                 <label for="photo" class="form-label">Photo</label>
                                                 <input class="form-control" name="photo" type="file" id="image">
-                                            </div>
-                                            <div class="mb-3">
+                                            </div> -->
+
+                                            <div class="profile-image mb-3">
+                                            <div class="add-photo-container">
                                                 <label for="exampleInputEmail1" class="form-label"></label>
-                                                <img id="showImage" class="wd-300 rounded-circle" src="{{ (!empty($photo)) ? url('upload/residents_images/'.$photo) : url('upload/user_cactus_jack.png') }}" alt="profile" style="float: left; margin-left: 430px; margin-bottom: 20px; margin-top: 20px;">
+                                                <a href="#" class="add-photo-link">
+                                                <img id="showImage" class="wd-500 img-fluid rounded-circle resident-image changed-image" src="{{ (!empty($photo)) ? url('upload/residents_images/'.$photo) : url('upload/no_image.png') }}" alt="profile" style="max-width: 300px;">
+                                                </a>
+                                                <strong><div class="add-text-overlay">Add photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
                                             </div>
+                                            <input type="file" name="photo" id="photo-input" style="display: none;">
                                         </div><!-- Col -->
+                                        </div>
+
+                                        
+                                        
                                     </div><!-- Row -->
+                                    
                                     <div class="row">
                                         <legend>Personal Information</legend>
                                         <div class="form-group mb-3">
@@ -282,7 +333,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 <!-- Script to preview selected image as new photo -->
 <script type="text/javascript">
@@ -482,6 +533,27 @@
         });
     });
     
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const editLink = document.querySelector(".add-photo-link");
+        const fileInput = document.querySelector("#photo-input");
+        const image = document.querySelector(".resident-image");
+
+        editLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function () {
+            const file = fileInput.files[0];
+            if (file) {
+                const imageURL = URL.createObjectURL(file);
+                image.src = imageURL;
+            }
+        });
+    });
 </script>
           
 @endsection

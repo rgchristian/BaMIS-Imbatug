@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BarangayOfficialsStaffController;
 use App\Http\Controllers\Backend\BarangayResidentsController;
+use App\Http\Controllers\Backend\BarangayCertificatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,8 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
  Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 
  Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+
+ Route::get('/project/about', [AdminController::class, 'About'])->name('project.about');
 
 }); // End group admin middleware
 
@@ -91,7 +94,14 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
     });
 
+    // Barangay certificates type all route
+    Route::controller(BarangayCertificatesController::class)->group(function(){
 
+        Route::get('/barangay/certificates', 'Certificates')->name('barangay.certificates');
+
+        Route::get('/barangay/barangaycertificate', 'BarangayCertificate')->name('barangay.certificate');
+
+    });
 
 }); // End group admin middleware
 

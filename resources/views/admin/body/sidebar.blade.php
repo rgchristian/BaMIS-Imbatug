@@ -1,7 +1,7 @@
 <nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Barangay<span>Imbatug</span>
+          Brgy.<span>Imbatug</span>
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -28,12 +28,12 @@
           <li class="nav-item">
             <a href="{{ route('barangay.residents') }}" class="nav-link">
               <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Residents</span>
+              <span class="link-title">Barangay Residents</span>
             </a>
           </li>
           <li class="nav-item nav-category">Services</li>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('barangay.certificates') }}" class="nav-link">
               <i class="link-icon" data-feather="file-text"></i>
               <span class="link-title">Certificates</span>
             </a>

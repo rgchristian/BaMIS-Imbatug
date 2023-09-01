@@ -2,11 +2,22 @@
 @section('admin')
 
 <div class="page-content">
+
+
+<nav class="page-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Community</li>
+						<li class="breadcrumb-item active" aria-current="page">Officials</li>
+					</ol>
+				</nav>
+
   <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.official') }}" class="btn btn-inverse-primary" title="Add barangay official">Add</a>
+      <a href="{{ route('add.official') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Add barangay official">Add</a>
     </ol>
   </nav>
+  
 
   <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
@@ -16,11 +27,11 @@
           <h6 class="card-title">Barangay officials</h6>
           <p class="text-muted mb-3">Barangay Imbatug<a href="#"> officials</a>.</p>
           <div class="table-responsive">
-            <table id="dataTableExample" class="table">
+            <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
               <thead>
                 <tr>
-                  <th>Id</th>
-                  <th>Name</th>
+                  <th style="text-align: center;">Id</th>
+                  <th style="text-align: center;">Name</th>
                   <th style="text-align: center;">Position</th>
                   <th style="text-align: center;">Status</th>
                   <th style="text-align: center;">Term start</th>
@@ -31,8 +42,8 @@
               <tbody>
                 @foreach($types as $key => $officials)
                 <tr>
-                  <td>{{ $key+1 }}</td>
-                  <td>{{ $officials->name }}</td>
+                  <td style="text-align: center;">{{ $key+1 }}</td>
+                  <td style="text-align: center;">{{ $officials->name }}</td>
                   <td style="text-align: center;">{{ $officials->position }}</td>
                   <td style="text-align: center;">
                     @if($officials->status === 'Active')
@@ -50,12 +61,12 @@
                   <td>
                     <div style="text-align: center;">
                       <a href="{{ route('edit.official', $officials->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" title="Edit">
+                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                       </a>
                       <a href="{{ route('delete.official', $officials->id) }}" id="delete">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" title="Delete">
+                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                       </a>

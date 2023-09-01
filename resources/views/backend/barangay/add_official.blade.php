@@ -8,7 +8,7 @@
 
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
-                <a href="{{ route('barangay.officials') }}" class="btn btn-inverse-primary" title="Back">Back</a>
+                <a href="{{ route('barangay.officials') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
             </ol>
         </nav>
 

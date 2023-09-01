@@ -6,13 +6,13 @@ $(function(){
   
                   Swal.fire({
                     title: 'Delete this data?',
-                    textSize: 12,
+                    text: "You won't be able to revert this!",
                     icon: 'warning',
                     showCancelButton: true,
-                    cancelButtonText: 'No',
+                    cancelButtonText: 'Cancel',
                     confirmButtonColor: '#5864dc',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes'
+                    confirmButtonText: 'Yes, delete it!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link

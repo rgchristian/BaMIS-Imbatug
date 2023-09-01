@@ -116,4 +116,11 @@ class AdminController extends Controller
 
     } // End Method
 
+    public function About(){
+
+        $types = User::latest()->get();
+        return view('backend.barangay.about', compact('types'));
+
+    } // End Method
+
 }
