@@ -135,8 +135,10 @@
                                                 <input type="number" name="age" class="form-control" placeholder="Enter age"> 
                                             </div>
                                         </div><!-- Col -->
+
                                     </div><!-- Row -->
                                     <div class="row">
+
                                         <div class="col-sm-6">
                                             <div class="form-group mb-3">
                                                 <label class="form-label">Gender</label>
@@ -147,6 +149,7 @@
                                                 </select> 
                                             </div>
                                         </div><!-- Col -->
+
                                         <div class="col-sm-6">
                                             <div class="form-group mb-3">
                                                 <label class="form-label">Blood Type</label>
@@ -159,8 +162,27 @@
                                                 </select> 
                                             </div>
                                         </div><!-- Col -->
+
+                                        </div><!-- Row -->
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Phone</label>
+                                                <input type="number" name="phone" class="form-control" placeholder="Enter phone"> 
+                                            </div>
+                                        </div><!-- Col -->
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" name="email" class="form-control" placeholder="Enter email"> 
+                                            </div>
+                                        </div><!-- Col -->
+                                        
                                     </div><!-- Row -->
                                     <div class="row">
+
                                         <div class="col-sm-6">
                                             <div class="form-group mb-3">
                                                 <label class="form-label">Marital Status</label>
@@ -271,9 +293,9 @@
                                         </div><!-- Col -->
                                         <div class="col-sm-6">
                                             <div class="form-group mb-3">
-                                                <label class="form-label">Purok ID</label>
+                                                <label class="form-label">Purok</label>
                                                 <select name="purokID" class="form-select mb-3 form-control">
-                                                    <option value="" selected disabled>Select purok ID</option>
+                                                    <option value="" selected disabled>Select purok </option>
                                                     <option value="Purok 6">Purok 6</option>
                                                     <option value="Purok 7">Purok 7</option>
                                                     <option value="Purok 8">Purok 8</option>
@@ -394,7 +416,13 @@
                 }, 
                 gender: {
                     required : true,
-                }, 
+                },
+                phone: {
+                    required : true,
+                },
+                email: {
+                    required : true,
+                },
                 blood_type: {
                     required : true,
                 }, 
@@ -470,6 +498,12 @@
                 gender: {
                     required : 'Please select gender.',
                 },
+                phone: {
+                    required : 'Please enter phone number.',
+                }, 
+                email: {
+                    required : 'Please enter email.',
+                }, 
                 blood_type: {
                     required : 'Please select blood type.',
                 },

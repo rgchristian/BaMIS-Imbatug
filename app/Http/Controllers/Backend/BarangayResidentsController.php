@@ -38,6 +38,8 @@ class BarangayResidentsController extends Controller
             'birthplace' => 'required',
             'age' => 'required',
             'gender' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
             'blood_type' => 'required',
             'marital_status' => 'required',
             'civil_status' => 'required',

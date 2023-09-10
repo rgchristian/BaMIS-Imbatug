@@ -111,6 +111,26 @@
                                         
                                     </div>
                                 </div><!-- Col -->
+
+
+                                </div><!-- Row -->
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Phone</label>
+                                                <input type="number" name="phone" class="form-control" value="{{ old('phone', $types->phone) }}" readonly> 
+                                            </div>
+                                        </div><!-- Col -->
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group mb-3">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" name="email" class="form-control" value="{{ old('email', $types->email) }}" readonly> 
+                                            </div>
+                                        </div><!-- Col -->
+
+
                             </div><!-- Row -->
                             <div class="row">
                                 <div class="col-sm-6">
