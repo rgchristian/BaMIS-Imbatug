@@ -71,7 +71,7 @@
                                                 <a href="#" class="add-photo-link">
                                                 <img id="showImage" class="wd-500 img-fluid rounded-circle resident-image changed-image" src="{{ (!empty($photo)) ? url('upload/residents_images/'.$photo) : url('upload/no_image.png') }}" alt="profile" style="max-width: 300px;">
                                                 </a>
-                                                <strong><div class="add-text-overlay">Add photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
+                                                <strong><div class="add-text-overlay">Add resident's photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
                                             </div>
                                             <input type="file" name="photo" id="photo-input" style="display: none;">
                                         </div><!-- Col -->
@@ -326,7 +326,7 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                             </fieldset>
-                            <button type="submit" class="btn btn-primary me-2">Save</button>
+                            <button type="submit" class="btn btn-primary me-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
                         </form>
                     </div>
                 </div>

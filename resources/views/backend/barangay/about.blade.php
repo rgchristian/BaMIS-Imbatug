@@ -7,7 +7,6 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
 						<li class="breadcrumb-item active" aria-current="page">About</li>
-                        <li class="breadcrumb-item active" aria-current="page">FAQ</li>
 					</ol>
 				</nav>
 
@@ -15,7 +14,7 @@
 					<div class="col-md-12">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Frequently Asked Questions</h6>
+                <h6 class="card-title">About</h6>
                 <div class="accordion" id="FaqAccordion">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">

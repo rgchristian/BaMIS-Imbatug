@@ -114,13 +114,13 @@ class AdminController extends Controller
 
         return back()->with($notification);
 
-    } // End Method
+    } // End method
 
     public function About(){
 
         $types = User::latest()->get();
         return view('backend.barangay.about', compact('types'));
 
-    } // End Method
+    } // End method
 
 }

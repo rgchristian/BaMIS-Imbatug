@@ -54,20 +54,44 @@
     text-transform: uppercase;
   }
 
-  /* #5864dc, #198754, #DC3545 */
+  /* #5864dc, #198754, #DC3545, #aeb9cc, #FFC107, #198754 */
   .status-badge.badge-success {
     background-color: #5864dc; 
-	color: white;
+	  color: white;
   }
 
   .status-badge.badge-danger {
     background-color: #5864dc; 
-	color: white;
+	  color: white;
   }
+
   .dark-title {
-  color: #333; /* Replace this with your desired dark color code */
+    color: #333; /* Replace this with your desired dark color code */
   }
+
+  .status-new {
+    background-color: #5864dc;
+    color: #ffffff;
+  }
+
+  .status-pending {
+    background-color: #5864dc;
+    color: #ffffff;
+  }
+
+  .status-ongoing {
+    background-color: #5864dc;
+    color: #ffffff;
+  }
+
+  .status-finished {
+    background-color: #5864dc;
+    color: #ffffff;
+  }
+
 </style>
+
+
 
 <body>
 	<div class="main-wrapper">
@@ -163,6 +187,18 @@
 	
     flatpickr("#birthdate", {
         dateFormat: "Y-m-d",
+        // Additional options...
+    });
+
+    flatpickr("#incident_date", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        // Additional options...
+    });
+
+    flatpickr("#incident_date_recorded", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
         // Additional options...
     });
 	</script>

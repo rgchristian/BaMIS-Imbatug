@@ -68,12 +68,12 @@
                     @csrf
                       <div class="mb-3">
                         <label for="login" class="form-label">Username</label>
-                        <input type="text" name="login" class="form-control" id="login" placeholder="Input email or username">
+                        <input type="text" name="login" class="form-control" id="login" placeholder="Enter username">
                       </div>
 
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Input password">
+                        <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Enter password">
                       </div>
                       <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="authCheck">

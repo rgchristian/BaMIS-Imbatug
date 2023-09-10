@@ -22,13 +22,13 @@
           <li class="nav-item">
           <a href="{{ route('barangay.officials') }}" class="nav-link">
               <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Barangay Officials</span>
+              <span class="link-title">Officials</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('barangay.residents') }}" class="nav-link">
               <i class="link-icon" data-feather="users"></i>
-              <span class="link-title">Barangay Residents</span>
+              <span class="link-title">Residents</span>
             </a>
           </li>
           <li class="nav-item nav-category">Services</li>
@@ -38,7 +38,7 @@
               <span class="link-title">Certificates</span>
             </a>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('barangay.clearances') }}" class="nav-link">
               <i class="link-icon" data-feather="file-text"></i>
               <span class="link-title">Clearances</span>
             </a>
@@ -46,7 +46,7 @@
           <li class="nav-item">
           <a href="#" class="nav-link">
               <i class="link-icon" data-feather="archive"></i>
-              <span class="link-title">Attendance Records</span>
+              <span class="link-title">Attendance</span>
             </a>
             <div class="collapse" id="general-pages">
               <ul class="nav sub-menu">
@@ -54,9 +54,9 @@
             </div>
           </li>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('barangay.blotter.records') }}" class="nav-link">
               <i class="link-icon" data-feather="archive"></i>
-              <span class="link-title">Blotter Records</span>
+              <span class="link-title">Blotter</span>
             </a>
           </li>
           <li class="nav-item nav-category">Earnings</li>
@@ -64,6 +64,13 @@
             <a href="#" class="nav-link">
               <i class="link-icon" data-feather="dollar-sign"></i>
               <span class="link-title">Revenue</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">Releases</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="link-icon" data-feather="send"></i>
+              <span class="link-title">Announcement</span>
             </a>
           </li>
         </ul>

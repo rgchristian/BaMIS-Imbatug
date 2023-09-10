@@ -89,7 +89,7 @@
 
                                 </fieldset>
 
-                                <button type="submit" class="btn btn-primary me-2">Save</button>
+                                <button type="submit" class="btn btn-primary me-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
                             </form>
                         </div>
                     </div>

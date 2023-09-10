@@ -75,7 +75,7 @@
             <a href="#" class="edit-photo-link">
                 <img class="wd-500 img-fluid rounded-circle resident-image changed-image" src="{{ asset($types->photo) }}" alt="{{ $types->photo }}" style="max-width: 300px;">
             </a>
-            <strong><div class="edit-text-overlay">Upload a new photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
+            <strong><div class="edit-text-overlay">Change resident's photo <i class="icon-edit edit-icon" data-feather="upload"></i></div></strong>
         </div>
         <input type="file" name="photo" id="photo-input" style="display: none;">
     </div>
@@ -349,7 +349,7 @@
                             </div><!-- Row -->
                             <div class="row">
                                 <div class="col-sm-6">
-                        <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+                        <button type="submit" class="btn btn-primary me-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Save changes">Save Changes</button>
                         </fieldset>
                       </form>
                     </div>

@@ -8,7 +8,7 @@
 
 <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('barangay.certificates') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
+            <a href="{{ route('barangay.clearances') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
         </ol>
     </nav>
 
@@ -16,7 +16,7 @@
 					<div class="col-md-12 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<h6 class="card-title">Barangay Certificate</h6>
+								<h6 class="card-title">Barangay Clearance</h6>
 									<form>
                                     @csrf
 										<div class="row">
@@ -80,7 +80,7 @@
 											</div><!-- Col -->
 										</div><!-- Row -->
 									</form>
-									<button type="button" class="btn btn-primary submit" data-bs-toggle="tooltip" data-bs-placement="right" title="Generate certificate">Generate Certificate</button>
+									<button type="button" class="btn btn-primary submit" data-bs-toggle="tooltip" data-bs-placement="right" title="Generate clearance">Generate Clearance</button>
 							</div>
 						</div>
 					</div>

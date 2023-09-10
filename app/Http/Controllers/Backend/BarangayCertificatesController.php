@@ -22,5 +22,5 @@ class BarangayCertificatesController extends Controller
         $types = BarangayCertificates::latest()->get();
         return view('backend.barangay.barangay_certificate', compact('types'));
 
-    } // End Method
+    } // End method
 }

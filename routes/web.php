@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BarangayOfficialsStaffController;
 use App\Http\Controllers\Backend\BarangayResidentsController;
 use App\Http\Controllers\Backend\BarangayCertificatesController;
+use App\Http\Controllers\Backend\BarangayClearancesController;
+use App\Http\Controllers\Backend\BarangayBlotterRecordsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +104,38 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/barangay/barangaycertificate', 'BarangayCertificate')->name('barangay.certificate');
 
     });
+
+    // Barangay clearances type all route
+    Route::controller(BarangayClearancesController::class)->group(function(){
+
+        Route::get('/barangay/clearances', 'Clearances')->name('barangay.clearances');
+
+        Route::get('/barangay/barangayclearance', 'BarangayClearance')->name('barangay.clearance');
+        
+    });
+
+    // Barangay blotter records type all route
+    Route::controller(BarangayBlotterRecordsController::class)->group(function(){
+
+    Route::get('/barangay/blotterrecords', 'BlotterRecords')->name('barangay.blotter.records');
+
+    Route::get('/add/blotterrecord', 'AddBlotterRecord')->name('add.blotter.record');
+
+    Route::post('/store/blotterrecord', 'StoreBlotterRecord')->name('store.blotter.record');
+
+    Route::get('/edit/blotterrecord/{id}', 'EditBlotterRecord')->name('edit.blotter.record');
+
+    Route::post('/update/blotterrecord', 'UpdateBlotterRecord')->name('update.blotter.record');
+
+    Route::get('/delete/blotterrecord/{id}', 'DeleteBlotterRecord')->name('delete.blotter.record');
+
+    Route::get('/view/blotterrecord/{id}', 'ViewBlotterRecord')->name('view.blotter.record');
+    
+    });
+
+    
+
+    
 
 }); // End group admin middleware
 
