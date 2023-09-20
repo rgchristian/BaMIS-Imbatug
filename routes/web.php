@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\BarangayResidentsController;
 use App\Http\Controllers\Backend\BarangayCertificatesController;
 use App\Http\Controllers\Backend\BarangayClearancesController;
 use App\Http\Controllers\Backend\BarangayBlotterRecordsController;
+use App\Http\Controllers\Backend\BarangayAttendanceRecordsController;
+use App\Http\Controllers\Backend\BarangayAnnouncementsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,7 +121,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
     Route::get('/barangay/blotterrecords', 'BlotterRecords')->name('barangay.blotter.records');
 
-    Route::get('/add/blotterrecord', 'AddBlotterRecord')->name('add.blotter.record');
+    Route::get('/create/blotterrecord', 'CreateBlotterRecord')->name('create.blotter.record');
 
     Route::post('/store/blotterrecord', 'StoreBlotterRecord')->name('store.blotter.record');
 
@@ -132,6 +134,36 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/view/blotterrecord/{id}', 'ViewBlotterRecord')->name('view.blotter.record');
     
     });
+
+    // Barangay attendance records type all route
+    Route::controller(BarangayAttendanceRecordsController::class)->group(function(){
+
+    Route::get('/barangay/attendancerecords', 'AttendanceRecords')->name('barangay.attendance.records');
+
+    Route::get('/create/attendancerecord', 'CreateAttendanceRecord')->name('create.attendance.record');
+
+    Route::post('/store/attendancerecord', 'StoreAttendanceRecord')->name('store.attendance.record');
+
+    Route::get('/edit/attendancerecord/{id}', 'EditAttendanceRecord')->name('edit.attendance.record');
+
+    Route::post('/update/attendancerecord', 'UpdateAttendanceRecord')->name('update.attendance.record');
+
+    Route::get('/delete/attendancerecord/{id}', 'DeleteAttendanceRecord')->name('delete.attendance.record');
+
+    Route::get('/view/attendancerecord/{id}', 'ViewAttendanceRecord')->name('view.attendance.record');
+
+
+    });
+
+    // Barangay announcements type all route
+    Route::controller(BarangayAnnouncementsController::class)->group(function(){
+
+    Route::get('/barangay/announcements', 'Announcements')->name('barangay.announcements');
+    
+    });
+
+
+    
 
     
 
