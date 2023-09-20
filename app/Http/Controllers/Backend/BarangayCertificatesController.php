@@ -13,7 +13,7 @@ use App\Models\BarangayBlotterRecords;
 use App\Models\BarangayClearances;
 use App\Models\BarangayOfficials;
 use App\Models\BarangayResidents;
-
+use App\Models\BarangayRevenues;
 
 class BarangayCertificatesController extends Controller
 {

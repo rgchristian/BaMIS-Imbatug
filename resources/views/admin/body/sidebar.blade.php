@@ -61,7 +61,7 @@
           </li>
           <li class="nav-item nav-category">Earnings</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('barangay.revenues') }}" class="nav-link">
               <i class="link-icon" data-feather="dollar-sign"></i>
               <span class="link-title">Revenue</span>
             </a>

@@ -14,6 +14,7 @@ use App\Models\BarangayBlotterRecords;
 use App\Models\BarangayCertificates;
 use App\Models\BarangayClearances;
 use App\Models\BarangayOfficials;
+use App\Models\BarangayRevenues;
 
 class BarangayResidentsController extends Controller
 {

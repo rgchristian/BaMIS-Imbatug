@@ -24,7 +24,7 @@
                 <h6 class="card-title">Attendance Records</h6>
                 <p class="text-muted mb-3">Barangay Imbatug <a href="#"> attendance records</a>.</p>
                 <div class="table-responsive">
-                <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
+                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th style="text-align: center;">ID</th>

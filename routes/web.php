@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\BarangayClearancesController;
 use App\Http\Controllers\Backend\BarangayBlotterRecordsController;
 use App\Http\Controllers\Backend\BarangayAttendanceRecordsController;
 use App\Http\Controllers\Backend\BarangayAnnouncementsController;
+use App\Http\Controllers\Backend\BarangayRevenuesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,7 +153,6 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
     Route::get('/view/attendancerecord/{id}', 'ViewAttendanceRecord')->name('view.attendance.record');
 
-
     });
 
     // Barangay announcements type all route
@@ -161,6 +161,15 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/barangay/announcements', 'Announcements')->name('barangay.announcements');
     
     });
+
+    // Barangay revenues type all route
+    Route::controller(BarangayRevenuesController::class)->group(function(){
+
+    Route::get('/barangay/revenues', 'Revenues')->name('barangay.revenues');
+    
+    });
+
+
 
 
     
