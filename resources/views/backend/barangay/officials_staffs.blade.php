@@ -40,7 +40,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($types as $key => $officials)
+                @foreach($officials as $key => $officials)
                 <tr>
                   <td style="text-align: center;">{{ $key+1 }}</td>
                   <td style="text-align: center;">{{ $officials->name }}</td>
@@ -61,12 +61,12 @@
                   <td>
                     <div style="text-align: center;">
                       <a href="{{ route('edit.official', $officials->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                       </a>
                       <a href="{{ route('delete.official', $officials->id) }}" id="delete">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                       </a>

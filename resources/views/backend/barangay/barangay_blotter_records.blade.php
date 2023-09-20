@@ -13,7 +13,7 @@
 
                 <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Add blotter record">Add</a>
+      <a href="{{ route('create.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create blotter record">Create</a>
     </ol>
   </nav>
 
@@ -27,7 +27,7 @@
                   <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
                     <thead>
                       <tr>
-                        <th style="text-align: center;">Blotter ID</th>
+                        <th style="text-align: center;">ID</th>
                         <th style="text-align: center;">Incident Type</th>
                         <th style="text-align: center;">Blotter Status</th>
                         <th style="text-align: center;">Incident Date</th>
@@ -36,7 +36,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($types as $key => $blotter)
+                        @foreach($blotter as $key => $blotter)
                       <tr>
                         <td style="text-align: center;">{{ $key+1 }}</td>
                         <td style="text-align: center;">{{ $blotter->incident_type }}</td>
@@ -66,17 +66,17 @@
                         <td>
                         <div style="text-align: center;">
                         <a href="{{ route('view.blotter.record', $blotter->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
                         <a href="{{ route('edit.blotter.record', $blotter->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
                         <a href="{{ route('delete.blotter.record', $blotter->id) }}" id="delete">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                         </a>

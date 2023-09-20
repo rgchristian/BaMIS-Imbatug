@@ -30,7 +30,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">New Customers</h6>
+                      <h6 class="card-title mb-0">Total Population</h6>
                       <div class="dropdown mb-2">
                         <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -65,7 +65,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">New Orders</h6>
+                      <h6 class="card-title mb-0">Registered Voters</h6>
                       <div class="dropdown mb-2">
                         <a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -100,7 +100,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Growth</h6>
+                      <h6 class="card-title mb-0">Labor force</h6>
                       <div class="dropdown mb-2">
                         <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -178,7 +178,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
-                  <h6 class="card-title mb-0">Monthly sales</h6>
+                  <h6 class="card-title mb-0">Attendance Records</h6>
                   <div class="dropdown mb-2">
                     <a type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -197,11 +197,12 @@
               </div> 
             </div>
           </div>
+          
           <div class="col-lg-5 col-xl-4 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline">
-                  <h6 class="card-title mb-0">Cloud storage</h6>
+                  <h6 class="card-title mb-0">Accomplished</h6>
                   <div class="dropdown mb-2">
                     <a type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -243,7 +244,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
-                  <h6 class="card-title mb-0">Inbox</h6>
+                  <h6 class="card-title mb-0">Announcements</h6>
                   <div class="dropdown mb-2">
                     <a type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -326,7 +327,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
-                  <h6 class="card-title mb-0">Projects</h6>
+                  <h6 class="card-title mb-0">Blotter Records</h6>
                   <div class="dropdown mb-2">
                     <a type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -344,12 +345,12 @@
                   <table class="table table-hover mb-0">
                     <thead>
                       <tr>
-                        <th class="pt-0">#</th>
-                        <th class="pt-0">Project Name</th>
-                        <th class="pt-0">Start Date</th>
-                        <th class="pt-0">Due Date</th>
-                        <th class="pt-0">Status</th>
-                        <th class="pt-0">Assign</th>
+                        <th class="pt-0">Blotter ID</th>
+                        <th class="pt-0">Incident Type</th>
+                        <th class="pt-0">Blotter Status</th>
+                        <th class="pt-0">Incident Date</th>
+                        <th class="pt-0">Date Recorded</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -359,7 +360,7 @@
                         <td>01/01/2022</td>
                         <td>26/04/2022</td>
                         <td><span class="badge bg-danger">Released</span></td>
-                        <td>Leonardo Payne</td>
+                        
                       </tr>
                       <tr>
                         <td>2</td>
@@ -367,7 +368,7 @@
                         <td>01/01/2022</td>
                         <td>26/04/2022</td>
                         <td><span class="badge bg-success">Review</span></td>
-                        <td>Carl Henson</td>
+                        
                       </tr>
                       <tr>
                         <td>3</td>
@@ -375,7 +376,7 @@
                         <td>01/05/2022</td>
                         <td>10/09/2022</td>
                         <td><span class="badge bg-info">Pending</span></td>
-                        <td>Jensen Combs</td>
+                        
                       </tr>
                       <tr>
                         <td>4</td>
@@ -384,7 +385,7 @@
                         <td>31/11/2022</td>
                         <td><span class="badge bg-warning">Work in Progress</span>
                         </td>
-                        <td>Amiah Burton</td>
+                        
                       </tr>
                       <tr>
                         <td>5</td>
@@ -392,7 +393,7 @@
                         <td>01/01/2022</td>
                         <td>31/12/2022</td>
                         <td><span class="badge bg-danger">Coming soon</span></td>
-                        <td>Yaretzi Mayo</td>
+                        
                       </tr>
                       <tr>
                         <td>6</td>
@@ -400,7 +401,7 @@
                         <td>01/01/2022</td>
                         <td>31/12/2022</td>
                         <td><span class="badge bg-primary">Coming soon</span></td>
-                        <td>Carl Henson</td>
+                        
                       </tr>
                       <tr>
                         <td class="border-bottom">3</td>
@@ -408,7 +409,7 @@
                         <td class="border-bottom">01/05/2022</td>
                         <td class="border-bottom">10/11/2022</td>
                         <td class="border-bottom"><span class="badge bg-info">Pending</span></td>
-                        <td class="border-bottom">Jensen Combs</td>
+                        
                       </tr>
                     </tbody>
                   </table>

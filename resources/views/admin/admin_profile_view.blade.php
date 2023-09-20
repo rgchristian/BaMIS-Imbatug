@@ -76,63 +76,69 @@
           <!-- left wrapper end -->
           
           <!-- middle wrapper start -->
-          <div class="col-md-8 col-xl-7 middle-wrapper">
-            <div class="row">
-            <div class="card">
-              <div class="card-body">
+<div class="col-md-8 col-xl-7 middle-wrapper">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">Update Profile</h6>
 
-								<h6 class="card-title">Update Profile</h6>
+                <form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
+                    @csrf
 
-								<form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
-                  @csrf
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputUsername1" class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->username }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name }}">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Phone</label>
+                            <input type="number" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->phone }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->email }}">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Address</label>
+                            <input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->address }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Photo</label>
+                            <input class="form-control" name="photo" type="file" id="image">
+                        </div>
+                    </div>
 
-									<div class="mb-3">
-										<label for="exampleInputUsername1" class="form-label">Username</label>
-										<input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->username }}">
-									</div>
-									<div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Name</label>
-										<input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->name }}">
-									</div>
-                  <div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Email</label>
-										<input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->email }}">
-									</div>
-                  <div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Phone</label>
-										<input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->phone }}">
-									</div>
-                  <div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Address</label>
-										<input type="text" name="address" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $profileData->address }}">
-									</div>
-                  <div class="mb-3">
-										<label for="exampleInputEmail1" class="form-label">Photo</label>
-										<input class="form-control" name="photo" type="file" id="image">
-									</div>
-                  <div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label"></label>
-  <img id="showImage" class="profile-preview" 
-       src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" 
-       alt="profile"
-  >
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="exampleInputEmail1" class="form-label"></label>
+                            <img id="showImage" class="profile-preview" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" alt="profile">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
 </div>
-									
-									
-									<button type="submit" class="btn btn-primary me-2">Save Changes</button>
-									
-								</form>
+<!-- middle wrapper end -->
 
-              </div>
-            </div>
-              
-
-
-
-
-            </div>
-          </div>
-          <!-- middle wrapper end -->
           <!-- right wrapper start -->
           
           <!-- right wrapper end -->

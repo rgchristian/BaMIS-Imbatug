@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\BarangayOfficials;
 
+use App\Models\BarangayAnnouncements;
+use App\Models\BarangayAttendanceRecords;
+use App\Models\BarangayBlotterRecords;
+use App\Models\BarangayCertificates;
+use App\Models\BarangayClearances;
+use App\Models\BarangayResidents;
+
 class BarangayOfficialsStaffController extends Controller
 {
     public function Officials(){
 
-        $types = BarangayOfficials::latest()->get();
-        return view('backend.barangay.officials_staffs' ,compact('types'));
+        $officials = BarangayOfficials::latest()->get();
+        return view('backend.barangay.officials_staffs' ,compact('officials'));
 
     } // End method
 
@@ -56,8 +63,8 @@ class BarangayOfficialsStaffController extends Controller
 
     public function EditOfficial($id){
 
-        $types = BarangayOfficials::findOrFail($id);
-        return view('backend.barangay.edit_official', compact('types'));
+        $officials = BarangayOfficials::findOrFail($id);
+        return view('backend.barangay.edit_official', compact('officials'));
 
     } // End method
 

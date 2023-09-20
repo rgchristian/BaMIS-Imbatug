@@ -7,20 +7,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\BarangayCertificates;
 
+use App\Models\BarangayAnnouncements;
+use App\Models\BarangayAttendanceRecords;
+use App\Models\BarangayBlotterRecords;
+use App\Models\BarangayClearances;
+use App\Models\BarangayOfficials;
+use App\Models\BarangayResidents;
+
 
 class BarangayCertificatesController extends Controller
 {
     public function Certificates(){
 
-        $types = BarangayCertificates::latest()->get();
-        return view('backend.barangay.barangay_certificates', compact('types'));
+        $certificates = BarangayCertificates::latest()->get();
+        return view('backend.barangay.barangay_certificates', compact('certificates'));
 
     } // End method
 
     public function BarangayCertificate(){
 
-        $types = BarangayCertificates::latest()->get();
-        return view('backend.barangay.barangay_certificate', compact('types'));
+        $barangay_certificate = BarangayCertificates::latest()->get();
+        return view('backend.barangay.barangay_certificate', compact('barangay_certificate'));
 
     } // End method
 }

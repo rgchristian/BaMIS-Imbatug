@@ -7,18 +7,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\BarangayBlotterRecords;
 
+use App\Models\BarangayAnnouncements;
+use App\Models\BarangayAttendanceRecords;
+use App\Models\BarangayCertificates;
+use App\Models\BarangayClearances;
+use App\Models\BarangayOfficials;
+use App\Models\BarangayResidents;
+
 class BarangayBlotterRecordsController extends Controller
 {
     public function BlotterRecords(){
 
-        $types = BarangayBlotterRecords::latest()->get();
-        return view('backend.barangay.barangay_blotter_records', compact('types'));
+        $blotter = BarangayBlotterRecords::latest()->get();
+        return view('backend.barangay.barangay_blotter_records', compact('blotter'));
 
     } // End method
 
-    public function AddBlotterRecord(){
+    public function CreateBlotterRecord(){
 
-        return view('backend.barangay.add_blotter_record');
+        return view('backend.barangay.create_blotter_record');
 
     } // End method
 
@@ -69,16 +76,16 @@ class BarangayBlotterRecordsController extends Controller
 
     public function EditBlotterRecord($id){
 
-        $types = BarangayBlotterRecords::findOrFail($id);
-        return view('backend.barangay.edit_blotter_record', compact('types'));
+        $blotter = BarangayBlotterRecords::findOrFail($id);
+        return view('backend.barangay.edit_blotter_record', compact('blotter'));
 
     } // End method
 
     public function UpdateBlotterRecord(Request $request){
 
-       $pid = $request->id;
+       $blotter_id = $request->id;
 
-       BarangayBlotterRecords::findOrFail($pid)->update([
+       BarangayBlotterRecords::findOrFail($blotter_id)->update([
 
            'incident_type' => $request->incident_type,
            'incident_status' => $request->incident_status,
@@ -120,9 +127,9 @@ class BarangayBlotterRecordsController extends Controller
 
    public function ViewBlotterRecord($id){
 
-        $types = BarangayBlotterRecords::findOrFail($id);
+        $blotter = BarangayBlotterRecords::findOrFail($id);
 
-        return view('backend.barangay.view_blotter_record', compact('types'));
+        return view('backend.barangay.view_blotter_record', compact('blotter'));
 
    } // End method
 

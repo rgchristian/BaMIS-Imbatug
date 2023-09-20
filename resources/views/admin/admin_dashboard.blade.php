@@ -190,6 +190,12 @@
         // Additional options...
     });
 
+    flatpickr("#attendance_date", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        // Additional options...
+    });
+
     flatpickr("#incident_date", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
@@ -201,6 +207,19 @@
         enableTime: true,
         // Additional options...
     });
+
+    flatpickr("#barangay_certificate", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        // Additional options...
+    });
+
+    flatpickr("#barangay_clearance", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        // Additional options...
+    });
+
 	</script>
 
 </body>

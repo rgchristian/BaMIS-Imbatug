@@ -42,7 +42,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($types as $key => $residents)
+                      @foreach($residents as $key => $residents)
                       <tr>
                         <td style="text-align: center;">{{ $key+1 }}</td>
                         <td style="text-align: center;">{{ $residents->name }}</td>
@@ -59,17 +59,17 @@
                         <td>
                         <div style="text-align: center;">
                         <a href="{{ route('view.resident', $residents->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
                         <a href="{{ route('edit.resident', $residents->id) }}">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
                         <a href="{{ route('delete.resident', $residents->id) }}" id="delete">
-                        <button type="button" class="btn btn-primary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                         </a>

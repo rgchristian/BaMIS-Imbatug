@@ -8,13 +8,20 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\BarangayResidents;
 use Illuminate\Support\Facades\Storage;
 
+use App\Models\BarangayAnnouncements;
+use App\Models\BarangayAttendanceRecords;
+use App\Models\BarangayBlotterRecords;
+use App\Models\BarangayCertificates;
+use App\Models\BarangayClearances;
+use App\Models\BarangayOfficials;
+
 class BarangayResidentsController extends Controller
 {
     public function Residents() {
 
-        $types = BarangayResidents::latest()->get();
+        $residents = BarangayResidents::latest()->get();
 
-        return view('backend.barangay.residents', compact('types'));
+        return view('backend.barangay.residents', compact('residents'));
 
     } // End method
 
@@ -87,9 +94,9 @@ class BarangayResidentsController extends Controller
 
     public function EditResident($id) {
 
-        $types = BarangayResidents::findOrFail($id);
+        $residents = BarangayResidents::findOrFail($id);
 
-        return view('backend.barangay.edit_resident', compact('types'));
+        return view('backend.barangay.edit_resident', compact('residents'));
 
     } // End method
 
@@ -147,9 +154,9 @@ class BarangayResidentsController extends Controller
 
     public function ViewResident($id) {
 
-        $types = BarangayResidents::findOrFail($id);
+        $residents = BarangayResidents::findOrFail($id);
 
-        return view('backend.barangay.view_resident', compact('types'));
+        return view('backend.barangay.view_resident', compact('residents'));
 
     } // End method
 

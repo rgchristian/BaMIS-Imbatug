@@ -1,6 +1,6 @@
 <nav class="sidebar">
       <div class="sidebar-header">
-        <a href="#" class="sidebar-brand">
+        <a href="{{ route('admin.dashboard') }}" class="sidebar-brand">
           Brgy.<span>Imbatug</span>
         </a>
         <div class="sidebar-toggler not-active">
@@ -44,7 +44,7 @@
             </a>
           <li class="nav-item nav-category">Records</li>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('barangay.attendance.records') }}" class="nav-link">
               <i class="link-icon" data-feather="archive"></i>
               <span class="link-title">Attendance</span>
             </a>
@@ -68,9 +68,9 @@
           </li>
           <li class="nav-item nav-category">Releases</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('barangay.announcements') }}" class="nav-link">
               <i class="link-icon" data-feather="send"></i>
-              <span class="link-title">Announcement</span>
+              <span class="link-title">Announcements</span>
             </a>
           </li>
         </ul>

@@ -20,14 +20,14 @@
                     <form method="POST" action="{{ route('update.blotter.record') }}" class="forms-sample">
                         @csrf
 
-                        <input type="hidden" name="id" value="{{ $types->id }}">
+                        <input type="hidden" name="id" value="{{ $blotter->id }}">
             
                         <legend>Incident's Information</legend>
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="mb-3">
                                     <label class="form-label">Incident Type</label>
-                                    <input type="text" name="incident_type" placeholder="Enter incident type" class="form-control @error('incident_type') is-invalid @enderror" value = "{{ $types->incident_type }}">
+                                    <input type="text" name="incident_type" placeholder="Enter incident type" class="form-control @error('incident_type') is-invalid @enderror" value = "{{ $blotter->incident_type }}">
                                     @error('incident_type')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -36,12 +36,12 @@
                             <div class="col-sm-4">
                                 <div class="mb-3">
                                     <label class="form-label">Incident Status</label>
-                                    <select name="incident_status" class="form-control @error('incident_status') is-invalid @enderror" value = "{{ $types->incident_status }}">
+                                    <select name="incident_status" class="form-select mb-3 form-control @error('incident_status') is-invalid @enderror" value = "{{ $blotter->incident_status }}">
                                         <option value="" selected disabled>Select status</option>
-                                        <option value="New" {{ old('incident_status', $types->incident_status) === 'New' ? 'selected' : '' }}>New</option>
-                                        <option value="Pending" {{ old('incident_status', $types->incident_status) === 'Pending' ? 'selected' : '' }}>Pending</option>
-                                        <option value="Ongoing" {{ old('incident_status', $types->incident_status) === 'Ongoing' ? 'selected' : '' }}>Ongoing</option>
-                                        <option value="Finished" {{ old('incident_status', $types->incident_status) === 'Finished' ? 'selected' : '' }}>Finished</option>
+                                        <option value="New" {{ old('incident_status', $blotter->incident_status) === 'New' ? 'selected' : '' }}>New</option>
+                                        <option value="Pending" {{ old('incident_status', $blotter->incident_status) === 'Pending' ? 'selected' : '' }}>Pending</option>
+                                        <option value="Ongoing" {{ old('incident_status', $blotter->incident_status) === 'Ongoing' ? 'selected' : '' }}>Ongoing</option>
+                                        <option value="Finished" {{ old('incident_status', $blotter->incident_status) === 'Finished' ? 'selected' : '' }}>Finished</option>
                                     </select>
                                     @error('incident_status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -54,7 +54,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Incident Date</label>
                                     <div class="input-group">
-                                        <input type="datetime" id="incident_date" name="incident_date" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active @error('incident_date') is-invalid @enderror" value = "{{ $types->incident_date }}">
+                                        <input type="datetime" id="incident_date" name="incident_date" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active @error('incident_date') is-invalid @enderror" value = "{{ $blotter->incident_date }}">
                                         <span class="input-group-text input-group-addon" data-toggle="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -73,7 +73,7 @@
                                 <div class="mb-3">
                                     <label class="form-label">Date Recorded</label>
                                     <div class="input-group">
-                                        <input type="datetime" id="incident_date_recorded" name="incident_date_recorded" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active @error('incident_date_recorded') is-invalid @enderror" value = "{{ $types->incident_date_recorded }}">
+                                        <input type="datetime" id="incident_date_recorded" name="incident_date_recorded" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active @error('incident_date_recorded') is-invalid @enderror" value = "{{ $blotter->incident_date_recorded }}">
                                         <span class="input-group-text input-group-addon" data-toggle="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -92,7 +92,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Resident Name</label>
-                                    <input type="text" name="resident_name" placeholder="Enter resident name" class="form-control @error('resident_name') is-invalid @enderror" value = "{{ $types->resident_name }}">
+                                    <input type="text" name="resident_name" placeholder="Enter resident name" class="form-control @error('resident_name') is-invalid @enderror" value = "{{ $blotter->resident_name }}">
                                     @error('resident_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -101,7 +101,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Resident Address</label>
-                                    <input type="text" name="resident_address" placeholder="Enter resident address" class="form-control @error('resident_address') is-invalid @enderror" value = "{{ $types->resident_address }}">
+                                    <input type="text" name="resident_address" placeholder="Enter resident address" class="form-control @error('resident_address') is-invalid @enderror" value = "{{ $blotter->resident_address }}">
                                     @error('resident_address')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -110,7 +110,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Resident Phone</label>
-                                    <input type="text" name="resident_phone" placeholder="Enter resident phone" class="form-control @error('resident_phone') is-invalid @enderror" value = "{{ $types->resident_phone }}">
+                                    <input type="text" name="resident_phone" placeholder="Enter resident phone" class="form-control @error('resident_phone') is-invalid @enderror" value = "{{ $blotter->resident_phone }}">
                                     @error('resident_phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -119,7 +119,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Resident Age</label>
-                                    <input type="text" name="resident_age" placeholder="Enter resident age" class="form-control @error('resident_age') is-invalid @enderror" value = "{{ $types->resident_age }}">
+                                    <input type="text" name="resident_age" placeholder="Enter resident age" class="form-control @error('resident_age') is-invalid @enderror" value = "{{ $blotter->resident_age }}">
                                     @error('resident_age')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -129,7 +129,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Complainant Name</label>
-                                    <input type="text" name="complainant_name" placeholder="Enter complainant name" class="form-control @error('complainant_name') is-invalid @enderror" value = "{{ $types->complainant_name }}">
+                                    <input type="text" name="complainant_name" placeholder="Enter complainant name" class="form-control @error('complainant_name') is-invalid @enderror" value = "{{ $blotter->complainant_name }}">
                                     @error('complainant_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -138,7 +138,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Complainant Address</label>
-                                    <input type="text" name="complainant_address" placeholder="Enter complainant address" class="form-control @error('complainant_address') is-invalid @enderror" value = "{{ $types->complainant_address }}">
+                                    <input type="text" name="complainant_address" placeholder="Enter complainant address" class="form-control @error('complainant_address') is-invalid @enderror" value = "{{ $blotter->complainant_address }}">
                                     @error('complainant_address')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -147,7 +147,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Complainant Phone</label>
-                                    <input type="text" name="complainant_phone" placeholder="Enter complainant phone" class="form-control @error('complainant_phone') is-invalid @enderror" value = "{{ $types->complainant_phone }}">
+                                    <input type="text" name="complainant_phone" placeholder="Enter complainant phone" class="form-control @error('complainant_phone') is-invalid @enderror" value = "{{ $blotter->complainant_phone }}">
                                     @error('complainant_phone')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -156,7 +156,7 @@
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Complainant Age</label>
-                                    <input type="text" name="complainant_age" placeholder="Enter complainant age" class="form-control @error('complainant_age') is-invalid @enderror" value = "{{ $types->complainant_age }}">
+                                    <input type="text" name="complainant_age" placeholder="Enter complainant age" class="form-control @error('complainant_age') is-invalid @enderror" value = "{{ $blotter->complainant_age }}">
                                     @error('complainant_age')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -164,8 +164,8 @@
                             </div><!-- Col -->
                             <div class="col-sm-6">
     							<div class="mb-3">
-        							<label class="form-label">List of Mediators</label>
-        							<textarea name="list_mediators" placeholder="Enter mediators names" rows="6" class="form-control @error('list_mediators') is-invalid @enderror">{{ old('list_mediators', $types->list_mediators) }}</textarea>
+        							<label class="form-label">Names of Mediators</label>
+        							<textarea name="list_mediators" placeholder="Enter mediators names" rows="6" class="form-control @error('list_mediators') is-invalid @enderror">{{ old('list_mediators', $blotter->list_mediators) }}</textarea>
         							@error('list_mediators')
             							<span class="text-danger">{{ $message }}</span>
         							@enderror
