@@ -40,32 +40,32 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($officials as $key => $officials)
+                @foreach($officials_staffs as $key => $barangay_officials)
                 <tr>
                   <td style="text-align: center;">{{ $key+1 }}</td>
-                  <td style="text-align: center;">{{ $officials->name }}</td>
-                  <td style="text-align: center;">{{ $officials->position }}</td>
+                  <td style="text-align: center;">{{ $barangay_officials->name }}</td>
+                  <td style="text-align: center;">{{ $barangay_officials->position }}</td>
                   <td style="text-align: center;">
-                    @if($officials->status === 'Active')
+                    @if($barangay_officials->status === 'Active')
                       <span class="status-badge badge badge-success">Active</span>
                     @else
                       <span class="status-badge badge badge-danger">Inactive</span>
                     @endif
                   </td>
                   @php
-                    $termStart = \Carbon\Carbon::parse($officials->term_start)->toDateString();
-                    $termEnd = \Carbon\Carbon::parse($officials->term_end)->toDateString();
+                    $termStart = \Carbon\Carbon::parse($barangay_officials->term_start)->toDateString();
+                    $termEnd = \Carbon\Carbon::parse($barangay_officials->term_end)->toDateString();
                   @endphp
                   <td style="text-align: center;">{{ $termStart }}</td>
                   <td style="text-align: center;">{{ $termEnd }}</td>
                   <td>
                     <div style="text-align: center;">
-                      <a href="{{ route('edit.official', $officials->id) }}">
+                      <a href="{{ route('edit.official', $barangay_officials->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                       </a>
-                      <a href="{{ route('delete.official', $officials->id) }}" id="delete">
+                      <a href="{{ route('delete.official', $barangay_officials->id) }}" id="delete">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>

@@ -19,8 +19,8 @@ class BarangayOfficialsStaffController extends Controller
 {
     public function Officials(){
 
-        $officials = BarangayOfficials::latest()->get();
-        return view('backend.barangay.officials_staffs' ,compact('officials'));
+        $officials_staffs = BarangayOfficials::latest()->get();
+        return view('backend.barangay.officials_staffs', compact('officials_staffs'));
 
     } // End method
 
@@ -34,7 +34,6 @@ class BarangayOfficialsStaffController extends Controller
 
         // Validation
         $request->validate([
-
             'name' => 'required|unique:barangay_officials|max:200',
             'position' => 'required',
             'status' => 'required',
@@ -43,7 +42,7 @@ class BarangayOfficialsStaffController extends Controller
 
         ]);
 
-            BarangayOfficials::create([
+            BarangayOfficials::insert([
 
                 'name' => $request->name,
                 'position' => $request->position,
@@ -64,17 +63,17 @@ class BarangayOfficialsStaffController extends Controller
 
     public function EditOfficial($id){
 
-        $officials = BarangayOfficials::findOrFail($id);
-        return view('backend.barangay.edit_official', compact('officials'));
+        $edit_official = BarangayOfficials::findOrFail($id);
+        return view('backend.barangay.edit_official', compact('edit_official'));
 
     } // End method
 
     public function UpdateOfficial(Request $request){
 
             // Update specific id
-            $pid = $request->id;
+            $official_id = $request->id;
 
-            BarangayOfficials::findOrFail($pid)->update([
+            BarangayOfficials::findOrFail($official_id)->update([
 
                 'name' => $request->name,
                 'position' => $request->position,

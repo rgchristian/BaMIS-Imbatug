@@ -19,8 +19,8 @@ class BarangayBlotterRecordsController extends Controller
 {
     public function BlotterRecords(){
 
-        $blotter = BarangayBlotterRecords::latest()->get();
-        return view('backend.barangay.barangay_blotter_records', compact('blotter'));
+        $blotter_records = BarangayBlotterRecords::latest()->get();
+        return view('backend.barangay.barangay_blotter_records', compact('blotter_records'));
 
     } // End method
 
@@ -77,8 +77,8 @@ class BarangayBlotterRecordsController extends Controller
 
     public function EditBlotterRecord($id){
 
-        $blotter = BarangayBlotterRecords::findOrFail($id);
-        return view('backend.barangay.edit_blotter_record', compact('blotter'));
+        $edit_blotter_record = BarangayBlotterRecords::findOrFail($id);
+        return view('backend.barangay.edit_blotter_record', compact('edit_blotter_record'));
 
     } // End method
 
@@ -128,9 +128,9 @@ class BarangayBlotterRecordsController extends Controller
 
    public function ViewBlotterRecord($id){
 
-        $blotter = BarangayBlotterRecords::findOrFail($id);
+        $view_blotter_record = BarangayBlotterRecords::findOrFail($id);
 
-        return view('backend.barangay.view_blotter_record', compact('blotter'));
+        return view('backend.barangay.view_blotter_record', compact('view_blotter_record'));
 
    } // End method
 

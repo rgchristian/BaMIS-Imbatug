@@ -42,33 +42,33 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($residents as $key => $residents)
+                      @foreach($residents as $key => $barangay_residents)
                       <tr>
                         <td style="text-align: center;">{{ $key+1 }}</td>
-                        <td style="text-align: center;">{{ $residents->name }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->name }}</td>
                         <td style="text-align: center;">
-                                <img class="rounded-circle resident-image" src="{{ asset($residents->photo) }}" alt="profile">
+                                <img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile">
                         </td>
-                        <td style="text-align: center;">{{ $residents->first_name }}</td>
-                        <td style="text-align: center;">{{ $residents->middle_name }}</td>
-                        <td style="text-align: center;">{{ $residents->last_name }}</td>
-                        <td style="text-align: center;">{{ $residents->birthdate }}</td>
-                        <td style="text-align: center;">{{ $residents->birthplace }}</td>
-                        <td style="text-align: center;">{{ $residents->age }}</td>
-                        <td style="text-align: center;">{{ $residents->gender }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->first_name }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->middle_name }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->last_name }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->birthdate }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->birthplace }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->age }}</td>
+                        <td style="text-align: center;">{{ $barangay_residents->gender }}</td>
                         <td>
                         <div style="text-align: center;">
-                        <a href="{{ route('view.resident', $residents->id) }}">
+                        <a href="{{ route('view.resident', $barangay_residents->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
-                        <a href="{{ route('edit.resident', $residents->id) }}">
+                        <a href="{{ route('edit.resident', $barangay_residents->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
-                        <a href="{{ route('delete.resident', $residents->id) }}" id="delete">
+                        <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="delete">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>

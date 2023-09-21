@@ -323,6 +323,9 @@
               </div>
             </div>
           </div>
+
+
+
           <div class="col-lg-7 col-xl-8 stretch-card">
             <div class="card">
               <div class="card-body">
@@ -341,6 +344,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="table-responsive">
                   <table class="table table-hover mb-0">
                     <thead>
@@ -414,6 +418,7 @@
                     </tbody>
                   </table>
                 </div>
+                
               </div> 
             </div>
           </div>

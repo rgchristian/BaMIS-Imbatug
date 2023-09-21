@@ -23,6 +23,8 @@
               <div class="card-body">
                 <h6 class="card-title">Blotter Records</h6>
                 <p class="text-muted mb-3">Barangay Imbatug <a href="#"> blotter records</a>.</p>
+                
+
                 <div class="table-responsive">
                   <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
                     <thead>
@@ -36,14 +38,14 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($blotter as $key => $blotter)
+                        @foreach($blotter_records as $key => $blotter_rec)
                       <tr>
                         <td style="text-align: center;">{{ $key+1 }}</td>
-                        <td style="text-align: center;">{{ $blotter->incident_type }}</td>
+                        <td style="text-align: center;">{{ $blotter_rec->incident_type }}</td>
                         <td style="text-align: center;">
                       @php
                         $statusClass = '';
-                        switch($blotter->incident_status) {
+                        switch($blotter_rec->incident_status) {
                         case 'New':
                             $statusClass = 'status-new';
                             break;
@@ -58,24 +60,24 @@
                             break;
                         }
                       @endphp
-    <span class="status-badge {{ $statusClass }}">{{ $blotter->incident_status }}</span>
+    <span class="status-badge {{ $statusClass }}">{{ $blotter_rec->incident_status }}</span>
 </td>
 
-                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter->incident_date)) }}</td>
-                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter->incident_date_recorded)) }}</td>
+                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->incident_date)) }}</td>
+                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->incident_date_recorded)) }}</td>
                         <td>
                         <div style="text-align: center;">
-                        <a href="{{ route('view.blotter.record', $blotter->id) }}">
+                        <a href="{{ route('view.blotter.record', $blotter_rec->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
-                        <a href="{{ route('edit.blotter.record', $blotter->id) }}">
+                        <a href="{{ route('edit.blotter.record', $blotter_rec->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
-                        <a href="{{ route('delete.blotter.record', $blotter->id) }}" id="delete">
+                        <a href="{{ route('delete.blotter.record', $blotter_rec->id) }}" id="delete">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
@@ -87,6 +89,7 @@
                     </tbody>
                   </table>
                 </div>
+
               </div>
             </div>
 					</div>

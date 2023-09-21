@@ -80,7 +80,39 @@ class BarangayResidentsController extends Controller
 
     }
     
-        BarangayResidents::create($requestData);
+        // BarangayResidents::create($requestData);
+
+        BarangayResidents::insert([
+
+            'name' => $request->name,
+            'photo' => $requestData["photo"],
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'birthdate' => $request->birthdate,
+            'birthplace' => $request->birthplace,
+            'age' => $request->age,
+            'gender' => $request->gender,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'blood_type' => $request->blood_type,
+            'marital_status' => $request->marital_status,
+            'civil_status' => $request->civil_status,
+            'h_educ_attainment' => $request->h_educ_attainment,
+            'monthly_income' => $request->monthly_income,
+            'religion' => $request->religion,
+            'nationality' => $request->nationality,
+            'philhealth_no' => $request->philhealth_no,
+            'votersID' => $request->votersID,
+            'household_no' => $request->household_no,
+            'purokID' => $request->purokID,
+            'h_ownership_status' => $request->h_ownership_status,
+            'length_stay' => $request->length_stay,
+            'r_head_family' => $request->r_head_family,
+            'abled_person' => $request->abled_person
+
+        ]);
+
         
         $notification = array(
 
@@ -95,15 +127,17 @@ class BarangayResidentsController extends Controller
 
     public function EditResident($id) {
 
-        $residents = BarangayResidents::findOrFail($id);
+        $edit_resident = BarangayResidents::findOrFail($id);
 
-        return view('backend.barangay.edit_resident', compact('residents'));
+        return view('backend.barangay.edit_resident', compact('edit_resident'));
 
     } // End method
 
     public function UpdateResident(Request $request) {
-        $pid = $request->id;
-        $resident = BarangayResidents::findOrFail($pid);
+
+        $resident_id = $request->id;
+
+        $resident = BarangayResidents::findOrFail($resident_id);
     
         $requestData = $request->except(['_token', '_method', 'id']);
     
@@ -124,7 +158,7 @@ class BarangayResidentsController extends Controller
         }
     
         // Update the resident data
-        BarangayResidents::where('id', $pid)->update($requestData);
+        BarangayResidents::where('id', $resident_id)->update($requestData);
     
         $notification = array(
             'message' => 'Barangay resident updated successfully',
@@ -155,9 +189,9 @@ class BarangayResidentsController extends Controller
 
     public function ViewResident($id) {
 
-        $residents = BarangayResidents::findOrFail($id);
+        $view_resident = BarangayResidents::findOrFail($id);
 
-        return view('backend.barangay.view_resident', compact('residents'));
+        return view('backend.barangay.view_resident', compact('view_resident'));
 
     } // End method
 

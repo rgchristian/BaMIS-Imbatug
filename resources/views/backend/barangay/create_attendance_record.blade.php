@@ -54,7 +54,7 @@
                             </div><!-- Col -->
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
-                                    <label for="event_date_time" class="form-label">Event Date & Time</label>
+                                    <label for="event_date_time" class="form-label">Event Date</label>
                                     <div class="input-group">
                                         <input type="text" id="attendance_date" name="event_date_time" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly">
                                         <span class="input-group-text input-group-addon" data-toggle="">

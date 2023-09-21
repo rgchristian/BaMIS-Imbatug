@@ -35,25 +35,25 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($attendance as $key => $attendance)
+                      @foreach($attendance_records as $key => $attendance_rec)
                       <tr>
                         <td style="text-align: center;">{{ $key+1 }}</td>
-                        <td style="text-align: center;">{{ $attendance->event_name }}</td>
-                        <td style="text-align: center;">{{ $attendance->event_location }}</td>
-                        <td style="text-align: center;">{{ $attendance->event_date_time }}</td>
+                        <td style="text-align: center;">{{ $attendance_rec->event_name }}</td>
+                        <td style="text-align: center;">{{ $attendance_rec->event_location }}</td>
+                        <td style="text-align: center;">{{ $attendance_rec->event_date_time }}</td>
                         <td>
                         <div style="text-align: center;">
-                        <a href="{{ route('view.attendance.record', $attendance->id) }}">
+                        <a href="{{ route('view.attendance.record', $attendance_rec->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
-                        <a href="{{ route('edit.attendance.record', $attendance->id) }}">
+                        <a href="{{ route('edit.attendance.record', $attendance_rec->id) }}">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
-                        <a href="{{ route('delete.attendance.record', $attendance->id) }}" id="delete">
+                        <a href="{{ route('delete.attendance.record', $attendance_rec->id) }}" id="delete">
                         <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>

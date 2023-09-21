@@ -64,7 +64,8 @@
                 <div class="p-1">
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="d-flex justify-content-between flex-grow-1">
                       <div class="me-4">
@@ -76,7 +77,8 @@
                   </a>
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="d-flex justify-content-between flex-grow-1">
                       <div class="me-4">
@@ -88,7 +90,8 @@
                   </a>
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="d-flex justify-content-between flex-grow-1">
                       <div class="me-4">
@@ -100,7 +103,8 @@
                   </a>
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="d-flex justify-content-between flex-grow-1">
                       <div class="me-4">
@@ -112,7 +116,8 @@
                   </a>
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="d-flex justify-content-between flex-grow-1">
                       <div class="me-4">
@@ -161,7 +166,8 @@
                   </a>
                   <a href="#" class="dropdown-item d-flex align-items-center py-2">
                     <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr">
+                      <!-- <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30" alt="userr"> -->
+                      <i class="icon-sm text-white" data-feather="user"></i>
                     </div>
                     <div class="flex-grow-1 me-2">
 											<p>New customer registered</p>

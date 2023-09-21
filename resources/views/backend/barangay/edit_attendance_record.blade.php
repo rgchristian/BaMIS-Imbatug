@@ -20,20 +20,20 @@
                     <form id="myForm" method="POST" action="{{ route('update.attendance.record') }}" class="forms-sample">
                         @csrf
 
-                        <input type="hidden" name="id" value="{{ $attendance->id }}">
+                        <input type="hidden" name="id" value="{{ $edit_attendance_record->id }}">
 
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Event Name</label>
-                                    <input type="text" name="event_name" class="form-control" value="{{ $attendance->event_name }}">
+                                    <input type="text" name="event_name" class="form-control" value="{{ $edit_attendance_record->event_name }}">
                                 </div>
 
                                 </div><!-- Col -->
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Host Name</label>
-                                    <input type="text" name="host_name" class="form-control" value="{{ $attendance->host_name }}">
+                                    <input type="text" name="host_name" class="form-control" value="{{ $edit_attendance_record->host_name }}">
                                 </div>
 
 
@@ -43,7 +43,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Event Details</label>
-                                    <textarea name="event_details" rows="6" class="form-control">{{ old('event_details', $attendance->event_details) }}</textarea>
+                                    <textarea name="event_details" rows="6" class="form-control">{{ old('event_details', $edit_attendance_record->event_details) }}</textarea>
                                 </div>
                             
                             </div><!-- Col -->
@@ -52,14 +52,14 @@
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label for="event_location" class="form-label">Event Location</label>
-                                    <input type="text" name="event_location" class="form-control" value="{{ $attendance->event_location }}">
+                                    <input type="text" name="event_location" class="form-control" value="{{ $edit_attendance_record->event_location }}">
                                 </div>
                             </div><!-- Col -->
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label for="event_date_time" class="form-label">Event Date & Time</label>
                                     <div class="input-group">
-                                        <input type="text" id="attendance_date" name="event_date_time" class="form-control flatpickr-input active" value="{{ $attendance->event_date_time }}" readonly="readonly">
+                                        <input type="text" id="attendance_date" name="event_date_time" class="form-control flatpickr-input active" value="{{ $edit_attendance_record->event_date_time }}" readonly="readonly">
                                         <span class="input-group-text input-group-addon" data-toggle="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -77,7 +77,7 @@
                             <div class="col-sm-12">
                                 <div class="mb-3 form-group">
                                     <label for="list_attendees" class="form-label">List of Attendees</label>
-                                    <textarea name="list_attendees" rows="6" class="form-control">{{ old('list_attendees', $attendance->list_attendees) }}</textarea>
+                                    <textarea name="list_attendees" rows="6" class="form-control">{{ old('list_attendees', $edit_attendance_record->list_attendees) }}</textarea>
                                 </div>
                             </div><!-- Col -->
                             </div><!-- Row -->

@@ -20,13 +20,13 @@
                     <form method="POST" action="{{ route('update.official') }}" class="forms-sample">
                         @csrf
 
-                        <input type="hidden" name="id" value="{{ $officials->id }}">
+                        <input type="hidden" name="id" value="{{ $edit_official->id }}">
                         
                         <div class="row form-group">
                             <div class="col-sm-12">
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
-                                    <input type="text" name="name" class="form-control" value="{{ $officials->name }}">
+                                    <input type="text" name="name" class="form-control" value="{{ $edit_official->name }}">
                                 </div>
                             </div><!-- Col -->
                         </div><!-- Row -->
@@ -36,11 +36,11 @@
                                     <label class="form-label">Position</label>
                                     <select name="position" class="form-select mb-3 form-control">
                                       <option value="" disabled>Select position</option>
-                                      <option value="Barangay Captain" {{ $officials->position == 'Barangay Captain' ? 'selected' : '' }}>Barangay Captain</option>
-                                      <option value="Sangguniang Barangay Member" {{ $officials->position == 'Sangguniang Barangay Member' ? 'selected' : '' }}>Sangguniang Barangay Member</option>
-                                      <option value="Sangguniang Kabataan Chairperson" {{ $officials->position == 'Sangguniang Kabataan Chairperson' ? 'selected' : '' }}>Sangguniang Kabataan Chairperson</option>
-                                      <option value="Barangay Treasurer" {{ $officials->position == 'Barangay Treasurer' ? 'selected' : '' }}>Barangay Treasurer</option>
-                                      <option value="Barangay Secretary" {{ $officials->position == 'Barangay Secretary' ? 'selected' : '' }}>Barangay Secretary</option>
+                                      <option value="Barangay Captain" {{ $edit_official->position == 'Barangay Captain' ? 'selected' : '' }}>Barangay Captain</option>
+                                      <option value="Sangguniang Barangay Member" {{ $edit_official->position == 'Sangguniang Barangay Member' ? 'selected' : '' }}>Sangguniang Barangay Member</option>
+                                      <option value="Sangguniang Kabataan Chairperson" {{ $edit_official->position == 'Sangguniang Kabataan Chairperson' ? 'selected' : '' }}>Sangguniang Kabataan Chairperson</option>
+                                      <option value="Barangay Treasurer" {{ $edit_official->position == 'Barangay Treasurer' ? 'selected' : '' }}>Barangay Treasurer</option>
+                                      <option value="Barangay Secretary" {{ $edit_official->position == 'Barangay Secretary' ? 'selected' : '' }}>Barangay Secretary</option>
                                     </select>
                                 </div>
                             </div><!-- Col -->
@@ -49,8 +49,8 @@
                                     <label class="form-label">Status</label>
                                     <select name="status" class="form-select mb-3 form-control">
                                       <option value="" disabled>Select status</option>
-                                      <option value="Active" {{ $officials->status == 'Active' ? 'selected' : '' }}>Active</option>
-                                      <option value="Inactive" {{ $officials->status == 'Inactive' ? 'selected' : '' }}>Inactive</option>
+                                      <option value="Active" {{ $edit_official->status == 'Active' ? 'selected' : '' }}>Active</option>
+                                      <option value="Inactive" {{ $edit_official->status == 'Inactive' ? 'selected' : '' }}>Inactive</option>
                                     </select>
                                 </div>
                             </div><!-- Col -->
@@ -60,7 +60,7 @@
                                 <div class="mb-3 form-group">
                                     <label for="term_start" class="form-label">Term Start</label>
                                     <div class="input-group">
-                                    <input type="text" id="term_start" name="term_start" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly" value="{{ $officials->term_start }}">
+                                    <input type="text" id="term_start" name="term_start" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly" value="{{ $edit_official->term_start }}">
                                         <span class="input-group-text input-group-addon" data-toggle="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -76,7 +76,7 @@
                                 <div class="mb-3 form-group">
                                     <label for="term_end" class="form-label">Term End</label>
                                     <div class="input-group">
-                                    <input type="text" id="term_end" name="term_end" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly" value="{{ $officials->term_end }}">
+                                    <input type="text" id="term_end" name="term_end" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly" value="{{ $edit_official->term_end }}">
                                         <span class="input-group-text input-group-addon" data-toggle="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>

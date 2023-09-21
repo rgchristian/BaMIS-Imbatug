@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\BarangayAnnouncements;
+use App\Models\BarangayAttendanceRecords;
+use App\Models\BarangayBlotterRecords;
+use App\Models\BarangayCertificates;
+use App\Models\BarangayClearances;
+use App\Models\BarangayOfficials;
+use App\Models\BarangayResidents;
+use App\Models\BarangayRevenues;
+
 class AdminController extends Controller
 {
     public function AdminDashboard() {

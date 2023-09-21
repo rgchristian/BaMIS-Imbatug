@@ -19,8 +19,8 @@ class BarangayAttendanceRecordsController extends Controller
 {
     public function AttendanceRecords(){
 
-        $attendance = BarangayAttendanceRecords::latest()->get();
-        return view('backend.barangay.barangay_attendance_records', compact('attendance'));
+        $attendance_records = BarangayAttendanceRecords::latest()->get();
+        return view('backend.barangay.barangay_attendance_records', compact('attendance_records'));
 
     } // End Method
 
@@ -29,7 +29,6 @@ class BarangayAttendanceRecordsController extends Controller
         return view('backend.barangay.create_attendance_record');
 
     } // End Method
-
 
     public function StoreAttendanceRecord(Request $request){
 
@@ -66,8 +65,8 @@ class BarangayAttendanceRecordsController extends Controller
 
     public function EditAttendanceRecord($id){
 
-        $attendance = BarangayAttendanceRecords::findOrFail($id);
-        return view('backend.barangay.edit_attendance_record', compact('attendance'));
+        $edit_attendance_record = BarangayAttendanceRecords::findOrFail($id);
+        return view('backend.barangay.edit_attendance_record', compact('edit_attendance_record'));
 
     } // End Method
 
@@ -110,9 +109,9 @@ class BarangayAttendanceRecordsController extends Controller
 
     public function ViewAttendanceRecord($id){
 
-        $attendance = BarangayAttendanceRecords::findOrFail($id);
+        $view_attendance_record = BarangayAttendanceRecords::findOrFail($id);
 
-        return view('backend.barangay.view_attendance_record', compact('attendance'));
+        return view('backend.barangay.view_attendance_record', compact('view_attendance_record'));
 
    } // End method
 
