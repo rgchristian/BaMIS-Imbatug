@@ -38,7 +38,8 @@ class AdminController extends Controller
     public function AdminLogin() {
 
         return view('admin.admin_login');
-    }
+        
+    } // End method
 
     public function AdminProfile() {
 
@@ -127,9 +128,43 @@ class AdminController extends Controller
 
     public function About(){
 
-        $types = User::latest()->get();
-        return view('backend.barangay.about', compact('types'));
+        $about = User::latest()->get();
+        return view('backend.barangay.about', compact('about'));
 
     } // End method
+
+    public function BarangayHome(){
+
+        return view('frontend.master');
+
+    } // End method
+
+    public function BarangayAbout(){
+
+        return view('frontend.about');
+
+    } // End method
+
+    public function BarangayService(){
+
+        return view('frontend.service');
+
+    } // End method
+
+    public function BarangayContact(){
+
+        return view('frontend.contact');
+
+    } // End method
+
+    public function BarangayOfficials(){
+
+        return view('frontend.officials');
+
+    } // End method
+
+    
+
+    
 
 }

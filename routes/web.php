@@ -24,11 +24,11 @@ use App\Http\Controllers\Backend\BarangayRevenuesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.master');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.admin_dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -58,7 +58,18 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
 }); // End group admin middleware
 
+//Landing page type all route
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+Route::get('/barangay/home', [AdminController::class, 'BarangayHome'])->name('barangay.home');
+
+Route::get('/barangay/about', [AdminController::class, 'BarangayAbout'])->name('barangay.about');
+
+Route::get('/barangay/service', [AdminController::class, 'BarangayService'])->name('barangay.service');
+
+Route::get('/barangay/contact', [AdminController::class, 'BarangayContact'])->name('barangay.contact');
+
+Route::get('/officials', [AdminController::class, 'BarangayOfficials'])->name('officials');
 
 // Admin group middleware
 Route::middleware(['auth', 'role:admin'])->group(function(){

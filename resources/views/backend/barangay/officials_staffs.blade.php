@@ -61,12 +61,12 @@
                   <td>
                     <div style="text-align: center;">
                       <a href="{{ route('edit.official', $barangay_officials->id) }}">
-                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                       </a>
                       <a href="{{ route('delete.official', $barangay_officials->id) }}" id="delete">
-                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                        <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                       </a>

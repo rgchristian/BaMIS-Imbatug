@@ -45,59 +45,60 @@
 
   <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
 </head>
-<body>
-	<div class="main-wrapper">
-		<div class="page-wrapper full-page">
-			<div class="page-content d-flex align-items-center justify-content-center">
 
-				<div class="row w-100 mx-0 auth-page">
-					<div class="col-md-8 col-xl-6 mx-auto">
-						<div class="card">
-							<div class="row">
-                <div class="col-md-4 pe-md-0">
-                  <div class="authlogin-side-wrapper">
+<div class="main-wrapper">
+    <div class="page-wrapper full-page">
+        <div class="page-content d-flex align-items-center justify-content-center">
 
-                  </div>
+            <div class="row w-100 mx-0 auth-page">
+                <div class="col-md-8 col-xl-6 mx-auto">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-4 pe-md-0">
+                                <div class="authlogin-side-wrapper">
+                                </div>
+                            </div>
+                            <div class="col-md-8 ps-md-0">
+                                <div class="auth-form-wrapper px-4 py-5">
+                                    <a href="{{ route('barangay.home') }}" class="btn btn-outline-danger btn-icon-text mb-2 position-absolute top-0 start-0 m-3">
+                                        <i class="feather icon-arrow-left"></i> Back
+                                    </a>
+                                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Barangay<span>Imbatug</span></a>
+                                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
+
+                                    <form class="forms-sample" method="post" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label for="login" class="form-label">Username</label>
+                                            <input type="text" name="login" class="form-control" id="login" placeholder="Enter username">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="userPassword" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Enter password">
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input type="checkbox" class="form-check-input" id="authCheck">
+                                            <label class="form-check-label" for="authCheck">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 ps-md-0">
-                  <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Barangay<span>Imbatug</span></a>
-                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
+            </div>
 
-                    <form class="forms-sample" method="post" action="{{ route('login') }}">
-                    @csrf
-                      <div class="mb-3">
-                        <label for="login" class="form-label">Username</label>
-                        <input type="text" name="login" class="form-control" id="login" placeholder="Enter username">
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="userPassword" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" placeholder="Enter password">
-                      </div>
-                      <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="authCheck">
-                        <label class="form-check-label" for="authCheck">
-                          Remember me
-                        </label>
-                      </div>
-                      <div>
-                        
-                        <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
-                          Login
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
+</div>
 
 	<!-- core:js -->
 	<script src="{{ asset('backend/assets/vendors/core/core.js') }}"></script>

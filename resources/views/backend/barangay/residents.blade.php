@@ -59,17 +59,17 @@
                         <td>
                         <div style="text-align: center;">
                         <a href="{{ route('view.resident', $barangay_residents->id) }}">
-                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+                        <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>
                         </button>
                         </a>
                         <a href="{{ route('edit.resident', $barangay_residents->id) }}">
-                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>
                         </button>
                         </a>
                         <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="delete">
-                        <button type="button" class="btn btn-inverse-light btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                        <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                           <i data-feather="trash"></i>
                         </button>
                         </a>
