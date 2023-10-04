@@ -137,7 +137,7 @@
                             </div><!-- Col -->
                             <div class="col-sm-12">
     							<div class="mb-3 form-group">
-        							<label class="form-label">List of Mediators</label>
+        							<label class="form-label">Names of Mediators</label>
         							<textarea name="list_mediators" placeholder="Enter names of mediators" rows="6" class="form-control"></textarea>
    								</div>
 						</div><!-- Col -->

@@ -134,4 +134,14 @@ class BarangayBlotterRecordsController extends Controller
 
    } // End method
 
+   //Fetch data blotter records to admin dashboard
+   public function DashBlotterRecords(){
+
+    $dash_blotter_records = BarangayBlotterRecords::latest()->get();
+
+    return view('admin.index', compact('dash_blotter_records'));
+
+   } // End method
+
+
 }

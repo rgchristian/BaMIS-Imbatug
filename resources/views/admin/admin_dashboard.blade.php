@@ -56,12 +56,12 @@
 
   /* #5864dc, #198754, #DC3545, #aeb9cc, #FFC107, #198754 */
   .status-badge.badge-success {
-    background-color: #5864dc; 
+    background-color: #198754; 
 	  color: white;
   }
 
   .status-badge.badge-danger {
-    background-color: #5864dc; 
+    background-color: #DC3545; 
 	  color: white;
   }
 
@@ -186,6 +186,11 @@
     });
 	
     flatpickr("#birthdate", {
+        dateFormat: "Y-m-d",
+        // Additional options...
+    });
+
+    flatpickr("#resident_added", {
         dateFormat: "Y-m-d",
         // Additional options...
     });

@@ -6,6 +6,7 @@
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Project</li>
 						<li class="breadcrumb-item active" aria-current="page">About</li>
 					</ol>
 				</nav>
@@ -37,7 +38,7 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#FaqAccordion">
                       <div class="accordion-body">
                       <ul class="list-group">
-                        <li class="list-group-item">Cagampang RG Christian D.</li>
+                        <li class="list-group-item">Cagampang, RG Christian D.</li>
                         <li class="list-group-item">Justalero, Jesse James A.</li>
                         <li class="list-group-item">Mondejar, Honeylee M.</li>
                         <li class="list-group-item">Tachado, Andres F.</li>

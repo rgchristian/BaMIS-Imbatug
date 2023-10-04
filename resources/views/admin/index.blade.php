@@ -346,77 +346,47 @@
                 </div>
 
                 <div class="table-responsive">
-                  <table class="table table-hover mb-0">
-                    <thead>
-                      <tr>
-                        <th class="pt-0">Blotter ID</th>
-                        <th class="pt-0">Incident Type</th>
-                        <th class="pt-0">Blotter Status</th>
-                        <th class="pt-0">Incident Date</th>
-                        <th class="pt-0">Date Recorded</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>NobleUI jQuery</td>
-                        <td>01/01/2022</td>
-                        <td>26/04/2022</td>
-                        <td><span class="badge bg-danger">Released</span></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>NobleUI Angular</td>
-                        <td>01/01/2022</td>
-                        <td>26/04/2022</td>
-                        <td><span class="badge bg-success">Review</span></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>NobleUI ReactJs</td>
-                        <td>01/05/2022</td>
-                        <td>10/09/2022</td>
-                        <td><span class="badge bg-info">Pending</span></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>NobleUI VueJs</td>
-                        <td>01/01/2022</td>
-                        <td>31/11/2022</td>
-                        <td><span class="badge bg-warning">Work in Progress</span>
-                        </td>
-                        
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>NobleUI Laravel</td>
-                        <td>01/01/2022</td>
-                        <td>31/12/2022</td>
-                        <td><span class="badge bg-danger">Coming soon</span></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>NobleUI NodeJs</td>
-                        <td>01/01/2022</td>
-                        <td>31/12/2022</td>
-                        <td><span class="badge bg-primary">Coming soon</span></td>
-                        
-                      </tr>
-                      <tr>
-                        <td class="border-bottom">3</td>
-                        <td class="border-bottom">NobleUI EmberJs</td>
-                        <td class="border-bottom">01/05/2022</td>
-                        <td class="border-bottom">10/11/2022</td>
-                        <td class="border-bottom"><span class="badge bg-info">Pending</span></td>
-                        
-                      </tr>
-                    </tbody>
-                  </table>
+                <table class="table table-hover mb-0 table border-secondary">
+    <thead>
+        <tr>
+            <th class="pt-0" style="text-align: center;">ID</th>
+            <th class="pt-0" style="text-align: center;">Incident Type</th>
+            <th class="pt-0" style="text-align: center;">Status</th>
+            <th class="pt-0" style="text-align: center;">Date</th>
+            <th class="pt-0" style="text-align: center;">Date Recorded</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($dash_blotter_records as $key => $dash_blott)
+        <tr>
+            <td style="text-align: center;">{{ $key+1 }}</td>
+            <td style="text-align: center;">{{ $dash_blott->incident_type }}</td>
+            <td style="text-align: center;">
+            @php
+                        $statusClass = '';
+                        switch($dash_blott->incident_status) {
+                        case 'New':
+                            $statusClass = 'status-new';
+                            break;
+                        case 'Pending':
+                            $statusClass = 'status-pending';
+                            break;
+                        case 'Ongoing':
+                            $statusClass = 'status-ongoing';
+                            break;
+                        case 'Finished':
+                            $statusClass = 'status-finished';
+                            break;
+                        }
+                      @endphp
+    <span class="status-badge {{ $statusClass }}">{{ $dash_blott->incident_status }}</span>
+            </td>
+            <td style="text-align: center;">{{ $dash_blott->incident_date }}</td>
+            <td style="text-align: center;">{{ $dash_blott->incident_date_recorded }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
                 </div>
                 
               </div> 
