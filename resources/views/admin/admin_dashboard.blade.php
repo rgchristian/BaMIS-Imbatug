@@ -56,12 +56,32 @@
 
   /* #5864dc, #198754, #DC3545, #aeb9cc, #FFC107, #198754 */
   .status-badge.badge-success {
-    background-color: #198754; 
+    background-color: #4CAF50; 
 	  color: white;
   }
 
   .status-badge.badge-danger {
-    background-color: #DC3545; 
+    background-color: #F32013; 
+	  color: white;
+  }
+
+  .status-badge.badge-info {
+    background-color: #FAD02E; 
+	  color: white;
+  }
+
+  .status-badge.badge-warning {
+    background-color: #6056F5; 
+	  color: white;
+  }
+
+  .status-badge.badge-primary {
+    background-color: #F762C6; 
+	  color: white;
+  }
+
+  .status-badge.badge-secondary {
+    background-color: #FFA900; 
 	  color: white;
   }
 
@@ -70,22 +90,22 @@
   }
 
   .status-new {
-    background-color: #5864dc;
+    background-color: #FF5733;
     color: #ffffff;
   }
 
   .status-pending {
-    background-color: #5864dc;
+    background-color: #FFC300;
     color: #ffffff;
   }
 
   .status-ongoing {
-    background-color: #5864dc;
+    background-color: #3498DB;
     color: #ffffff;
   }
 
   .status-finished {
-    background-color: #5864dc;
+    background-color: #4CAF50;
     color: #ffffff;
   }
 
@@ -225,7 +245,17 @@
         // Additional options...
     });
 
+    flatpickr("#settlement_schedule", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        // Additional options...
+    });
+
+    
+
 	</script>
+
+  
 
 </body>
 </html>    

@@ -13,7 +13,9 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="#" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create barangay announcement">Create</a>
+            <a href="#" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create barangay announcement">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="" class="btn btn-inverse-light btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
+            <a href="" class="btn btn-inverse-info btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
         </ol>
     </nav>
 

@@ -14,9 +14,9 @@
 
   <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.official') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Add barangay official">Add</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="" class="btn btn-outline-light btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a>&nbsp;&nbsp;
-            <a href="" class="btn btn-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
+      <a href="{{ route('add.official') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add barangay official">Add</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="" class="btn btn-inverse-light btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
+            <a href="" class="btn btn-inverse-info btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
     </ol>
   </nav>
   
@@ -34,6 +34,7 @@
                 <tr>
                   <th style="text-align: center;">Id</th>
                   <th style="text-align: center;">Name</th>
+                  <th style="text-align: center;">Photo</th>
                   <th style="text-align: center;">Position</th>
                   <th style="text-align: center;">Status</th>
                   <th style="text-align: center;">Term start</th>
@@ -46,14 +47,23 @@
                 <tr>
                   <td style="text-align: center;">{{ $key+1 }}</td>
                   <td style="text-align: center;">{{ $barangay_officials->name }}</td>
+                  <td style="text-align: center;"><img class="rounded-circle official-image" src="{{ asset($barangay_officials->photo) }}" alt="profile"></td>
                   <td style="text-align: center;">{{ $barangay_officials->position }}</td>
                   <td style="text-align: center;">
-                    @if($barangay_officials->status === 'Active')
-                      <span class="status-badge badge badge-success">Active</span>
-                    @else
-                      <span class="status-badge badge badge-danger">Inactive</span>
-                    @endif
-                  </td>
+  @if($barangay_officials->status === 'Active')
+    <span class="status-badge badge badge-success">Active</span>
+  @elseif($barangay_officials->status === 'Resigned')
+    <span class="status-badge badge badge-info">Resigned</span>
+  @elseif($barangay_officials->status === 'Suspended')
+    <span class="status-badge badge badge-warning">Suspended</span>
+  @elseif($barangay_officials->status === 'Elected')
+    <span class="status-badge badge badge-primary">Elected</span>
+  @elseif($barangay_officials->status === 'Appointed')
+    <span class="status-badge badge badge-secondary">Appointed</span>
+  @else
+    <span class="status-badge badge badge-danger">Inactive</span>
+  @endif
+</td>
                   @php
                     $termStart = \Carbon\Carbon::parse($barangay_officials->term_start)->toDateString();
                     $termEnd = \Carbon\Carbon::parse($barangay_officials->term_end)->toDateString();
@@ -62,6 +72,11 @@
                   <td style="text-align: center;">{{ $termEnd }}</td>
                   <td>
                     <div style="text-align: center;">
+                    <a href="{{ route('view.official', $barangay_officials->id) }}">
+          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+            <i data-feather="eye"></i>
+          </button>
+        </a>
                       <a href="{{ route('edit.official', $barangay_officials->id) }}">
                         <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                           <i data-feather="edit"></i>

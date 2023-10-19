@@ -26,81 +26,209 @@
         <div class="row">
           <div class="col-12 col-xl-12 stretch-card">
             <div class="row flex-grow-1">
+
+            <div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Total Population</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/total_population.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+              <div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Male</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/male_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Female</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/female_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Persons With Disability (PWD)</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/pwd_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Solo Parent</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/solo_parent.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
               <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Total Population</h6>
-                      <div class="dropdown mb-2">
-                        <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2">3,897</h3>
-                        <div class="d-flex align-items-baseline">
-                          <p class="text-success">
-                            <span>+3.3%</span>
-                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-6 col-md-12 col-xl-7">
-                        <div id="customersChart" class="mt-md-3 mt-xl-0"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Registered Voters</h6>
-                      <div class="dropdown mb-2">
-                        <a type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2">35,084</h3>
-                        <div class="d-flex align-items-baseline">
-                          <p class="text-danger">
-                            <span>-2.8%</span>
-                            <i data-feather="arrow-down" class="icon-sm mb-1"></i>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="col-6 col-md-12 col-xl-7">
-                        <div id="ordersChart" class="mt-md-3 mt-xl-0"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Labor force</h6>
+                      <h6 class="card-title mb-0">Household</h6>
                       <div class="dropdown mb-2">
                         <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -115,17 +243,20 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2">89.87%</h3>
-                        <div class="d-flex align-items-baseline">
-                          <p class="text-success">
-                            <span>+2.8%</span>
-                            <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-                          </p>
-                        </div>
+                    <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">3, 897</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+                          <div class="mt-md-3 mt-xl-0">
+
+                          </div>
                       </div>
-                      <div class="col-6 col-md-12 col-xl-7">
-                        <div id="growthChart" class="mt-md-3 mt-xl-0"></div>
+                      <div class="col-6 col-md-12 col-xl-5">
+                      <img src="{{ asset('upload/household.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+                      <div class="d-flex align-items-baseline">
                       </div>
                     </div>
                   </div>
@@ -133,6 +264,46 @@
               </div>
             </div>
           </div>
+          </div>
+          
+          <div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Purok</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">9</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/purok.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         </div> <!-- row -->
 
         <div class="row">
@@ -336,11 +507,11 @@
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.blotter.records') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.blotter.records') }}"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.blotter.records') }}"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+                      <!-- <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a> -->
                     </div>
                   </div>
                 </div>
@@ -352,8 +523,8 @@
             <th class="pt-0" style="text-align: center;">ID</th>
             <th class="pt-0" style="text-align: center;">Incident Type</th>
             <th class="pt-0" style="text-align: center;">Status</th>
-            <th class="pt-0" style="text-align: center;">Date</th>
-            <th class="pt-0" style="text-align: center;">Date Recorded</th>
+            <th class="pt-0" style="text-align: center;">Incident Date</th>
+            <th class="pt-0" style="text-align: center;">Settlement Schedule</th>
         </tr>
     </thead>
     <tbody>
@@ -382,7 +553,7 @@
     <span class="status-badge {{ $statusClass }}">{{ $dash_blott->incident_status }}</span>
             </td>
             <td style="text-align: center;">{{ $dash_blott->incident_date }}</td>
-            <td style="text-align: center;">{{ $dash_blott->incident_date_recorded }}</td>
+            <td style="text-align: center;">{{ $dash_blott->settlement_schedule }}</td>
         </tr>
         @endforeach
     </tbody>

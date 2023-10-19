@@ -3,20 +3,8 @@
 
 <!-- jQuery Google CDN via W3schools.com -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
-
-<style>
-    #captureButtonContainer {
-    position: absolute;
-    bottom: 40px; /* Adjust this value to position the button vertically */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-</style>
-
 <div class="page-content">
+
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -42,7 +30,7 @@
 
                         <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-1">
                             <div class="toggle-camer mb-2">
-                                <a type="button" id="toggleCameraButton" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Toggle camera">
+                                <a type="button" id="accesscamera" data-toggle="modal" data-target="#photoModal" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Open camera">
                                 <i class="link-icon" data-feather="video"></i>
                                 </a>
                             </div>
@@ -59,13 +47,41 @@
     </div>
     </div>
 
-    <div class="d-flex justify-content-center" id="captureButtonContainer" style="display: none;">
+    <!-- <div class="d-flex justify-content-center" id="captureButtonContainer" style="display: none;">
     <a download id="captureButton" name="photo" class="btn btn-outline-danger rounded-circle capture-button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Capture photo" style="display: none;"><i class="link-icon" data-feather="camera"></i></a>
-</div>       
+</div>        -->
 
                     </div>
                 </div>
             </div>
+
+            <!--Modal-->
+    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Take Photo</h5>
+                    <button type="button" id="closeWebcam" class="btn btn-danger close" data-bs-toggle="tooltip" data-bs-placement="top" title="Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div id="my_camera" class="d-block mx-auto rounded overflow-hidden"></div>
+                    </div>
+                    <div id="results" class="d-none"></div>
+                    <form method="post" id=""> 
+                        <input type="hidden" id="photoStore" name="photoStore" value="">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info mx-auto text-white rounded-circle" id="takephoto"><i class="link-icon" data-feather="camera" data-bs-toggle="tooltip" data-bs-placement="top" title="Capture photo"></i></button>
+                    <button type="button" class="btn btn-danger mx-auto text-white d-none" id="retakephoto"><i class="link-icon" data-feather="arrow-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Retake photo"></i></button>
+                    <button type="submit" class="btn btn-success mx-auto text-white d-none" id="uploadphoto" form=""><i class="link-icon" data-feather="download" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload photo"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
             
             <div class="col-md-8">
                 <div class="card">
@@ -80,6 +96,9 @@
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter full name">
+                                    @error('name')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
                                 </div>
                             </div>
                             <!-- Col -->
@@ -148,7 +167,7 @@
                             <!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                <label for="moral" class="form-label">
+                                <label for="age" class="form-label">
                                     Age <a data-bs-toggle="tooltip" data-bs-placement="top" title="Age will be automatically added if the birthdate is filled." class="text-primary">(?)</a>
                                     </label>
                                     <input type="number" name="age" id="age" class="form-control" readonly>
@@ -428,7 +447,7 @@
                                 </div> -->
                         </div>
                         <!-- Row -->
-                        <button type="submit" class="btn btn-primary submit">Save</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
     </form>
     </div>
     </div>
@@ -708,123 +727,134 @@
 </script>
 <!-- End Please be specify -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
 <script>
-    const webCamElement = document.getElementById("webCam");
-    const toggleCameraButton = document.getElementById("toggleCameraButton");
-    const photoImage = document.getElementById("photoImage");
-    const captureButton = document.getElementById("captureButton");
+    $(document).ready(function() {
+    Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
 
-    let webcam = null;
-    let isCameraOn = false;
-
-    // Function to toggle the button text and icon
-    function toggleButtonTextAndIcon(isCameraOn) {
-        if (isCameraOn) {
-            toggleCameraButton.innerHTML = '<i class="link-icon" data-feather="video-off"></i>';
-            captureButton.style.display = "block"; // Show the capture button
-        } else {
-            toggleCameraButton.innerHTML = '<i class="link-icon" data-feather="video"></i>';
-            captureButton.style.display = "none"; // Hide the capture button
-        }
-        feather.replace();
-    }
-
-    // Function to toggle the webcam on and off
-    function toggleCamera() {
-        if (!isCameraOn) {
-            // Create a new webcam instance and start it
-            webcam = new Webcam(webCamElement, "user");
-            webcam.start();
-            photoImage.style.display = "none"; // Hide the image when the camera is on
-            webCamElement.style.display = "block"; // Show the camera preview
-            toggleButtonTextAndIcon(true);
-        } else {
-            // Stop and remove the webcam instance
-            webcam.stop();
-            webcam = null;
-            photoImage.style.display = "block"; // Show the image when the camera is off
-            webCamElement.style.display = "none"; // Hide the camera preview
-            toggleButtonTextAndIcon(false);
-        }
-        isCameraOn = !isCameraOn;
-    }
-
-    // Add a click event listener to the toggle camera button
-    toggleCameraButton.addEventListener("click", toggleCamera);
-
-    // Function to capture and save the photo
-    function captureAndSavePhoto() {
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-        const video = document.getElementById("webCam");
-
-        // Set the canvas dimensions to match the video frame
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-
-        // Draw the current video frame onto the canvas
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        // Convert the canvas image to a data URL
-        const photoDataUrl = canvas.toDataURL("image/jpeg");
-
-        // Display the captured photo in the frame
-        photoImage.src = photoDataUrl;
-
-         // Stop the webcam
-        toggleCamera(); // This will turn off the webcam
-
-        // Save the photo locally in the specified path
-        const photoBlob = dataURItoBlob(photoDataUrl);
-        const formData = new FormData();
-        formData.append("photo", photoBlob);
-
-        // Make an AJAX request to save the photo locally
-        fetch("/public/upload/resident_images", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    // Photo saved successfully
-                    console.log("Photo saved locally.");
-                } else {
-                    // Handle the error
-                    console.error("Error saving photo locally.");
-                }
+    $('#accesscamera').on('click', function() {
+        Webcam.reset();
+        Webcam.on('error', function() {
+            $('#photoModal').modal('hide');
+            swal({
+                title: 'Warning',
+                text: 'Please give permission to access your webcam',
+                icon: 'warning'
             });
+        });
+        Webcam.attach('#my_camera');
+    });
 
-        // Save the photo in the database (assuming you have the necessary route and controller method)
-        const photoInput = document.getElementById("photoInput");
-        photoInput.files = [photoBlob]; // Set the selected file to the captured photo
-        // Submit the form to trigger the Laravel controller method
-        document.getElementById("myForm").submit(); // Replace 'yourFormId' with the actual form ID
-    }
+    // Event handler for the close button
+    $('#closeWebcam').on('click', function() {
+        Webcam.reset(); // Stop the webcam capture
+        $('#photoModal').modal('hide');
+    });
 
-    // Add a click event listener to the capture button
-    captureButton.addEventListener("click", captureAndSavePhoto);
+    $('#takephoto').on('click', take_snapshot);
 
-    // Function to convert data URL to Blob
-    function dataURItoBlob(dataURI) {
-        const byteString = atob(dataURI.split(",")[1]);
-        const mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
-        const ab = new ArrayBuffer(byteString.length);
-        const ia = new Uint8Array(ab);
-        for (let i = 0; i < byteString.length; i++) {
-            ia[i] = byteString.charCodeAt(i);
-        }
-        return new Blob([ab], { type: mimeString });
-    }
+    $('#retakephoto').on('click', function() {
+        $('#my_camera').addClass('d-block');
+        $('#my_camera').removeClass('d-none');
 
-    // Add a click event listener to the photo frame for opening the file browser
-    photoImage.addEventListener("click", openFileBrowser);
+        $('#results').addClass('d-none');
 
-    // Function to open the file browser (keep your existing openFileBrowser() function)
-    function openFileBrowser() {
-        // Trigger a click event on the hidden file input
-        document.getElementById('photoInput').click();
-    }
+        $('#takephoto').addClass('d-block');
+        $('#takephoto').removeClass('d-none');
+
+        $('#retakephoto').addClass('d-none');
+        $('#retakephoto').removeClass('d-block');
+
+        $('#uploadphoto').addClass('d-none');
+        $('#uploadphoto').removeClass('d-block');
+    });
+
+    $('#photoForm').on('submit', function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: 'photoUpload.php',
+            type: 'POST',
+            data: new FormData(this),
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                if(data == 'success') {
+                    Webcam.reset();
+
+                    $('#my_camera').addClass('d-block');
+                    $('#my_camera').removeClass('d-none');
+
+                    $('#results').addClass('d-none');
+
+                    $('#takephoto').addClass('d-block');
+                    $('#takephoto').removeClass('d-none');
+
+                    $('#retakephoto').addClass('d-none');
+                    $('#retakephoto').removeClass('d-block');
+
+                    $('#uploadphoto').addClass('d-none');
+                    $('#uploadphoto').removeClass('d-block');
+
+                    $('#photoModal').modal('hide');
+
+                    swal({
+                        title: 'Success',
+                        text: 'Photo uploaded successfully',
+                        icon: 'success',
+                        buttons: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false,
+                        timer: 2000
+                    })
+                }
+                else {
+                    swal({
+                        title: 'Error',
+                        text: 'Something went wrong',
+                        icon: 'error'
+                    })
+                }
+            }
+        })
+    })
+})
+
+function take_snapshot()
+{
+    //take snapshot and get image data
+    Webcam.snap(function(data_uri) {
+        //display result image
+        $('#results').html('<img src="' + data_uri + '" class="d-block mx-auto rounded"/>');
+
+        var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
+        $('#photoStore').val(raw_image_data);
+    });
+
+    $('#my_camera').removeClass('d-block');
+    $('#my_camera').addClass('d-none');
+
+    $('#results').removeClass('d-none');
+
+    $('#takephoto').removeClass('d-block');
+    $('#takephoto').addClass('d-none');
+
+    $('#retakephoto').removeClass('d-none');
+    $('#retakephoto').addClass('d-block');
+
+    $('#uploadphoto').removeClass('d-none');
+    $('#uploadphoto').addClass('d-block');
+}
 </script>
+
+<script src="{{ asset('plugin/sweetalert/sweetalert.min.js') }}"></script>
+<script src="{{ asset('plugin/webcamjs/webcam.min.js') }}"></script>
 
 @endsection

@@ -30,9 +30,9 @@
 
 <nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-            <a href="{{ route('add.resident') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Add barangay resident">Add</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="" class="btn btn-outline-light btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a>&nbsp;&nbsp;
-            <a href="" class="btn btn-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
+            <a href="{{ route('add.resident') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add barangay resident">Add</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="" class="btn btn-inverse-light btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
+            <a href="" class="btn btn-inverse-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
 					</ol>
 				</nav>
 
@@ -42,9 +42,9 @@
               <div class="card-body">
                 <h6 class="card-title">Barangay Residents</h6>
                 <!-- <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p> -->
-                <p class="text-muted mb-3"> Records of Barangay Inhabitants (<a href="#">RBI</a>).</p>
+                <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p>
                 <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
-                            <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="Yellow indicates an inactive resident. Red indicates the resident has an unsettled case(s). Orange indicates the resident is inactive and has an unsettled case(s)."></i>
+                            <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="The color coding system is used to denote different resident statuses: White signifies a well-behaved resident, Yellow represents an inactive resident, Red indicates a resident with unresolved case(s), and Orange signifies an inactive resident with unsettled case(s)."></i>
                             </div>
                 <div class="table-responsive">
                   <table id="dataTableExample" class="table border-secondary border-top table-bordered">
@@ -55,6 +55,7 @@
                         <th style="text-align: center;">Name</th>
                         <th style="text-align: center;">Photo</th>
                         <th style="text-align: center;">Birthdate</th>
+                        <th style="text-align: center;">Age</th>
                         <th style="text-align: center;">Sex</th>
                         <th style="text-align: center;">Actions</th>
                       </tr>
@@ -92,20 +93,21 @@
     <td style="text-align: center;">{{ $barangay_residents->name }}</td>
     <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile"></td>
     <td style="text-align: center;">{{ $barangay_residents->birthdate }}</td>
+    <td style="text-align: center;">{{ $barangay_residents->age }}</td>
     <td style="text-align: center;">{{ $barangay_residents->sex }}</td>
     <td>
       <div style="text-align: center;">
-        <a href="">
+        <a href="{{ route('view.resident', $barangay_residents->id) }}">
           <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
             <i data-feather="eye"></i>
           </button>
         </a>
-        <a href="">
+        <a href="{{ route('edit.resident', $barangay_residents->id) }}">
           <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
             <i data-feather="edit"></i>
           </button>
         </a>
-        <a href="" id="delete">
+        <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="delete">
           <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
             <i data-feather="trash"></i>
           </button>

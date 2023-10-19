@@ -24,7 +24,7 @@
                       </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#FaqAccordion">
-                      <div class="accordion-body">
+                      <div class="accordion-body text-muted">
                         Title: <strong>A Web-based Barangay Management Information System with SMS Notification for Barangay Imbatug</strong>
                       </div>
                     </div>
@@ -38,10 +38,78 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#FaqAccordion">
                       <div class="accordion-body">
                       <ul class="list-group">
-                        <li class="list-group-item">Cagampang, RG Christian D.</li>
-                        <li class="list-group-item">Justalero, Jesse James A.</li>
-                        <li class="list-group-item">Mondejar, Honeylee M.</li>
-                        <li class="list-group-item">Tachado, Andres F.</li>
+                      <li class="list-group-item text-muted">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <a style="text-decoration: none; color: inherit;">
+                                    Cagampang, RG Christian D.
+                                </a>
+                                <span>
+                                    <a href="https://www.facebook.com/konogaki1/" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="facebook" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="https://github.com/rgchristian" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="github" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="mailto:rgchristiancagampang@gmail.com" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="mail"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item text-muted">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <a style="text-decoration: none; color: inherit;">
+                                    Justalero, Jesse James A.
+                                </a>
+                                <span>
+                                    <a href="https://facebook.com/yourfacebookprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="facebook" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="https://github.com/yourgithubprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="github" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="mailto:your-email@example.com" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="mail"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item text-muted">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <a style="text-decoration: none; color: inherit;">
+                                    Mondejar, Honeylee M.
+                                </a>
+                                <span>
+                                    <a href="https://facebook.com/yourfacebookprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="facebook" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="https://github.com/yourgithubprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="github" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="mailto:your-email@example.com" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="mail"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="list-group-item text-muted">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <a style="text-decoration: none; color: inherit;">
+                                    Tachado, Andres F.
+                                </a>
+                                <span>
+                                    <a href="https://facebook.com/yourfacebookprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="facebook" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="https://github.com/yourgithubprofile" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="github" style="margin-right: 10px;"></i>
+                                    </a>
+                                    <a href="mailto:your-email@example.com" style="text-decoration: none; color: inherit;" target="_blank">
+                                        <i data-feather="mail"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </li>
                       </ul>
                       </div>
                     </div>
@@ -55,8 +123,8 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#FaqAccordion">
                       <div class="accordion-body">
                       <ul class="list-group">
-                        <li class="list-group-item">PHP 8.2.4</li>
-                        <li class="list-group-item">Laravel 10.15</li>
+                        <li class="list-group-item text-muted">PHP 8.2.4</li>
+                        <li class="list-group-item text-muted">Laravel 10.15</li>
                       </ul>
                       </div>
                     </div>
@@ -68,7 +136,7 @@
                       </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#FaqAccordion">
-                      <div class="accordion-body">
+                      <div class="accordion-body text-muted">
                         <strong>1.0</strong>
                       </div>
                     </div>

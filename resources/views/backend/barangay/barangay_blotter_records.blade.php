@@ -13,7 +13,9 @@
 
                 <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('create.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create blotter record">Create</a>
+      <a href="{{ route('create.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create blotter record">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="" class="btn btn-inverse-light btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
+            <a href="" class="btn btn-inverse-info btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
     </ol>
   </nav>
 
@@ -67,6 +69,16 @@
                         <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->incident_date_recorded)) }}</td>
                         <td>
                         <div style="text-align: center;">
+                        
+                        
+
+        <a href="{{ route('mark.blotter.record.as.done', $blotter_rec->id) }}" onclick="event.preventDefault(); document.getElementById('mark-as-done-form-{{ $blotter_rec->id }}').submit();">
+        <button type="button" class="btn btn-inverse-success btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as done">
+                          <i data-feather="check"></i>
+                        </button><form id="mark-as-done-form-{{ $blotter_rec->id }}" action="{{ route('mark.blotter.record.as.done', $blotter_rec->id) }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
                         <a href="{{ route('view.blotter.record', $blotter_rec->id) }}">
                         <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
                           <i data-feather="eye"></i>

@@ -331,8 +331,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
-                <h1>Our Experience Doctors</h1>
+                <p class="d-inline-block border rounded-pill py-1 px-4">Officials</p>
+                <h1>Barangay Officials</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -342,7 +342,7 @@
                         </div>
                         <div class="team-text bg-light text-center p-4">
                             <h5>Doctor Name</h5>
-                            <p class="text-primary">Department</p>
+                            <p class="text-primary">Department Name</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
@@ -358,7 +358,7 @@
                         </div>
                         <div class="team-text bg-light text-center p-4">
                             <h5>Doctor Name</h5>
-                            <p class="text-primary">Department</p>
+                            <p class="text-primary">Department Name</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
@@ -374,7 +374,7 @@
                         </div>
                         <div class="team-text bg-light text-center p-4">
                             <h5>Doctor Name</h5>
-                            <p class="text-primary">Department</p>
+                            <p class="text-primary">Depatment Name</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
@@ -390,7 +390,7 @@
                         </div>
                         <div class="team-text bg-light text-center p-4">
                             <h5>Doctor Name</h5>
-                            <p class="text-primary">Department</p>
+                            <p class="text-primary">Department Name</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>

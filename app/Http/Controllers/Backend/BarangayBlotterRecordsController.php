@@ -5,15 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\BarangayBlotterRecords;
 
-use App\Models\BarangayAnnouncements;
-use App\Models\BarangayAttendanceRecords;
-use App\Models\BarangayCertificates;
-use App\Models\BarangayClearances;
-use App\Models\BarangayOfficials;
-use App\Models\BarangayResidents;
-use App\Models\BarangayRevenues;
+
 
 class BarangayBlotterRecordsController extends Controller
 {
@@ -36,8 +31,11 @@ class BarangayBlotterRecordsController extends Controller
          $request->validate([
             'incident_type' => 'required',
             'incident_status' => 'required',
+            'location' => 'required',
+            'remarks' => 'required',
             'incident_date' => 'required',
             'incident_date_recorded' => 'required',
+            'settlement_schedule' => 'required',
             'resident_name'	=> 'required|unique:barangay_blotter_records',
             'resident_address' => 'required',
             'resident_phone' => 'required',
@@ -49,12 +47,17 @@ class BarangayBlotterRecordsController extends Controller
             'list_mediators' => 'required'
         ]);
 
+        
+
         BarangayBlotterRecords::insert([
 
             'incident_type' => $request->incident_type,
             'incident_status' => $request->incident_status,
+            'location' => $request->location,
+            'remarks' => $request->remarks,
             'incident_date' => $request->incident_date,
             'incident_date_recorded' => $request->incident_date_recorded,
+            'settlement_schedule' => $request->settlement_schedule,
             'resident_name' => $request->resident_name,
             'resident_address' => $request->resident_address,
             'resident_phone' => $request->resident_phone,
@@ -86,12 +89,17 @@ class BarangayBlotterRecordsController extends Controller
 
        $blotter_id = $request->id;
 
+       
+
        BarangayBlotterRecords::findOrFail($blotter_id)->update([
 
            'incident_type' => $request->incident_type,
            'incident_status' => $request->incident_status,
+           'location' => $request->location,
+           'remarks' => $request->remarks,
            'incident_date' => $request->incident_date,
            'incident_date_recorded' => $request->incident_date_recorded,
+           'settlement_schedule' => $request->settlement_schedule,
            'resident_name' => $request->resident_name,
            'resident_address' => $request->resident_address,
            'resident_phone' => $request->resident_phone,
@@ -142,6 +150,31 @@ class BarangayBlotterRecordsController extends Controller
     return view('admin.index', compact('dash_blotter_records'));
 
    } // End method
+
+   public function markBlotterRecordAsDone($id)
+{
+    // Find the blotter record by its ID
+    $blotterRecord = BarangayBlotterRecords::find($id);
+
+    if (!$blotterRecord) {
+        // Handle the case where the record is not found
+        return redirect()->route('barangay.blotter.records')->with('error', 'Blotter record not found');
+    }
+
+    // Update the status to "Finished"
+    $blotterRecord->incident_status = 'Finished';
+    $blotterRecord->save();
+
+    $notification = array(
+        'message' => 'Blotter record settled successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->back()->with($notification);
+
+    
+} // End method
+
 
 
 }

@@ -89,6 +89,10 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
         Route::get('/delete/official/{id}', 'DeleteOfficial')->name('delete.official');
 
+        Route::get('/view/official/{id}', 'ViewOfficial')->name('view.official');
+
+        
+
     });
 
     // Barangay residents type all route
@@ -100,13 +104,13 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
         Route::post('/store/resident', 'StoreResident')->name('store.resident');
 
-        // Route::get('/edit/resident/{id}', 'EditResident')->name('edit.resident');
+        Route::get('/edit/resident/{id}', 'EditResident')->name('edit.resident');
 
-        // Route::post('/update/resident', 'UpdateResident')->name('update.resident');
+        Route::post('/update/resident', 'UpdateResident')->name('update.resident');
 
-        // Route::get('/delete/resident/{id}', 'DeleteResident')->name('delete.resident');
+        Route::get('/delete/resident/{id}', 'DeleteResident')->name('delete.resident');
 
-        // Route::get('/view/resident/{id}', 'ViewResident')->name('view.resident');
+        Route::get('/view/resident/{id}', 'ViewResident')->name('view.resident');
 
     });
 
@@ -144,6 +148,9 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/delete/blotterrecord/{id}', 'DeleteBlotterRecord')->name('delete.blotter.record');
 
     Route::get('/view/blotterrecord/{id}', 'ViewBlotterRecord')->name('view.blotter.record');
+
+    // Mark as done
+    Route::post('/blotter-record/{id}/mark-as-done', 'MarkBlotterRecordAsDone')->name('mark.blotter.record.as.done');
 
 
     
@@ -184,6 +191,14 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
     // Fetch data to admin dashboard
     Route::get('/admin/dashboard', [BarangayBlotterRecordsController::class, 'DashBlotterRecords'])->name('admin.dashboard');
+
+    
+
+    
+
+
+
+   
 
 
 

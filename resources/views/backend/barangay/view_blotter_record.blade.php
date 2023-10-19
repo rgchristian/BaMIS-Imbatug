@@ -4,6 +4,8 @@
 <!-- jQuery Google CDN via W3schools.com -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+
+
 <div class="page-content">
 
     <nav class="page-breadcrumb">
@@ -21,8 +23,7 @@
                         @csrf
 
                         <input type="hidden" name="id" value="{{ $view_blotter_record->id }}">
-            
-                        <legend>Incident's Information</legend>
+                        <h5 class="text-muted mb-3"><a>Incident's Information</a></h5>
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="mb-3">
@@ -48,9 +49,29 @@
                                     @enderror
                                 </div>
                             </div><!-- Col -->
+
+                            </div><!-- Row -->
+                            <div class="row">
+                        <div class="col-sm-12">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Incident Location</label>
+                                    <input type="text" name="location" placeholder="Enter incident location" class="form-control" value = "{{ $view_blotter_record->location }}" readonly>
+                                </div>
+                            </div><!-- Col -->
+
+                            </div><!-- Row -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Blotter Remarks</label>
+                                    <textarea name="remarks" placeholder="Enter blotter record remarks" rows="6" class="form-control" readonly>{{ $view_blotter_record->remarks }}</textarea>
+                                </div>
+                            </div><!-- Col -->
+
+
                         </div><!-- Row -->
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="mb-3">
                                     <label class="form-label">Incident Date</label>
                                     <div class="input-group">
@@ -69,7 +90,7 @@
                                     @enderror
                                 </div>
                             </div><!-- Col -->
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="mb-3">
                                     <label class="form-label">Date Recorded</label>
                                     <div class="input-group">
@@ -88,7 +109,25 @@
                                     @enderror
                                 </div>
                             </div><!-- Col -->
-                            <legend>Resident's Information</legend>
+
+
+                            <div class="col-sm-4">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Settlement Schedule</label>
+                                    <div class="input-group">
+                                        <input type="datetime" id="settlemet_schedule" name="settlement_schedule" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active" value = "{{ $view_blotter_record->settlement_schedule }}" readonly disabled>
+                                        <span class="input-group-text input-group-addon" data-toggle="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div><!-- Col -->
+                            <h5 class="text-muted mb-3"><a>Resident's Information</a></h5>
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Resident Name</label>
@@ -125,7 +164,7 @@
                                     @enderror
                                 </div>
                             </div><!-- Col -->
-                            <legend>Complainant's Information</legend>
+                            <h5 class="text-muted mb-3"><a>Complainant's Information</a></h5>
                             <div class="col-sm-6">
                                 <div class="mb-3">
                                     <label class="form-label">Complainant Name</label>
@@ -162,7 +201,8 @@
                                     @enderror
                                 </div>
                             </div><!-- Col -->
-                            <div class="col-sm-6">
+                            <h5 class="text-muted mb-3"><a>Mediators</a></h5>
+                            <div class="col-sm-12">
     							<div class="mb-3">
         							<label class="form-label">Names of Mediators</label>
         							<textarea name="list_mediators" placeholder="Enter mediators names" rows="6" class="form-control @error('list_mediators') is-invalid @enderror" readonly>{{ old('list_mediators', $view_blotter_record->list_mediators) }}</textarea>

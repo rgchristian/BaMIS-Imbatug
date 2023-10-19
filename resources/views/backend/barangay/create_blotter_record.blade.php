@@ -19,13 +19,12 @@
                     <h6 class="card-title">Create Blotter Record</h6>
                     <form id="myForm" method="POST" action="{{ route('store.blotter.record') }}" class="forms-sample">
                         @csrf
-                        <legend>Incident's Information</legend>
+                        <h5 class="text-muted mb-3"><a>Incident's Information</a></h5>
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Incident Type</label>
                                     <input type="text" name="incident_type" placeholder="Enter incident type" class="form-control">
-                                    
                                 </div>
                             </div><!-- Col -->
                             <div class="col-sm-4">
@@ -36,14 +35,28 @@
                                         <option value="New">New</option>
                                         <option value="Pending">Pending</option>
                                         <option value="Ongoing">Ongoing</option>
-                                        <option value="Finished">Finished</option>
                                     </select>
-                            
                                 </div>
                             </div><!-- Col -->
                         </div><!-- Row -->
                         <div class="row">
-                            <div class="col-sm-6">
+                        <div class="col-sm-12">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Incident Location</label>
+                                    <input type="text" name="location" placeholder="Enter incident location" class="form-control">
+                                </div>
+                            </div><!-- Col -->
+                            </div><!-- Row -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Blotter Remarks</label>
+                                    <textarea name="remarks" placeholder="Enter blotter record remarks" rows="6" class="form-control"></textarea>
+                                </div>
+                            </div><!-- Col -->
+                            </div><!-- Row -->
+                        <div class="row">
+                            <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Incident Date</label>
                                     <div class="input-group">
@@ -60,7 +73,8 @@
                                     
                                 </div>
                             </div><!-- Col -->
-                            <div class="col-sm-6">
+
+                            <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Date Recorded</label>
                                     <div class="input-group">
@@ -74,10 +88,28 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    
                                 </div>
                             </div><!-- Col -->
-                            <legend>Resident's Information</legend>
+
+                            <div class="col-sm-4">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Settlement Schedule</label>
+                                    <div class="input-group">
+                                        <input type="datetime" id="settlement_schedule" name="settlement_schedule" placeholder="Select date" readonly="readonly" class="form-control flatpickr-input active">
+                                        <span class="input-group-text input-group-addon" data-toggle="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div><!-- Col -->
+                            <h5 class="text-muted mb-3"><a>Resident's Information</a></h5>
+                            </div><!-- Row -->
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Resident Name</label>
@@ -99,6 +131,7 @@
                                     
                                 </div>
                             </div><!-- Col -->
+                            
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Resident Age</label>
@@ -106,7 +139,9 @@
                                     
                                 </div>
                             </div><!-- Col -->
-                            <legend>Complainant's Information</legend>
+                            <h5 class="text-muted mb-3"><a>Complainant's Information</a></h5>
+                            </div><!-- Row -->
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Complainant Name</label>
@@ -135,6 +170,9 @@
                                     
                                 </div>
                             </div><!-- Col -->
+                            </div><!-- Row -->
+                            <h5 class="text-muted mb-3"><a>Mediators</a></h5>
+                        <div class="row">
                             <div class="col-sm-12">
     							<div class="mb-3 form-group">
         							<label class="form-label">Names of Mediators</label>
@@ -162,10 +200,19 @@
                 incident_status: {
                     required : true,
                 },
+                location: {
+                    required : true,
+                },
+                remarks: {
+                    required: true,
+                },
                 incident_date: {
                     required : true,
                 },
                 incident_date_recorded: {
+                    required : true,
+                },
+                settlement_schedule: {
                     required : true,
                 },
                 resident_name: {
@@ -205,11 +252,20 @@
                 incident_status: {
                     required : 'Please select incident status.',
                 },
+                location: {
+                    required : 'Please enter incident location.',
+                },
+                remarks: {
+                    required: 'Please enter blotter record remarks.',
+                },
                 incident_date: {
-                    required : 'Please enter incident date.',
+                    required : 'Please select incident date.',
                 },
                 incident_date_recorded: {
-                    required : 'Please enter incident date recorded.',
+                    required : 'Please select incident date recorded.',
+                },
+                settlement_schedule: {
+                    required : 'Please select settlement date schedule.',
                 },
                 resident_name: {
                     required : 'Please enter resident name.',
