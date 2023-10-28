@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+// Load the models
+use App\Models\BarangayOfficials;
+use App\Models\BarangayResidents;
+
+//Load the controllers
+use App\Http\Controllers\Backend\BarangayResidentsController;
+use App\Http\Controllers\Backend\BarangayOfficialsStaffController;
+
 class AdminController extends Controller
 {
     public function AdminDashboard() {
@@ -41,37 +49,37 @@ class AdminController extends Controller
     } // End method
 
     // Update admin profile
-    public function AdminProfileStore(Request $request) {
+public function AdminProfileStore(Request $request) {
+    $id = Auth::user()->id;
+    $data = User::find($id);
+    $data->username = $request->username;
+    $data->name = $request->name;
+    $data->email = $request->email;
+    $data->phone = $request->phone;
+    $data->address = $request->address;
 
-        $id = Auth::user()->id;
-        $data = User::find($id);
-        $data->username = $request->username;
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->address = $request->address;
+    if ($request->file('photo')) {
+        $file = $request->file('photo');
 
-        if($request->file('photo')) {
-            $file = $request->file('photo');
+        // Delete the old profile photo
+        @unlink(public_path('upload/admin_images/' . $data->photo));
 
-            //Store the exact profile photo only
-            @unlink(public_path('upload/admin_images/'.$data->photo));
+        $filename = date('YmdHi') . $file->getClientOriginalName();
+        $file->move(public_path('upload/admin_images'), $filename);
 
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
-            $data['photo'] = $filename;
-        }
+        // Set the new image filename to the 'photo' attribute
+        $data->photo = $filename;
+    }
 
-        $data->save();
+    $data->save();
 
-        $notification = array(
-            'message' => 'Profile updated successfully',
-            'alert-type' => 'success'
-        );
+    $notification = [
+        'message' => 'Profile updated successfully',
+        'alert-type' => 'success',
+    ];
 
-        return redirect()->back()->with($notification);
-
-    } // End method
+    return redirect()->back()->with($notification);
+} // End method
 
     public function AdminChangePassword(){
 
@@ -124,35 +132,13 @@ class AdminController extends Controller
 
     } // End method
 
-    public function BarangayHome(){
+    public function Calendar(){
 
-        return view('frontend.master');
-
-    } // End method
-
-    public function BarangayAbout(){
-
-        return view('frontend.about');
+        return view('backend.barangay.calendar');
 
     } // End method
 
-    public function BarangayService(){
-
-        return view('frontend.service');
-
-    } // End method
-
-    public function BarangayContact(){
-
-        return view('frontend.contact');
-
-    } // End method
-
-    public function BarangayOfficials(){
-
-        return view('frontend.officials');
-
-    } // End method
+    
 
 
     

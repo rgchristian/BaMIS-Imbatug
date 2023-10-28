@@ -2,7 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+// Controller for the system user
 use App\Http\Controllers\AdminController;
+
+//
+use App\Http\Controllers\HomeController;
+
+// Controller for the system content
 use App\Http\Controllers\Backend\BarangayOfficialsStaffController;
 use App\Http\Controllers\Backend\BarangayResidentsController;
 use App\Http\Controllers\Backend\BarangayCertificatesController;
@@ -11,6 +18,25 @@ use App\Http\Controllers\Backend\BarangayBlotterRecordsController;
 use App\Http\Controllers\Backend\BarangayAttendanceRecordsController;
 use App\Http\Controllers\Backend\BarangayAnnouncementsController;
 use App\Http\Controllers\Backend\BarangayRevenuesController;
+
+// Controller to fetch data from admin into landing page
+use App\Http\Controllers\Backend\BarangayHomeController;
+
+// Controller to fetch data from admin into admin dashboard
+use App\Http\Controllers\Backend\BarangayAdminController;
+
+// Controller to fetch data from admin into barangay official page
+use App\Http\Controllers\Backend\BarangayOfficialPageController;
+
+//
+use App\Http\Controllers\Backend\BarangayAboutPageController;
+
+//
+use App\Http\Controllers\Backend\BarangayServicePageController;
+
+//
+use App\Http\Controllers\Backend\BarangayAllPageViewer;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,20 +82,22 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
  Route::get('/project/about', [AdminController::class, 'About'])->name('project.about');
 
+ Route::get('/calendar', [AdminController::class, 'Calendar'])->name('calendar');
+
 }); // End group admin middleware
 
 //Landing page type all route
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
-Route::get('/barangay/home', [AdminController::class, 'BarangayHome'])->name('barangay.home');
+Route::get('/barangay/home', [BarangayAllPageViewer::class, 'BarangayHome'])->name('barangay.home');
 
-Route::get('/barangay/about', [AdminController::class, 'BarangayAbout'])->name('barangay.about');
+Route::get('/barangay/about', [BarangayAllPageViewer::class, 'BarangayAbout'])->name('barangay.about');
 
-Route::get('/barangay/service', [AdminController::class, 'BarangayService'])->name('barangay.service');
+Route::get('/barangay/service', [BarangayAllPageViewer::class, 'BarangayService'])->name('barangay.service');
 
-Route::get('/barangay/contact', [AdminController::class, 'BarangayContact'])->name('barangay.contact');
+Route::get('/barangay/contact', [BarangayAllPageViewer::class, 'BarangayContact'])->name('barangay.contact');
 
-Route::get('/officials', [AdminController::class, 'BarangayOfficials'])->name('officials');
+Route::get('/officials', [BarangayAllPageViewer::class, 'BarangayOfficials'])->name('officials');
 
 // Admin group middleware
 Route::middleware(['auth', 'role:admin'])->group(function(){
@@ -179,6 +207,10 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::controller(BarangayAnnouncementsController::class)->group(function(){
 
     Route::get('/barangay/announcements', 'Announcements')->name('barangay.announcements');
+
+    Route::get('/create/announcement', 'CreateAnnouncement')->name('create.announcement');
+
+    Route::post('/store/announcement', 'StoreAnnouncement')->name('store.announcement');
     
     });
 
@@ -189,8 +221,19 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     
     });
 
-    // Fetch data to admin dashboard
-    Route::get('/admin/dashboard', [BarangayBlotterRecordsController::class, 'DashBlotterRecords'])->name('admin.dashboard');
+    // Fetch data to admin dashboard 
+    Route::get('/admin/dashboard', [BarangayAdminController::class, 'FetchToDashbard'])->name('admin.dashboard');
+
+    // Fetch data to landing page
+    Route::get('barangay/home', [BarangayHomeController::class, 'FetchToHome'])->name('barangay.home');
+
+    Route::get('/officials', [BarangayOfficialPageController::class, 'FetchToOfficialPage'])->name('officials');
+
+    Route::get('/barangay/about', [BarangayAboutPageController::class, 'FetchToAboutPage'])->name('barangay.about');
+
+    Route::get('/barangay/service', [BarangayServicePageController::class, 'FetchToServicePage'])->name('barangay.service');
+
+    
 
     
 

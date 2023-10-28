@@ -47,9 +47,7 @@ class BarangayBlotterRecordsController extends Controller
             'list_mediators' => 'required'
         ]);
 
-        
-
-        BarangayBlotterRecords::insert([
+        BarangayBlotterRecords::create([
 
             'incident_type' => $request->incident_type,
             'incident_status' => $request->incident_status,
@@ -70,7 +68,7 @@ class BarangayBlotterRecordsController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Blotter record added successfully',
+            'message' => 'Blotter record created successfully',
             'alert-type' => 'success'
         );
 

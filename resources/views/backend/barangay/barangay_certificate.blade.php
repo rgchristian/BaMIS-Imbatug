@@ -6,12 +6,7 @@
 
 <div class="page-content">
 
-    <nav class="page-breadcrumb">
-        <ol class="breadcrumb">
-            <a href="{{ route('barangay.certificates') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip"
-                data-bs-placement="right" title="Back">Back</a>
-        </ol>
-    </nav>
+   
 
     <div class="row">
         <div class="col-md-6">

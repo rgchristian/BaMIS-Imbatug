@@ -31,17 +31,54 @@
               <span class="link-title">Residents</span>
             </a>
           </li>
-          <li class="nav-item nav-category">Services</li>
+          <li class="nav-item nav-category">Forms</li>
           <li class="nav-item">
-          <a href="{{ route('barangay.certificates') }}" class="nav-link">
+            <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
               <i class="link-icon" data-feather="file-text"></i>
               <span class="link-title">Certificates</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="emails">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{ route('barangay.certificates') }}" class="nav-link">All Certificates</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('barangay.certificate') }}" class="nav-link">Barangay Certificate</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Certiicate 1</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Certiicate 2</a>
+                </li>
+              </ul>
+            </div>
+          </li>
           <li class="nav-item">
-          <a href="{{ route('barangay.clearances') }}" class="nav-link">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">
               <i class="link-icon" data-feather="file-text"></i>
               <span class="link-title">Clearances</span>
+              <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav sub-menu">
+                <li class="nav-item">
+                  <a href="{{ route('barangay.clearances') }}" class="nav-link">All Clearances</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('barangay.clearance') }}" class="nav-link">Barangay Clearance</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Clearance 1</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Clearance 2</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
           <li class="nav-item nav-category">Records</li>
           <li class="nav-item">
           <a href="{{ route('barangay.attendance.records') }}" class="nav-link">
@@ -109,3 +146,5 @@
         </div>
       </div>
     </nav>
+
+    

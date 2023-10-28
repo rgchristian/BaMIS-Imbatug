@@ -88,11 +88,11 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">Feature</a>
+                        <a href="#" class="dropdown-item">Features</a>
                         <a href="{{ route('officials') }}" class="dropdown-item">Officials</a>
                         <a href="#" class="dropdown-item">Appointment</a>
-                        <a href="#" class="dropdown-item">Testimonial</a>
-                        <a href="#" class="dropdown-item">404 Page</a>
+                        <a href="#" class="dropdown-item">Announcements</a>
+                        <a href="#" class="dropdown-item">Ordinance</a>
                     </div>
                 </div>
                 <a href="{{ route('barangay.contact') }}" class="nav-item nav-link active">Contact</a>
@@ -160,19 +160,19 @@
                     <div class="bg-light rounded p-5">
                         <p class="d-inline-block border rounded-pill py-1 px-4">Contact Us</p>
                         <h1 class="mb-4">Have Any Query? Please Contact Us!</h1>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                        <p class="mb-4">If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                                        <label for="name">Your name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Your email">
+                                        <label for="email">Your email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -197,7 +197,7 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100" style="min-height: 400px;">
                         <iframe class="rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63165.2359239353!2d124.6361684784629!3d8.319959279123248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ff8ff8ff86d157%3A0xcea3f0bce09d11ad!2sImbatug%2C%20Baungon%2C%20Bukidnon!5e0!3m2!1sen!2sph!4v1698260445036!5m2!1sen!2sph"
                         frameborder="0" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                     </div>
@@ -226,26 +226,26 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="">Cardiology</a>
-                    <a class="btn btn-link" href="">Pulmonary</a>
-                    <a class="btn btn-link" href="">Neurology</a>
-                    <a class="btn btn-link" href="">Orthopedics</a>
-                    <a class="btn btn-link" href="">Laboratory</a>
+                    <a class="btn btn-link" href="">Service 1</a>
+                    <a class="btn btn-link" href="">Service 2</a>
+                    <a class="btn btn-link" href="">Service 3</a>
+                    <a class="btn btn-link" href="">Service 4</a>
+                    <a class="btn btn-link" href="">Service 5</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.about' ) }}">About Us</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.contact' ) }}">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.service' ) }}">Our Services</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h5 class="text-light mb-4">Feedback</h5>
+                    <p>Your feedback matters. Help us improve with your insights.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your feedback">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Send</button>
                     </div>
                 </div>
             </div>

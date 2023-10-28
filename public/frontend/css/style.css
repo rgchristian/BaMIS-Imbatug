@@ -1,10 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #0463FA;
+    --primary: #6571ff;
     --light: #EFF5FF;
     --dark: #1B2C51;
 }
-
+/* #0463FA */
 .fw-medium {
     font-weight: 500 !important;
 }

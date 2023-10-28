@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">{{ $residentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -57,7 +57,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/total_population.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/total_population.png') }}" alt="Population Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -87,7 +87,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">0</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -128,7 +128,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">0</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -137,7 +137,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/female_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/female_icon.png') }}" alt="Female Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -167,7 +167,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">0</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -176,7 +176,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/pwd_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/pwd_icon.png') }}" alt="PWD Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -206,7 +206,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">0</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -215,7 +215,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/solo_parent.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/solo_parent.png') }}" alt="Solo Parent Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -245,7 +245,7 @@
                     <div class="row">
                     <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">3, 897</h3>
+          <h3 class="mb-2">0</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -255,7 +255,7 @@
                           </div>
                       </div>
                       <div class="col-6 col-md-12 col-xl-5">
-                      <img src="{{ asset('upload/household.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+                      <img src="{{ asset('upload/household.png') }}" alt="Household Icon" class="img-fluid" width="70" height="70">
                       <div class="d-flex align-items-baseline">
                       </div>
                     </div>
@@ -296,7 +296,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/purok.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/purok.png') }}" alt="Purok Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -304,6 +304,46 @@
     </div>
   </div>
 </div>
+
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Registered Voters</h6>
+        <div class="dropdown mb-2">
+          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <!-- Move the image here (on the left) -->
+          <h3 class="mb-2">0</h3>
+          <!-- <p class="text-success">
+              <span>+3.3%</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p> -->
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <!-- Swap the positions of the image and h3 -->
+          <img src="{{ asset('upload/ballot.png') }}" alt="Ballot Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div> <!-- row -->
 
         <div class="row">
@@ -317,11 +357,11 @@
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.revenues') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+                      <!-- <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
                       <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
                       <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a> -->
                     </div>
                   </div>
                 </div>
@@ -411,9 +451,9 @@
         </div> <!-- row -->
 
         <div class="row">
-          <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
+          <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body"  style="max-height: 400px; overflow-y: auto;">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
                   <h6 class="card-title mb-0">Announcements</h6>
                   <div class="dropdown mb-2">
@@ -421,75 +461,27 @@
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.announcements') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.announcements') }}"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
+                      <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.announcements') }}"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
                     </div>
                   </div>
                 </div>
                 <div class="d-flex flex-column">
-                  <a href="javascript:;" class="d-flex align-items-center border-bottom pb-3">
+                @foreach ($dashboard_announcements as $key => $dash_announcement)
+                  <a href="#" class="d-flex align-items-center {{ $key === count($dashboard_announcements) - 1 ? '' : 'border-bottom pb-3 mb-3' }}">
                     <div class="me-3">
-                      <img src="https://via.placeholder.com/35x35" class="rounded-circle wd-35" alt="user">
+                      <img src="{{ asset($dash_announcement->announcement_photo) }}" alt="{{ $dash_announcement->announcement_name }}" class="wd-30 ht-30 rounded-circle" alt="user">
                     </div>
                     <div class="w-100">
                       <div class="d-flex justify-content-between">
-                        <h6 class="text-body mb-2">Leonardo Payne</h6>
-                        <p class="text-muted tx-12">12.30 PM</p>
+                        <h6 class="text-body mb-2">{{ $dash_announcement->announcement_host_name}}</h6>
+                        <p class="text-muted tx-12">{{ date('Y-m-d H:i', strtotime($dash_announcement->announcement_date_time_created)) }}</p>
                       </div>
-                      <p class="text-muted tx-13">Hey! there I'm available...</p>
+                      <p class="text-muted tx-13">{{ $dash_announcement->announcement_details}}</p>
                     </div>
                   </a>
-                  <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
-                    <div class="me-3">
-                      <img src="https://via.placeholder.com/35x35" class="rounded-circle wd-35" alt="user">
-                    </div>
-                    <div class="w-100">
-                      <div class="d-flex justify-content-between">
-                        <h6 class="text-body mb-2">Carl Henson</h6>
-                        <p class="text-muted tx-12">02.14 AM</p>
-                      </div>
-                      <p class="text-muted tx-13">I've finished it! See you so..</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
-                    <div class="me-3">
-                      <img src="https://via.placeholder.com/35x35" class="rounded-circle wd-35" alt="user">
-                    </div>
-                    <div class="w-100">
-                      <div class="d-flex justify-content-between">
-                        <h6 class="text-body mb-2">Jensen Combs</h6>
-                        <p class="text-muted tx-12">08.22 PM</p>
-                      </div>
-                      <p class="text-muted tx-13">This template is awesome!</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
-                    <div class="me-3">
-                      <img src="https://via.placeholder.com/35x35" class="rounded-circle wd-35" alt="user">
-                    </div>
-                    <div class="w-100">
-                      <div class="d-flex justify-content-between">
-                        <h6 class="text-body mb-2">Amiah Burton</h6>
-                        <p class="text-muted tx-12">05.49 AM</p>
-                      </div>
-                      <p class="text-muted tx-13">Nice to meet you</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="d-flex align-items-center border-bottom py-3">
-                    <div class="me-3">
-                      <img src="https://via.placeholder.com/35x35" class="rounded-circle wd-35" alt="user">
-                    </div>
-                    <div class="w-100">
-                      <div class="d-flex justify-content-between">
-                        <h6 class="text-body mb-2">Yaretzi Mayo</h6>
-                        <p class="text-muted tx-12">01.19 AM</p>
-                      </div>
-                      <p class="text-muted tx-13">Hey! there I'm available...</p>
-                    </div>
-                  </a>
+                @endforeach
                 </div>
               </div>
             </div>
@@ -499,7 +491,7 @@
 
           <div class="col-lg-7 col-xl-8 stretch-card">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body" style="max-height: 400px; overflow-y: auto;">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
                   <h6 class="card-title mb-0">Blotter Records</h6>
                   <div class="dropdown mb-2">
@@ -517,7 +509,7 @@
                 </div>
 
                 <div class="table-responsive">
-                <table class="table table-hover mb-0 table border-secondary">
+                <table class="table table-hover mb-0 table">
     <thead>
         <tr>
             <th class="pt-0" style="text-align: center;">ID</th>
@@ -528,7 +520,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($dash_blotter_records as $key => $dash_blott)
+        @foreach($dashboard_blotter_records as $key => $dash_blott)
         <tr>
             <td style="text-align: center;">{{ $key+1 }}</td>
             <td style="text-align: center;">{{ $dash_blott->incident_type }}</td>
@@ -552,8 +544,8 @@
                       @endphp
     <span class="status-badge {{ $statusClass }}">{{ $dash_blott->incident_status }}</span>
             </td>
-            <td style="text-align: center;">{{ $dash_blott->incident_date }}</td>
-            <td style="text-align: center;">{{ $dash_blott->settlement_schedule }}</td>
+            <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($dash_blott->incident_date)) }}</td>
+            <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($dash_blott->settlement_schedule)) }}</td>
         </tr>
         @endforeach
     </tbody>

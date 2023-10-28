@@ -13,11 +13,14 @@
 
     <style type="text/css">
 
-    .authlogin-side-wrapper{
-        width: 100%;
-        height: 100%;
-        background-image: url({{ asset('upload/login.png') }});
-    }
+.authlogin-side-wrapper {
+    width: 100%;
+    height: 100%;
+    background-image: url({{ asset('upload/55006611.jpg') }});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
     </style>
 
@@ -63,7 +66,7 @@
                                     <a href="{{ route('barangay.home') }}" class="btn btn-outline-danger btn-icon-text mb-2 position-absolute top-0 start-0 m-3">
                                         <i class="feather icon-arrow-left"></i> Back
                                     </a>
-                                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Barangay<span>Imbatug</span></a>
+                                    <a href="" class="noble-ui-logo logo-light d-block mb-2">Barangay<span>Imbatug</span></a>
                                     <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
 
                                     <form class="forms-sample" method="post" action="{{ route('login') }}">

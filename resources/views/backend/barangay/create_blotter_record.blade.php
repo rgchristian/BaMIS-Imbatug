@@ -5,6 +5,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div class="page-content">
+<nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Create</li>
+            <li class="breadcrumb-item active" aria-current="page">Blotter Record</li>
+        </ol>
+    </nav>
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">

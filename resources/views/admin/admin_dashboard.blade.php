@@ -16,6 +16,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <!-- End fonts -->
 
+  <!-- core:css -->
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/core/core.css') }}">
+	<!-- endinject -->
+
+	<!-- Plugin css for calendar page -->
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/fullcalendar/main.min.css') }}">
+	<!-- End plugin css for calendar page -->
+
   <!-- Flatpickr -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
@@ -138,19 +146,28 @@
 	<script src="{{ asset('backend/assets/vendors/core/core.js') }}"></script>
 	<!-- endinject -->
 
-	<!-- Plugin js for this page -->
+  <!-- Plugin js for calendar page -->
+	<script src="{{ asset('backend/assets/vendors/moment/moment.min.js') }}"></script>
+	<script src="{{ asset('backend/assets/vendors/fullcalendar/main.min.js') }}"></script>
+	<!-- End plugin js for calendar page -->
+
+  <!-- Custom js for calendar page -->
+	<script src="{{ asset('backend/assets/js/fullcalendar.js') }}"></script>
+	<!-- End custom js for calendar page -->
+
+	<!-- Plugin js for calendar page -->
   <script src="{{ asset('backend/assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
   <script src="{{ asset('backend/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
-	<!-- End plugin js for this page -->
+	<!-- End plugin js for calendar page -->
 
 	<!-- inject:js -->
 	<script src="{{ asset('backend/assets/vendors/feather-icons/feather.min.js') }}"></script>
 	<script src="{{ asset('backend/assets/js/template.js') }}"></script>
 	<!-- endinject -->
 
-	<!-- Custom js for this page -->
+	<!-- Custom js for dashboard page -->
   <script src="{{ asset('backend/assets/js/dashboard-dark.js') }}"></script>
-	<!-- End custom js for this page -->
+	<!-- End custom js for dashboard page -->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -181,14 +198,14 @@
 	<script src="{{ asset('backend/assets/js/code/code.js') }}"></script>
   <script src="{{ asset('backend/assets/js/code/validate.min.js') }}"></script>
 
-	<!-- Plugin js for this page -->
+	<!-- Plugin js for data tables page -->
 	<script src="{{ asset('backend/assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
   	<script src="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js')}}"></script>
-	<!-- End plugin js for this page -->
+	<!-- End plugin js for data tables page -->
 
-	<!-- Custom js for this page -->
+	<!-- Custom js for data tables page -->
 	<script src="{{ asset('backend/assets/js/data-table.js')}}"></script>
-	<!-- End custom js for this page -->
+	<!-- End custom js for data tables page -->
 
 	<!-- Flatpickr -->
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -197,58 +214,70 @@
     // Initialize flatpickr
     flatpickr("#term_start", {
         dateFormat: "Y-m-d",
-        // Additional options...
+        
     });
 
     flatpickr("#term_end", {
         dateFormat: "Y-m-d",
-        // Additional options...
+        
     });
 	
     flatpickr("#birthdate", {
         dateFormat: "Y-m-d",
-        // Additional options...
+        
     });
 
     flatpickr("#resident_added", {
         dateFormat: "Y-m-d",
-        // Additional options...
+        
     });
 
     flatpickr("#attendance_date", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
     });
 
     flatpickr("#incident_date", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
     });
 
     flatpickr("#incident_date_recorded", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
     });
 
     flatpickr("#barangay_certificate", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
     });
 
     flatpickr("#barangay_clearance", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
     });
 
     flatpickr("#settlement_schedule", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,
-        // Additional options...
+        
+    });
+
+    flatpickr("#announcement_date_time", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        
+    });
+
+    flatpickr("#announcement_date_time_created", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        
     });
 
     

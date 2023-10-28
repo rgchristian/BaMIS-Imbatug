@@ -5,99 +5,95 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div class="page-content">
-
-<nav class="page-breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+    <nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">Add</li>
-						<li class="breadcrumb-item active" aria-current="page">Barangay Official</li>
-					</ol>
-				</nav>
+            <li class="breadcrumb-item active" aria-current="page">Barangay Official</li>
+        </ol>
+    </nav>
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <a href="{{ route('barangay.officials') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
         </ol>
     </nav>
+
     <form id="myForm" method="POST" action="{{ route('store.official') }}" class="forms-sample" enctype="multipart/form-data">
-                        @csrf
+        @csrf
 
-    <div class="row">
-
-    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
                 <div class="card stretch-card">
                     <div class="card-body">
-
                         <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-1">
-                            <div class="toggle-camer mb-2">
+                            <div class="toggle-camera mb-2">
                                 <a type="button" id="accesscamera" data-toggle="modal" data-target="#photoModal" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="top" title="Open camera">
-                                <i class="link-icon" data-feather="video"></i>
+                                    <i class="link-icon" data-feather="video"></i>
                                 </a>
                             </div>
                         </div>
-                        
+
                         <div class="d-flex justify-content-center">
-    <div class="official-image add-photo-container" style="width: 300px; height: 300px; overflow: hidden; border-radius: 50%;">
-        <div class="d-flex justify-content-center" style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
-            <video id="webCam" autoplay playsinline style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%; display: none;"></video>
-            <img class="rounded-circle changed-image" id="photoImage" name="photo" src="{{ (!empty($photo)) ? url('upload/official_images/'.$photo) : url('upload/no_image.png') }}" alt="photo" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;" onclick="openFileBrowser()">
-            <input type="file" name="photo" id="photoInput" style="display: none;" onchange="displaySelectedImage(this)">
-            
-        </div>
-    </div>
-    </div>
-
+                            <div class="official-image add-photo-container" style="width: 300px; height: 300px; overflow: hidden; border-radius: 50%;">
+                                <div class="d-flex justify-content-center" style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
+                                    <video id="webCam" autoplay playsinline style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%; display: none;"></video>
+                                    <img class="rounded-circle changed-image" id="photoImage" name="photo" src="{{ (!empty($photo)) ? url('upload/official_images/'.$photo) : url('upload/no_image.png') }}" alt="photo" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;" onclick="openFileBrowser()">
+                                    <input type="file" name="photo" id="photoInput" style="display: none;" onchange="displaySelectedImage(this)">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!--Modal-->
-    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Take Photo</h5>
-                    <button type="button" id="closeWebcam" class="btn btn-danger close" data-bs-toggle="tooltip" data-bs-placement="top" title="Close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div>
-                        <div id="my_camera" class="d-block mx-auto rounded overflow-hidden"></div>
+            <!-- Modal -->
+            <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Take Photo</h5>
+                            <button type="button" id="closeWebcam" class="btn btn-danger close" data-bs-toggle="tooltip" data-bs-placement="top" title="Close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div id="my_camera" class="d-block mx-auto rounded overflow-hidden"></div>
+                            </div>
+                            <div id="results" class="d-none"></div>
+                            <form method="post" id="">
+                                <input type="hidden" id="photo" name="photo" value="">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info mx-auto text-white rounded-circle" id="takephoto"><i class="link-icon" data-feather="camera" data-bs-toggle="tooltip" data-bs-placement="top" title="Capture photo"></i></button>
+                            <button type="button" class="btn btn-danger mx-auto text-white d-none" id="retakephoto"><i class="link-icon" data-feather="arrow-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Retake photo"></i></button>
+                            <button type="submit" class="btn btn-success mx-auto text-white d-none" id="uploadphoto" form=""><i class="link-icon" data-feather="download" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload photo"></i></button>
+                        </div>
                     </div>
-                    <div id="results" class="d-none"></div>
-                    <form method="post" id=""> 
-                        <input type="hidden" id="photoStore" name="photoStore" value="">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-info mx-auto text-white rounded-circle" id="takephoto"><i class="link-icon" data-feather="camera" data-bs-toggle="tooltip" data-bs-placement="top" title="Capture photo"></i></button>
-                    <button type="button" class="btn btn-danger mx-auto text-white d-none" id="retakephoto"><i class="link-icon" data-feather="arrow-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Retake photo"></i></button>
-                    <button type="submit" class="btn btn-success mx-auto text-white d-none" id="uploadphoto" form=""><i class="link-icon" data-feather="download" data-bs-toggle="tooltip" data-bs-placement="top" title="Upload photo"></i></button>
                 </div>
             </div>
-        </div>
-    </div>
 
-
-
-        <div class="col-md-8 stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Add Barangay Official</h6>
-                    
+            <div class="col-md-8 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">Add Barangay Official</h6>
+                        <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
+                            <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="A barangay official photo is required. Hover and click on the image frame to browse the file."></i>
+                        </div>
                         <h5 class="text-muted mb-3"><a>Barangay Official Information</a></h5>
                         <div class="row">
-    <div class="col-sm-12">
-        <div class="form-group mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Enter full name">
-            @error('name')
-                <span class="text-danger">{{ $message }}</span>
-            @enderror
-        </div>
-    </div><!-- Col -->
-</div><!-- Row -->
+                            <div class="col-sm-12">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter full name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div><!-- Col -->
+                        </div><!-- Row -->
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
@@ -161,42 +157,38 @@
                                     </div>
                                 </div>
                             </div><!-- Col -->
+                        </div><!-- Row -->
 
-                            <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>
+                        <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Region</label>
-                                    <input type="text" name="region" class="form-control" value="Region X" readonly> 
+                                    <input type="text" name="region" class="form-control" value="Region X" readonly>
                                 </div>
-                            </div>
-                            <!-- Col -->
+                            </div><!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Province</label>
-                                    <input type="text" name="province" class="form-control" value="Bukidnon" readonly> 
+                                    <input type="text" name="province" class="form-control" value="Bukidnon" readonly>
                                 </div>
-                            </div>
-                            <!-- Col -->
+                            </div><!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Municipality</label>
-                                    <input type="text" name="municipality" class="form-control" value="Baungon" readonly> 
+                                    <input type="text" name="municipality" class="form-control" value="Baungon" readonly>
                                 </div>
-                            </div>
-                            <!-- Col -->
-                        </div>
-                        <!-- Row -->
+                            </div><!-- Col -->
+                        </div><!-- Row -->
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label for="barangay" class="form-label">Barangay</label>
                                     <div class="input-group">
-                                        <input type="text" name="barangay" class="form-control" value="Imbatug" readonly> 
+                                        <input type="text" name="barangay" class="form-control" value="Imbatug" readonly>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Col -->
+                            </div><!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Purok</label>
@@ -213,16 +205,15 @@
                                         <option value="Purok 9">Purok 9</option>
                                     </select>
                                 </div>
-                            </div>
-                            <!-- Col -->
+                            </div><!-- Col -->
                         </div><!-- Row -->
-                        </div>
+
                         <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 <script type="text/javascript">
@@ -445,7 +436,7 @@ function take_snapshot()
         $('#results').html('<img src="' + data_uri + '" class="d-block mx-auto rounded"/>');
 
         var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
-        $('#photoStore').val(raw_image_data);
+        $('#photo').val(raw_image_data);
     });
 
     $('#my_camera').removeClass('d-block');

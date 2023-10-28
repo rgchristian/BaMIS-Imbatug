@@ -233,7 +233,7 @@
                                     <label class="form-label">Tribe</label>
                                     <select name="tribe" class="form-select mb-3 form-control">
                                         <option value="" selected disabled>Select tribe</option>
-                                        <optgroup label="Common Ethnolinguistic Groups in Bukidnon">
+                                        <!-- <optgroup label="Common Ethnolinguistic Groups in Bukidnon"> -->
                                             <option value="Talaandig">Talaandig</option>
                                             <option value="Higaonon">Higaonon</option>
                                             <option value="Bukidnon">Bukidnon</option>

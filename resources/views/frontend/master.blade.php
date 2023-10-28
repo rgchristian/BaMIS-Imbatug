@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <head>
     <meta charset="utf-8">
     <title>Barangay Imbatug</title>
@@ -88,11 +91,11 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">Feature</a>
+                        <a href="#" class="dropdown-item">Features</a>
                         <a href="{{ route('officials') }}" class="dropdown-item">Officials</a>
                         <a href="#" class="dropdown-item">Appointment</a>
-                        <a href="#" class="dropdown-item">Testimonial</a>
-                        <a href="#" class="dropdown-item">404 Page</a>
+                        <a href="#" class="dropdown-item">Announcements</a>
+                        <a href="#" class="dropdown-item">Ordinance</a>
                     </div>
                 </div>
                 <a href="{{ route('barangay.contact') }}" class="nav-item nav-link">Contact</a>
@@ -114,19 +117,19 @@
                 <div class="row g-4">
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">123</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">{{ $residentsCount }}</h2>
                             <p class="text-light mb-0">Total Population</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">1234</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">0</h2>
                             <p class="text-light mb-0">Registered Voters</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">12345</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">{{ $officialsCount }}</h2>
                             <p class="text-light mb-0">Barangay Officials</p>
                         </div>
                     </div>
@@ -135,21 +138,21 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div class="owl-carousel header-carousel">
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('frontend/img/carousel-1.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('upload/Baungon.png') }}" alt="">
                         <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Cardiology</h1>
+                            <h1 class="display-1 text-white mb-0">Scenic</h1>
                         </div>
                     </div>
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('frontend/img/carousel-2.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('upload/Baungon 1.jpg') }}" alt="">
                         <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Neurology</h1>
+                            <h1 class="display-1 text-white mb-0">Rural</h1>
                         </div>
                     </div>
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('frontend/img/carousel-3.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('upload/Baungon 2.jpeg') }}" alt="">
                         <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Pulmonary</h1>
+                            <h1 class="display-1 text-white mb-0">Community</h1>
                         </div>
                     </div>
                 </div>
@@ -165,19 +168,19 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex flex-column">
-                        <img class="img-fluid rounded w-75 align-self-end" src="{{ asset('frontend/img/about-1.jpg') }}" alt="">
-                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('frontend/img/about-2.jpg') }}" alt="" style="margin-top: -25%;">
+                        <img class="img-fluid rounded w-75 align-self-end" src="{{ asset('upload/barangay.jpeg') }}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('upload/barangay 1.jpeg') }}" alt="" style="margin-top: -25%;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
-                    <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
-                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="#">Read More</a>
+                    <h1 class="mb-4">Our Barangay</h1>
+                    <p>Barangay Imbatug is situated in the heart of the Municipality of Baungon and awarded as one of the child-friendly barangay in the Province of Bukidnon for its safe, secure and peaceful community.</p>
+                    <p class="mb-4">Barangay Imbatug consists of nine (9) purok/sitio/zone. With more than 2,000 households and a population of more than 6,000, it is one of the most progressive barangay in Baungon.</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Prominent</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Community-oriented</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Progressive</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{{ route('barangay.about') }}">Read More</a>
                 </div>
             </div>
         </div>
@@ -190,37 +193,37 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
-                <h1>Health Care Solutions</h1>
+                <h1>Barangay Welfare</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                            <i class="fa fa-archive text-primary fs-4"></i>
                         </div>
-                        <h4 class="mb-3">Cardiology</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        <h4 class="mb-3">Attendance & Blotter Records</h4>
+                        <p class="mb-4">Important documents used to maintain and manage essential information within a local community.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                            <i class="fas fa-hands text-primary fs-4"></i>
                         </div>
-                        <h4 class="mb-3">Pulmonary</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        <h4 class="mb-3">Barangay Assistance</h4>
+                        <p class="mb-4">These forms of assistance are aimed at addressing the needs and concerns of the local community and promoting the welfare of its residents.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-brain text-primary fs-4"></i>
+                            <i class="fa fa-file text-primary fs-4"></i>
                         </div>
-                        <h4 class="mb-3">Neurology</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        <h4 class="mb-3">Certificates & Clearances</h4>
+                        <p class="mb-4">These documents are often required for various transactions and official purposes.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -228,29 +231,29 @@
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                             <i class="fa fa-wheelchair text-primary fs-4"></i>
                         </div>
-                        <h4 class="mb-3">Orthopedics</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded h-100 p-5">
-                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-tooth text-primary fs-4"></i>
-                        </div>
-                        <h4 class="mb-3">Dental Surgery</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        <h4 class="mb-3">PWD Support</h4>
+                        <p class="mb-4">These initiatives are designed to promote the well-being, inclusion, and empowerment of individuals with disabilities.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
-                            <i class="fa fa-vials text-primary fs-4"></i>
+                            <i class="fa fa-crutch text-primary fs-4"></i>
                         </div>
-                        <h4 class="mb-3">Laboratory</h4>
-                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                        <a class="btn" href="#"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                        <h4 class="mb-3">Senior Support</h4>
+                        <p class="mb-4">These efforts are aimed at promoting the well-being, health, and quality of life of older residents.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-child text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Women and Child Support</h4>
+                        <p class="mb-4">These efforts are aimed at promoting gender equality, protecting the rights of women and children, and ensuring their well-being.</p>
+                        <a class="btn" href="{{ route('barangay.service') }}"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                     </div>
                 </div>
             </div>
@@ -266,27 +269,27 @@
                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="p-lg-5 ps-lg-0">
                         <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p>
-                        <h1 class="text-white mb-4">Why Choose Us</h1>
-                        <p class="text-white mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                        <h1 class="text-white mb-4">Visit Us</h1>
+                        <p class="text-white mb-4 pb-2">Visit us to experience our welcoming hospitality and explore the beauty of our community.</p>
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-user-md text-primary"></i>
+                                        <i class="fas fa-hand-holding-heart text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Experience</p>
-                                        <h5 class="text-white mb-0">Doctors</h5>
+                                        <p class="text-white mb-2">Welcoming</p>
+                                        <h5 class="text-white mb-0">Hospitality</h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-check text-primary"></i>
+                                        <i class="fas fa-cogs text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Quality</p>
+                                        <p class="text-white mb-2">Enriching</p>
                                         <h5 class="text-white mb-0">Services</h5>
                                     </div>
                                 </div>
@@ -294,22 +297,22 @@
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-comment-medical text-primary"></i>
+                                        <i class="material-icons text-primary">landscape</i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">Positive</p>
-                                        <h5 class="text-white mb-0">Consultation</h5>
+                                        <p class="text-white mb-2">Scenic</p>
+                                        <h5 class="text-white mb-0">Views</h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-headphones text-primary"></i>
+                                        <i class="fa fa-users text-primary"></i>
                                     </div>
                                     <div class="ms-4">
-                                        <p class="text-white mb-2">24 Hours</p>
-                                        <h5 class="text-white mb-0">Support</h5>
+                                        <p class="text-white mb-2">Community-oriented</p>
+                                        <h5 class="text-white mb-0">Residents</h5>
                                     </div>
                                 </div>
                             </div>
@@ -318,7 +321,7 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('frontend/img/feature.jpg') }}" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('upload/barangay 3.jpeg') }}" style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
@@ -328,81 +331,35 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">Officials</p>
-                <h1>Barangay Officials</h1>
-            </div>
-            <div class="row g-4">
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">Officials</p>
+            <h1>Barangay Officials</h1>
+        </div>
+        <div class="row g-4">
+            @foreach ($home_barangay_officials as $home_official)
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('frontend/img/team-1.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ asset($home_official->photo) }}" alt="{{ $home_official->name }}">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>Doctor Name</h5>
-                            <p class="text-primary">Department Name</p>
+                            <h5>{{ $home_official->name }}</h5>
+                            <p class="text-primary">{{ $home_official->position }}</p>
                             <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="https://www.facebook.com/<FBProfile>"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('frontend/img/team-2.jpg') }}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Doctor Name</h5>
-                            <p class="text-primary">Department Name</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('frontend/img/team-3.jpg') }}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Doctor Name</h5>
-                            <p class="text-primary">Depatment Name</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('frontend/img/team-4.jpg') }}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Doctor Name</h5>
-                            <p class="text-primary">Department Name</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <!-- Team End -->
+</div>
+<!-- Team End -->
 
 
     <!-- Appointment Start -->
@@ -411,8 +368,8 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
-                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Barangay Hall</h1>
+                    <p class="mb-4">Plan your visit to our Barangay Hall and experience our dedicated service. We're here to assist you with any questions or concerns. Our friendly staff is ready to make your visit a smooth and helpful experience.</p>
                     <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
                         <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-primary"></i>
@@ -437,38 +394,38 @@
                         <form>
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="Your name" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control border-0" placeholder="Your email" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+                                    <input type="text" class="form-control border-0" placeholder="Your phone number" style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Choose Doctor</option>
-                                        <option value="1">Doctor 1</option>
-                                        <option value="2">Doctor 2</option>
-                                        <option value="3">Doctor 3</option>
+                                        <option selected>Choose official</option>
+                                        @foreach ($home_barangay_officials as $official)
+                                            <option value="{{ $official->id }}">{{ $official->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date" data-target-input="nearest">
                                         <input type="text"
                                             class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Select date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time" data-target-input="nearest">
                                         <input type="text"
                                             class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Select time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" rows="5" placeholder="Describe your problem"></textarea>
+                                    <textarea class="form-control border-0" rows="5" placeholder="Describe your reason(s) to visit"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
@@ -483,42 +440,28 @@
     <!-- Appointment End -->
 
 
-    <!-- Testimonial Start -->
+    <!-- Announcement Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
-                <h1>What Say Our Patients!</h1>
+                <p class="d-inline-block border rounded-pill py-1 px-4">Announcements</p>
+                <h1>Public Disclosure</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach ($home_barangay_announcements as $home_announcement)
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('frontend/img/testimonial-1.jpg') }}" style="width: 100px; height: 100px;">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset($home_announcement->announcement_photo) }}" alt="{{ $home_announcement->announcement_name }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
+                        <p>{{ $home_announcement->announcement_details}}</p>
+                        <h5 class="mb-1">“{{ $home_announcement->announcement_name}}”</h5>
+                        <span class="fst-italic">{{ $home_announcement->announcement_host_name}}</span>
                     </div>
                 </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('frontend/img/testimonial-2.jpg') }}" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('frontend/img/testimonial-3.jpg') }}" style="width: 100px; height: 100px;">
-                    <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Patient Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Announcement End -->
 
 
     <!-- Footer Start -->
@@ -539,26 +482,26 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="#">Cardiology</a>
-                    <a class="btn btn-link" href="#">Pulmonary</a>
-                    <a class="btn btn-link" href="#">Neurology</a>
-                    <a class="btn btn-link" href="#">Orthopedics</a>
-                    <a class="btn btn-link" href="#">Laboratory</a>
+                    <a class="btn btn-link" href="#">Service 1</a>
+                    <a class="btn btn-link" href="#">Service 2</a>
+                    <a class="btn btn-link" href="#">Service 3</a>
+                    <a class="btn btn-link" href="#">Service 4</a>
+                    <a class="btn btn-link" href="#">Service 5</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="#">About Us</a>
-                    <a class="btn btn-link" href="#">Contact Us</a>
-                    <a class="btn btn-link" href="#">Our Services</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.about' ) }}">About Us</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.contact' ) }}">Contact Us</a>
+                    <a class="btn btn-link" href="{{ route( 'barangay.service' ) }}">Our Services</a>
                     <a class="btn btn-link" href="#">Terms & Condition</a>
                     <a class="btn btn-link" href="#">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Newsletter</h5>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h5 class="text-light mb-4">Feedback</h5>
+                    <p>Your feedback matters. Help us improve with your insights.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your feedback">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Send</button>
                     </div>
                 </div>
             </div>

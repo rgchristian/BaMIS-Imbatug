@@ -8,13 +8,13 @@
               <div class="input-group-text">
                 <i data-feather="search"></i>
               </div>
-							<input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
+							<input type="text" class="form-control" id="navbarForm" placeholder="Search" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search bar">
 						</div>
 					</form>
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="ms-1 me-1 d-none d-md-inline-block">English</span>
+								<i class="flag-icon flag-icon-us mt-1"></i> <span class="ms-1 me-1 d-none d-md-inline-block" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Language">English</span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="languageDropdown">
                 <a href="#" class="dropdown-item py-2"><i class="flag-icon flag-icon-us" title="us" id="us"></i> <span class="ms-1"> English </span></a>
@@ -26,39 +26,39 @@
             </li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="grid"></i>
+								<i data-feather="grid" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shortcuts"></i>
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
                 <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
 									<p class="mb-0 fw-bold">Shortcuts</p>
-									<a href="#" class="text-muted">Edit</a>
+									<!-- <a href="#" class="text-muted">Edit</a> -->
 								</div>
                 <div class="row g-0 p-1">
                   <div class="col-3 text-center">
-                    <a href="#" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="message-square" class="icon-lg mb-1"></i><p class="tx-12">Chat</p></a>
+                    <a href="{{ route('barangay.announcements') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="send" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Send announcement"></i><p class="tx-12">Send</p></a>
                   </div>
                   <div class="col-3 text-center">
-                    <a href="#" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="calendar" class="icon-lg mb-1"></i><p class="tx-12">Calendar</p></a>
+                    <a href="{{ route('calendar') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="calendar" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View calendar"></i><p class="tx-12">Calendar</p></a>
                   </div>
                   <div class="col-3 text-center">
-                    <a href="#" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="mail" class="icon-lg mb-1"></i><p class="tx-12">Email</p></a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="mail" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View mail"></i><p class="tx-12">Email</p></a>
                   </div>
                   <div class="col-3 text-center">
-                    <a href="{{ route('admin.profile') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="user" class="icon-lg mb-1"></i><p class="tx-12">Profile</p></a>
+                    <a href="{{ route('admin.profile') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="user" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View profile"></i><p class="tx-12">Profile</p></a>
                   </div>
                 </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+								<!-- <div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
 									<a href="#">View all</a>
-								</div>
+								</div> -->
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="mail"></i>
+								<i data-feather="mail" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"></i>
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
 								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-									<p>9 New Messages</p>
+									<p>Messages</p>
 									<a href="#" class="text-muted">Clear all</a>
 								</div>
                 <div class="p-1">
@@ -135,14 +135,14 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="bell"></i>
+								<i data-feather="bell" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications"></i>
 								<div class="indicator">
 									<div class="circle"></div>
 								</div>
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
 								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-									<p>6 New Notifications</p>
+									<p>Notifications</p>
 									<a href="#" class="text-muted">Clear all</a>
 								</div>
                 <div class="p-1">
@@ -209,7 +209,7 @@
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img class="wd-30 ht-30 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" alt="profile">
+								<img class="wd-30 ht-30 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.png') }}" alt="profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
 								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">

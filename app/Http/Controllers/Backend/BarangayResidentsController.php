@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\Models\BarangayResidents;
+use Illuminate\Support\Facades\DB;
 
 class BarangayResidentsController extends Controller
 {
@@ -49,8 +50,8 @@ class BarangayResidentsController extends Controller
          if ($request->hasFile('photo')) {
              $file = $request->file('photo');
              $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Generate a unique filename
-             $file->move(public_path('upload/official_images'), $filename);
-             $requestData["photo"] = 'upload/official_images/' . $filename;
+             $file->move(public_path('upload/resident_images'), $filename);
+             $requestData["photo"] = 'upload/resident_images/' . $filename;
          }
     
         BarangayResidents::create($requestData);

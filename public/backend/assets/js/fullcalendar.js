@@ -18,43 +18,44 @@ $(function() {
     backgroundColor: 'rgba(1,104,250, .15)',
     borderColor: '#0168fa',
     events: [
-      {
-        id: '1',
-        start: curYear+'-'+curMonth+'-08T08:30:00',
-        end: curYear+'-'+curMonth+'-08T13:00:00',
-        title: 'Google Developers Meetup',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },{
-        id: '2',
-        start: curYear+'-'+curMonth+'-10T09:00:00',
-        end: curYear+'-'+curMonth+'-10T17:00:00',
-        title: 'Design/Code Review',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },{
-        id: '3',
-        start: curYear+'-'+curMonth+'-13T12:00:00',
-        end: curYear+'-'+curMonth+'-13T18:00:00',
-        title: 'Lifestyle Conference',
-        description: 'Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi...'
-      },{
-        id: '4',
-        start: curYear+'-'+curMonth+'-15T07:30:00',
-        end: curYear+'-'+curMonth+'-15T15:30:00',
-        title: 'Team Weekly Trip',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },{
-        id: '5',
-        start: curYear+'-'+curMonth+'-17T10:00:00',
-        end: curYear+'-'+curMonth+'-19T15:00:00',
-        title: 'DJ Festival',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },{
-        id: '6',
-        start: curYear+'-'+curMonth+'-08T13:00:00',
-        end: curYear+'-'+curMonth+'-08T18:30:00',
-        title: 'Carl Henson\'s Wedding',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      }
+      // {
+      //   id: '1',
+      //   start: curYear+'-'+curMonth+'-08T08:30:00',
+      //   end: curYear+'-'+curMonth+'-08T13:00:00',
+      //   title: 'Event 1',
+      //   description: 'Event 1 description.'
+      // },
+      // {
+      //   id: '2',
+      //   start: curYear+'-'+curMonth+'-10T09:00:00',
+      //   end: curYear+'-'+curMonth+'-10T17:00:00',
+      //   title: 'Design/Code Review',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // },{
+      //   id: '3',
+      //   start: curYear+'-'+curMonth+'-13T12:00:00',
+      //   end: curYear+'-'+curMonth+'-13T18:00:00',
+      //   title: 'Lifestyle Conference',
+      //   description: 'Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi...'
+      // },{
+      //   id: '4',
+      //   start: curYear+'-'+curMonth+'-15T07:30:00',
+      //   end: curYear+'-'+curMonth+'-15T15:30:00',
+      //   title: 'Team Weekly Trip',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // },{
+      //   id: '5',
+      //   start: curYear+'-'+curMonth+'-17T10:00:00',
+      //   end: curYear+'-'+curMonth+'-19T15:00:00',
+      //   title: 'DJ Festival',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // },{
+      //   id: '6',
+      //   start: curYear+'-'+curMonth+'-08T13:00:00',
+      //   end: curYear+'-'+curMonth+'-08T18:30:00',
+      //   title: 'Carl Henson\'s Wedding',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // }
     ]
   };
 
@@ -64,27 +65,27 @@ $(function() {
     backgroundColor: 'rgba(16,183,89, .25)',
     borderColor: '#10b759',
     events: [
-      {
-        id: '7',
-        start: curYear+'-'+curMonth+'-01T18:00:00',
-        end: curYear+'-'+curMonth+'-01T23:30:00',
-        title: 'Jensen Birthday',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },
-      {
-        id: '8',
-        start: curYear+'-'+curMonth+'-21T15:00:00',
-        end: curYear+'-'+curMonth+'-21T21:00:00',
-        title: 'Carl\'s Birthday',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      },
-      {
-        id: '9',
-        start: curYear+'-'+curMonth+'-23T15:00:00',
-        end: curYear+'-'+curMonth+'-23T21:00:00',
-        title: 'Yaretzi\'s Birthday',
-        description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
-      }
+      // {
+      //   id: '7',
+      //   start: curYear+'-'+curMonth+'-01T18:00:00',
+      //   end: curYear+'-'+curMonth+'-01T23:30:00',
+      //   title: 'Event 2',
+      //   description: 'Event 2 description.'
+      // },
+      // {
+      //   id: '8',
+      //   start: curYear+'-'+curMonth+'-21T15:00:00',
+      //   end: curYear+'-'+curMonth+'-21T21:00:00',
+      //   title: 'Carl\'s Birthday',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // },
+      // {
+      //   id: '9',
+      //   start: curYear+'-'+curMonth+'-23T15:00:00',
+      //   end: curYear+'-'+curMonth+'-23T21:00:00',
+      //   title: 'Yaretzi\'s Birthday',
+      //   description: 'In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis az pede mollis...'
+      // }
     ]
   };
 
@@ -98,20 +99,21 @@ $(function() {
         id: '10',
         start: curYear+'-'+curMonth+'-04',
         end: curYear+'-'+curMonth+'-06',
-        title: 'Feast Day'
+        title: 'Event 2',
+        description: 'Event 2 description.'
       },
-      {
-        id: '11',
-        start: curYear+'-'+curMonth+'-26',
-        end: curYear+'-'+curMonth+'-27',
-        title: 'Memorial Day'
-      },
-      {
-        id: '12',
-        start: curYear+'-'+curMonth+'-28',
-        end: curYear+'-'+curMonth+'-29',
-        title: 'Veteran\'s Day'
-      }
+      // {
+      //   id: '11',
+      //   start: curYear+'-'+curMonth+'-26',
+      //   end: curYear+'-'+curMonth+'-27',
+      //   title: 'Memorial Day'
+      // },
+      // {
+      //   id: '12',
+      //   start: curYear+'-'+curMonth+'-28',
+      //   end: curYear+'-'+curMonth+'-29',
+      //   title: 'Veteran\'s Day'
+      // }
     ]
   };
 
@@ -120,12 +122,13 @@ $(function() {
     backgroundColor: 'rgba(0,204,204,.25)',
     borderColor: '#00cccc',
     events: [
-      {
-        id: '13',
-        start: curYear+'-'+curMonth+'-17T08:00:00',
-        end: curYear+'-'+curMonth+'-18T11:00:00',
-        title: 'Web Design Workshop Seminar'
-      }
+      // {
+      //   id: '13',
+      //   start: curYear+'-'+curMonth+'-17T08:00:00',
+      //   end: curYear+'-'+curMonth+'-18T11:00:00',
+      //   title: 'Event 4',
+      //   description: 'Event 4 description.'
+      // }
     ]
   };
 
@@ -138,14 +141,15 @@ $(function() {
         id: '14',
         start: curYear+'-'+curMonth+'-03',
         end: curYear+'-'+curMonth+'-05',
-        title: 'UI/UX Meetup Conference'
+        title: 'Event 1',
+        description: 'Event 1 description.'
       },
-      {
-        id: '15',
-        start: curYear+'-'+curMonth+'-18',
-        end: curYear+'-'+curMonth+'-20',
-        title: 'Angular Conference Meetup'
-      }
+      // {
+      //   id: '15',
+      //   start: curYear+'-'+curMonth+'-18',
+      //   end: curYear+'-'+curMonth+'-20',
+      //   title: 'Angular Conference Meetup'
+      // }
     ]
   };
 
@@ -159,14 +163,15 @@ $(function() {
         id: '16',
         start: curYear+'-'+curMonth+'-06',
         end: curYear+'-'+curMonth+'-08',
-        title: 'My Rest Day'
+        title: 'Event 3',
+        description: 'Event 3 description.'
       },
-      {
-        id: '17',
-        start: curYear+'-'+curMonth+'-29',
-        end: curYear+'-'+curMonth+'-31',
-        title: 'My Rest Day'
-      }
+      // {
+      //   id: '17',
+      //   start: curYear+'-'+curMonth+'-29',
+      //   end: curYear+'-'+curMonth+'-31',
+      //   title: 'My Rest Day'
+      // }
     ]
   };
 
