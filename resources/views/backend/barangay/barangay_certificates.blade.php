@@ -6,14 +6,14 @@
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Services</li>
+            <li class="breadcrumb-item active" aria-current="page">Forms</li>
             <li class="breadcrumb-item active" aria-current="page">Certificates</li>
         </ol>
     </nav>
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create barangay certificate">Create</a>
+            <a href="" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Create barangay certificate">Create</a>
         </ol>
     </nav>
 

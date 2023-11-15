@@ -17,15 +17,16 @@ use App\Http\Controllers\Backend\BarangayAnnouncementsController;
 
 class BarangayHomeController extends Controller {
 
-    public function FetchToHome() {
+    // public function FetchToHome() {
 
-        $home_barangay_officials = BarangayOfficials::latest()->get();
-        $residentsCount = BarangayResidents::count();
-        $officialsCount = BarangayOfficials::count();
-        $home_barangay_announcements = BarangayAnnouncements::latest()->get();
+    //     $home_barangay_officials = BarangayOfficials::latest()->get();
+    //     $residentsCount = BarangayResidents::count();
+    //     $officialsCount = BarangayOfficials::count();
+    //     $home_barangay_announcements = BarangayAnnouncements::latest()->get();
+    //     $votersCount = BarangayResidents::where('registered_voter', 'Yes')->count();
 
-        return view('frontend.master', compact('home_barangay_officials', 'residentsCount', 'officialsCount', 'home_barangay_announcements'));
+    //     return view('frontend.master', compact('home_barangay_officials', 'residentsCount', 'officialsCount', 'home_barangay_announcements', 'votersCount'));
         
-    }
+    // }
 
 }

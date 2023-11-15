@@ -13,7 +13,7 @@
 
                 <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('create.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create blotter record">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="{{ route('create.blotter.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Create blotter record">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
       <a href="" class="btn btn-inverse-light btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
             <a href="" class="btn btn-inverse-info btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
     </ol>
@@ -28,7 +28,7 @@
                 
 
                 <div class="table-responsive">
-                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
+                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover">
                     <thead>
                       <tr>
                         <th style="text-align: center;">ID</th>

@@ -29,7 +29,7 @@
           <h6 class="card-title">Barangay officials</h6>
           <p class="text-muted mb-3">Barangay Imbatug<a href="#"> officials</a>.</p>
           <div class="table-responsive">
-            <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
+            <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover">
               <thead>
                 <tr>
                   <th style="text-align: center;">Id</th>
@@ -64,12 +64,8 @@
     <span class="status-badge badge badge-danger">Inactive</span>
   @endif
 </td>
-                  @php
-                    $termStart = \Carbon\Carbon::parse($barangay_officials->term_start)->toDateString();
-                    $termEnd = \Carbon\Carbon::parse($barangay_officials->term_end)->toDateString();
-                  @endphp
-                  <td style="text-align: center;">{{ $termStart }}</td>
-                  <td style="text-align: center;">{{ $termEnd }}</td>
+                  <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_officials->term_start)) }}</td>
+                  <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_officials->term_end)) }}</td>
                   <td>
                     <div style="text-align: center;">
                     <a href="{{ route('view.official', $barangay_officials->id) }}">

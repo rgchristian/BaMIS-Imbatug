@@ -160,6 +160,30 @@
                                     </div>
                                 </div>
                             </div><!-- Col -->
+                        </div><!-- Row -->
+                            
+                        <h5 class="text-muted mb-3"><a>Social Media Account</a></h5>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Facebook</label>
+                                    <input type="text" name="fb_url" class="form-control" value="{{ $edit_official->fb_url }}">
+                                </div>
+                            </div><!-- Col -->
+                            <div class="col-sm-4">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">X</label>
+                                    <input type="text" name="twitter_url" class="form-control" value="{{ $edit_official->twitter_url }}">
+                                </div>
+                            </div><!-- Col -->
+                            <div class="col-sm-4">
+                                <div class="mb-3 form-group">
+                                    <label class="form-label">Instagram</label>
+                                    <input type="text" name="ig_url" class="form-control" value="{{ $edit_official->ig_url }}">
+                                </div>
+                            </div><!-- Col -->
+                        </div><!-- Row -->
+                           
 
                             <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>
                         <div class="row">
@@ -215,7 +239,7 @@
                             </div>
                             <!-- Col -->
                         </div><!-- Row -->
-                        </div>
+                        
                         <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
                     </form>
                 </div>

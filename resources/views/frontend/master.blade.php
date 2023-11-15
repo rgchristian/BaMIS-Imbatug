@@ -12,7 +12,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('backend/assets/images/imbatug logo.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,26 +110,26 @@
     <div class="container-fluid header bg-primary p-0 mb-5">
         <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
             <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="text-center mb-5"> <!-- Center the image and content -->
+            <div class="text-center mb-5">
                 <img src="{{ asset('upload/imbatug logo.png') }}" alt="Logo" style="width: 250px; height: auto; margin: 20px auto;">
             </div>
                 <h1 class="display-8 text-white mb-5">Imbatug, formerly Poblacion, is a barangay in the municipality of Baungon, in the province of Bukidnon.</h1>
                 <div class="row g-4">
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">{{ $residentsCount }}</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">26</h2>
                             <p class="text-light mb-0">Total Population</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">0</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">24</h2>
                             <p class="text-light mb-0">Registered Voters</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">{{ $officialsCount }}</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">8</h2>
                             <p class="text-light mb-0">Barangay Officials</p>
                         </div>
                     </div>
@@ -338,24 +338,136 @@
             <h1>Barangay Officials</h1>
         </div>
         <div class="row g-4">
-            @foreach ($home_barangay_officials as $home_official)
+            
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset($home_official->photo) }}" alt="{{ $home_official->name }}">
+                            <img class="img-fluid" src="{{ asset('upload/A.jpg') }}" alt="">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>{{ $home_official->name }}</h5>
-                            <p class="text-primary">{{ $home_official->position }}</p>
+                            <h5>Official A</h5>
+                            <p class="text-primary">Barangay Captain</p>
                             <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/<FBProfile>"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/B.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official B</h5>
+                            <p class="text-primary">Barangay Kagawad</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/C.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official C</h5>
+                            <p class="text-primary">Barangay Secretary</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/D.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official D</h5>
+                            <p class="text-primary">Barangay Treasurer</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/E.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official E</h5>
+                            <p class="text-primary">Sangguniang Kabataan Chairperson</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/F.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official F</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/G.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official G</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/H.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official H</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </div>
 </div>
@@ -405,9 +517,16 @@
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
                                         <option selected>Choose official</option>
-                                        @foreach ($home_barangay_officials as $official)
-                                            <option value="{{ $official->id }}">{{ $official->name }}</option>
-                                        @endforeach
+                                        
+                                            <option value="">Official A</option>
+                                            <option value="">Official B</option>
+                                            <option value="">Official C</option>
+                                            <option value="">Official D</option>
+                                            <option value="">Official E</option>
+                                            <option value="">Official F</option>
+                                            <option value="">Official G</option>
+                                            <option value="">Official H</option>
+                                        
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -448,16 +567,32 @@
                 <h1>Public Disclosure</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            @foreach ($home_barangay_announcements as $home_announcement)
+            
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset($home_announcement->announcement_photo) }}" alt="{{ $home_announcement->announcement_name }}" style="width: 100px; height: 100px;">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/A.jpg') }}" alt="" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>{{ $home_announcement->announcement_details}}</p>
-                        <h5 class="mb-1">“{{ $home_announcement->announcement_name}}”</h5>
-                        <span class="fst-italic">{{ $home_announcement->announcement_host_name}}</span>
+                        <p>At 2023-12-01 18:00 Barangay Covered Court, we will be having a feast. See you all there!</p>
+                        <h5 class="mb-1">“Araw ng Barangay”</h5>
+                        <span class="fst-italic">Official A</span>
                     </div>
                 </div>
-            @endforeach
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/B.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-02 13:00 Barangay Covered Court, we will be having a Barangay Liga. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Liga”</h5>
+                        <span class="fst-italic">Official B</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/C.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-15 18:00 Barangay Hall, we will be having a meeting. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Meeting”</h5>
+                        <span class="fst-italic">Official C</span>
+                    </div>
+                </div>
+            
             </div>
         </div>
     </div>

@@ -121,6 +121,8 @@ class BarangayResidentsController extends Controller
         $resident->relation_to_the_hh_head = $request->relation_to_the_hh_head;
         $resident->moral = $request->moral;
         $resident->active_participation = $request->active_participation;
+        $resident->registered_voter = $request->registered_voter;
+        $resident->household_representative = $request->household_representative;
     
         if ($request->hasFile('photo')) {
             // Handle the photo update

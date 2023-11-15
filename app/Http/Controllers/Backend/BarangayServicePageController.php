@@ -15,12 +15,12 @@ use App\Http\Controllers\Backend\BarangayAnnouncementsController;
 
 class BarangayServicePageController extends Controller
 {
-    public function FetchToServicePage() {
+    // public function FetchToServicePage() {
 
-        $service_barangay_officials = BarangayOfficials::latest()->get();
-        $service_barangay_announcements = BarangayAnnouncements::latest()->get();
+    //     $service_barangay_officials = BarangayOfficials::latest()->get();
+    //     $service_barangay_announcements = BarangayAnnouncements::latest()->get();
 
-        return view('frontend.service', compact('service_barangay_officials', 'service_barangay_announcements'));
+    //     return view('frontend.service', compact('service_barangay_officials', 'service_barangay_announcements'));
         
-    }
+    // }
 }

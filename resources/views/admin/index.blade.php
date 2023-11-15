@@ -18,7 +18,7 @@
             </button>
             <button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
               <i class="btn-icon-prepend" data-feather="download-cloud"></i>
-              Download Report
+              Download
             </button>
           </div>
         </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/total_population.png') }}" alt="Population Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/total_population_1.png') }}" alt="Population Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -87,7 +87,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $maleResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -96,7 +96,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/male_icon.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/male_icon_1.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -128,7 +128,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $femaleResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -137,7 +137,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/female_icon.png') }}" alt="Female Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/female_icon_1.png') }}" alt="Female Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -167,7 +167,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $pwdResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -176,7 +176,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/pwd_icon.png') }}" alt="PWD Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/pwd_icon_1.png') }}" alt="PWD Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -206,7 +206,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $widowResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -215,7 +215,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/solo_parent.png') }}" alt="Solo Parent Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/solo_parent_1.png') }}" alt="Solo Parent Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -245,7 +245,7 @@
                     <div class="row">
                     <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $householdResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -255,7 +255,7 @@
                           </div>
                       </div>
                       <div class="col-6 col-md-12 col-xl-5">
-                      <img src="{{ asset('upload/household.png') }}" alt="Household Icon" class="img-fluid" width="70" height="70">
+                      <img src="{{ asset('upload/household_1.png') }}" alt="Household Icon" class="img-fluid" width="70" height="70">
                       <div class="d-flex align-items-baseline">
                       </div>
                     </div>
@@ -296,7 +296,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/purok.png') }}" alt="Purok Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/purok_1.png') }}" alt="Purok Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -326,7 +326,7 @@
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
           <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">0</h3>
+          <h3 class="mb-2">{{ $voterResidentsCount }}</h3>
           <!-- <p class="text-success">
               <span>+3.3%</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
@@ -335,7 +335,7 @@
         </div>
         <div class="col-6 col-md-12 col-xl-5">
           <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/ballot.png') }}" alt="Ballot Icon" class="img-fluid" width="70" height="70">
+          <img src="{{ asset('upload/ballot_1.png') }}" alt="Ballot Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -351,7 +351,7 @@
             <div class="card overflow-hidden">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-                  <h6 class="card-title mb-0">Revenue</h6>
+                  <h6 class="card-title mb-0">Revenues</h6>
                   <div class="dropdown">
                     <a type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -453,7 +453,7 @@
         <div class="row">
           <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0">
             <div class="card">
-              <div class="card-body"  style="max-height: 400px; overflow-y: auto;">
+              <div class="card-body" style="max-height: 400px; overflow-y: auto;">
                 <div class="d-flex justify-content-between align-items-baseline mb-2">
                   <h6 class="card-title mb-0">Announcements</h6>
                   <div class="dropdown mb-2">

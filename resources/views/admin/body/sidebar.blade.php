@@ -1,14 +1,14 @@
 <nav class="sidebar">
-      <div class="sidebar-header">
-        <a href="{{ route('admin.dashboard') }}" class="sidebar-brand">
-          Brgy.<span>Imbatug</span>
-        </a>
-        <div class="sidebar-toggler not-active">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+<div class="sidebar-header">
+  <a href="{{ route('admin.dashboard') }}" class="sidebar-brand">
+    Brgy.<span>Imbatug</span>
+  </a>
+  <div class="sidebar-toggler not-active">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
       <div class="sidebar-body">
         <ul class="nav">
           <li class="nav-item nav-category">Main</li>
@@ -100,7 +100,7 @@
           <li class="nav-item">
             <a href="{{ route('barangay.revenues') }}" class="nav-link">
               <i class="link-icon" data-feather="dollar-sign"></i>
-              <span class="link-title">Revenue</span>
+              <span class="link-title">Revenues</span>
             </a>
           </li>
           <li class="nav-item nav-category">Releases</li>
@@ -119,8 +119,8 @@
         <a href="#" class="settings-sidebar-toggler">
           <i data-feather="settings"></i>
         </a>
-        <h6 class="text-muted mb-2">Sidebar:</h6>
-        <div class="mb-3 pb-3 border-bottom">
+        <h5 class="text-muted mb-2"><strong>Theme:</strong></h6>
+        <!-- <div class="mb-3 pb-3 border-bottom">
           <div class="form-check form-check-inline">
             <input type="radio" class="form-check-input" name="sidebarThemeSettings" id="sidebarLight" value="sidebar-light">
             <label class="form-check-label" for="sidebarLight">
@@ -133,18 +133,19 @@
               Dark
             </label>
           </div>
-        </div>
+        </div> -->
         <div class="theme-wrapper">
-          <h6 class="text-muted mb-2">Light Theme:</h6>
+          <h6 class="text-muted mb-2">Light</h6>
           <a class="theme-item active" href="">
             <img src="{{ asset('backend/assets/images/screenshots/light.jpg') }}" alt="light theme">
           </a>
-          <h6 class="text-muted mb-2">Dark Theme:</h6>
+          <h6 class="text-muted mb-2">Dark</h6>
           <a class="theme-item" href="">
             <img src="{{ asset('backend/assets/images/screenshots/dark.jpg') }}" alt="light theme">
           </a>
         </div>
       </div>
     </nav>
+    
 
     

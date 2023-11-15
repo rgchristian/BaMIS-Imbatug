@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('backend/assets/images/imbatug logo.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -236,9 +236,16 @@
                                 <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
                                         <option selected>Choose official</option>
-                                        @foreach ($service_barangay_officials as $service)
-                                            <option value="{{ $service->id }}">{{ $service->name }}</option>
-                                        @endforeach
+                                        
+                                            <option value="">Official A</option>
+                                            <option value="">Official B</option>
+                                            <option value="">Official C</option>
+                                            <option value="">Official D</option>
+                                            <option value="">Official E</option>
+                                            <option value="">Official F</option>
+                                            <option value="">Official G</option>
+                                            <option value="">Official H</option>
+                                        
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
@@ -279,16 +286,32 @@
                 <h1>Public Disclosure</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            @foreach ($service_barangay_announcements as $service_announcement)
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset($service_announcement->announcement_photo) }}" alt="{{ $service_announcement->announcement_name }}" style="width: 100px; height: 100px;">
+            
+            <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/A.jpg') }}" alt="" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>{{ $service_announcement->announcement_details}}</p>
-                        <h5 class="mb-1">“{{ $service_announcement->announcement_name}}”</h5>
-                        <span class="fst-italic">{{ $service_announcement->announcement_host_name}}</span>
+                        <p>At 2023-12-01 18:00 Barangay Covered Court, we will be having a feast. See you all there!</p>
+                        <h5 class="mb-1">“Araw ng Barangay”</h5>
+                        <span class="fst-italic">Official A</span>
                     </div>
                 </div>
-            @endforeach
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/B.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-02 13:00 Barangay Covered Court, we will be having a Barangay Liga. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Liga”</h5>
+                        <span class="fst-italic">Official B</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/C.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-15 18:00 Barangay Hall, we will be having a meeting. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Meeting”</h5>
+                        <span class="fst-italic">Official C</span>
+                    </div>
+                </div>
+            
             </div>
         </div>
     </div>

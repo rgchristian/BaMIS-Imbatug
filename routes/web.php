@@ -35,7 +35,10 @@ use App\Http\Controllers\Backend\BarangayAboutPageController;
 use App\Http\Controllers\Backend\BarangayServicePageController;
 
 //
-use App\Http\Controllers\Backend\BarangayAllPageViewer;
+use App\Http\Controllers\Backend\BarangayContactPageController;
+
+// wala naman ata niay pulos
+use App\Http\Controllers\Backend\BarangayAllPageViewerController;
 
 
 /*
@@ -89,15 +92,19 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 //Landing page type all route
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
-Route::get('/barangay/home', [BarangayAllPageViewer::class, 'BarangayHome'])->name('barangay.home');
 
-Route::get('/barangay/about', [BarangayAllPageViewer::class, 'BarangayAbout'])->name('barangay.about');
+//Landing page type all route walay pulos
+Route::get('/barangay/contact', [BarangayContactPageController::class, 'BarangayContact'])->name('barangay.contact');
 
-Route::get('/barangay/service', [BarangayAllPageViewer::class, 'BarangayService'])->name('barangay.service');
+Route::get('/barangay/home', [BarangayAllPageViewerController::class, 'BarangayHome'])->name('barangay.home');
 
-Route::get('/barangay/contact', [BarangayAllPageViewer::class, 'BarangayContact'])->name('barangay.contact');
+Route::get('/barangay/about', [BarangayAllPageViewerController::class, 'BarangayAbout'])->name('barangay.about');
 
-Route::get('/officials', [BarangayAllPageViewer::class, 'BarangayOfficials'])->name('officials');
+Route::get('/barangay/service', [BarangayAllPageViewerController::class, 'BarangayService'])->name('barangay.service');
+
+Route::get('/barangay/contact', [BarangayAllPageViewerController::class, 'BarangayContact'])->name('barangay.contact');
+
+Route::get('/officials', [BarangayAllPageViewerController::class, 'BarangayOfficials'])->name('officials');
 
 // Admin group middleware
 Route::middleware(['auth', 'role:admin'])->group(function(){
@@ -118,8 +125,6 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
         Route::get('/delete/official/{id}', 'DeleteOfficial')->name('delete.official');
 
         Route::get('/view/official/{id}', 'ViewOfficial')->name('view.official');
-
-        
 
     });
 
@@ -163,61 +168,59 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     // Barangay blotter records type all route
     Route::controller(BarangayBlotterRecordsController::class)->group(function(){
 
-    Route::get('/barangay/blotterrecords', 'BlotterRecords')->name('barangay.blotter.records');
+        Route::get('/barangay/blotterrecords', 'BlotterRecords')->name('barangay.blotter.records');
 
-    Route::get('/create/blotterrecord', 'CreateBlotterRecord')->name('create.blotter.record');
+        Route::get('/create/blotterrecord', 'CreateBlotterRecord')->name('create.blotter.record');
 
-    Route::post('/store/blotterrecord', 'StoreBlotterRecord')->name('store.blotter.record');
+        Route::post('/store/blotterrecord', 'StoreBlotterRecord')->name('store.blotter.record');
 
-    Route::get('/edit/blotterrecord/{id}', 'EditBlotterRecord')->name('edit.blotter.record');
+        Route::get('/edit/blotterrecord/{id}', 'EditBlotterRecord')->name('edit.blotter.record');
 
-    Route::post('/update/blotterrecord', 'UpdateBlotterRecord')->name('update.blotter.record');
+        Route::post('/update/blotterrecord', 'UpdateBlotterRecord')->name('update.blotter.record');
 
-    Route::get('/delete/blotterrecord/{id}', 'DeleteBlotterRecord')->name('delete.blotter.record');
+        Route::get('/delete/blotterrecord/{id}', 'DeleteBlotterRecord')->name('delete.blotter.record');
 
-    Route::get('/view/blotterrecord/{id}', 'ViewBlotterRecord')->name('view.blotter.record');
+        Route::get('/view/blotterrecord/{id}', 'ViewBlotterRecord')->name('view.blotter.record');
 
-    // Mark as done
-    Route::post('/blotter-record/{id}/mark-as-done', 'MarkBlotterRecordAsDone')->name('mark.blotter.record.as.done');
+        // Mark as done
+        Route::post('/blotter-record/{id}/mark-as-done', 'MarkBlotterRecordAsDone')->name('mark.blotter.record.as.done');
 
-
-    
     });
 
     // Barangay attendance records type all route
     Route::controller(BarangayAttendanceRecordsController::class)->group(function(){
 
-    Route::get('/barangay/attendancerecords', 'AttendanceRecords')->name('barangay.attendance.records');
+        Route::get('/barangay/attendancerecords', 'AttendanceRecords')->name('barangay.attendance.records');
 
-    Route::get('/create/attendancerecord', 'CreateAttendanceRecord')->name('create.attendance.record');
+        Route::get('/create/attendancerecord', 'CreateAttendanceRecord')->name('create.attendance.record');
 
-    Route::post('/store/attendancerecord', 'StoreAttendanceRecord')->name('store.attendance.record');
+        Route::post('/store/attendancerecord', 'StoreAttendanceRecord')->name('store.attendance.record');
 
-    Route::get('/edit/attendancerecord/{id}', 'EditAttendanceRecord')->name('edit.attendance.record');
+        Route::get('/edit/attendancerecord/{id}', 'EditAttendanceRecord')->name('edit.attendance.record');
 
-    Route::post('/update/attendancerecord', 'UpdateAttendanceRecord')->name('update.attendance.record');
+        Route::post('/update/attendancerecord', 'UpdateAttendanceRecord')->name('update.attendance.record');
 
-    Route::get('/delete/attendancerecord/{id}', 'DeleteAttendanceRecord')->name('delete.attendance.record');
+        Route::get('/delete/attendancerecord/{id}', 'DeleteAttendanceRecord')->name('delete.attendance.record');
 
-    Route::get('/view/attendancerecord/{id}', 'ViewAttendanceRecord')->name('view.attendance.record');
+        Route::get('/view/attendancerecord/{id}', 'ViewAttendanceRecord')->name('view.attendance.record');
 
     });
 
     // Barangay announcements type all route
     Route::controller(BarangayAnnouncementsController::class)->group(function(){
 
-    Route::get('/barangay/announcements', 'Announcements')->name('barangay.announcements');
+        Route::get('/barangay/announcements', 'Announcements')->name('barangay.announcements');
 
-    Route::get('/create/announcement', 'CreateAnnouncement')->name('create.announcement');
+        Route::get('/create/announcement', 'CreateAnnouncement')->name('create.announcement');
 
-    Route::post('/store/announcement', 'StoreAnnouncement')->name('store.announcement');
+        Route::post('/store/announcement', 'StoreAnnouncement')->name('store.announcement');
     
     });
 
     // Barangay revenues type all route
     Route::controller(BarangayRevenuesController::class)->group(function(){
 
-    Route::get('/barangay/revenues', 'Revenues')->name('barangay.revenues');
+        Route::get('/barangay/revenues', 'Revenues')->name('barangay.revenues');
     
     });
 
@@ -225,32 +228,13 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     Route::get('/admin/dashboard', [BarangayAdminController::class, 'FetchToDashbard'])->name('admin.dashboard');
 
     // Fetch data to landing page
-    Route::get('barangay/home', [BarangayHomeController::class, 'FetchToHome'])->name('barangay.home');
+    // Route::get('/barangay/home', [BarangayHomeController::class, 'FetchToHome'])->name('barangay.home');
 
-    Route::get('/officials', [BarangayOfficialPageController::class, 'FetchToOfficialPage'])->name('officials');
+    // Route::get('/officials', [BarangayOfficialPageController::class, 'FetchToOfficialPage'])->name('officials');
 
-    Route::get('/barangay/about', [BarangayAboutPageController::class, 'FetchToAboutPage'])->name('barangay.about');
+    // Route::get('/barangay/about', [BarangayAboutPageController::class, 'FetchToAboutPage'])->name('barangay.about');
 
-    Route::get('/barangay/service', [BarangayServicePageController::class, 'FetchToServicePage'])->name('barangay.service');
-
-    
-
-    
-
-    
-
-
-
-   
-
-
-
-
-    
-
-    
-
-    
+    // Route::get('/barangay/service', [BarangayServicePageController::class, 'FetchToServicePage'])->name('barangay.service');
 
 }); // End group admin middleware
 

@@ -47,7 +47,7 @@
                             <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="The color coding system is used to denote different resident statuses: White signifies a well-behaved resident, Yellow represents an inactive resident, Red indicates a resident with unresolved case(s), and Orange signifies an inactive resident with unsettled case(s)."></i>
                             </div>
                 <div class="table-responsive">
-                  <table id="dataTableExample" class="table border-secondary border-top table-bordered">
+                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover">
                     <thead>
                       <tr>
                         <th style="text-align: center;">Id</th>
@@ -92,7 +92,7 @@
     <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
     <td style="text-align: center;">{{ $barangay_residents->name }}</td>
     <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile"></td>
-    <td style="text-align: center;">{{ $barangay_residents->birthdate }}</td>
+    <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_residents->birthdate)) }}</td>
     <td style="text-align: center;">{{ $barangay_residents->age }}</td>
     <td style="text-align: center;">{{ $barangay_residents->sex }}</td>
     <td>

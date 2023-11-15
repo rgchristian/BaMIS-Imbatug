@@ -8,6 +8,14 @@
 
 <div class="page-content">
 
+<nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">View</li>
+            <li class="breadcrumb-item active" aria-current="page">Blotter Record</li>
+        </ol>
+    </nav>
+
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <a href="{{ route('barangay.blotter.records') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>

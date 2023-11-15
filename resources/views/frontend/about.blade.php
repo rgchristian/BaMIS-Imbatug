@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <head>
     <meta charset="utf-8">
     <title>Barangay Imabatug | About</title>
@@ -9,7 +11,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('backend/assets/images/imbatug logo.png') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,24 +223,136 @@
             <h1>Barangay Officials</h1>
         </div>
         <div class="row g-4">
-            @foreach ($page_barangay_about as $page_about)
+            
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset($page_about->photo) }}" alt="{{ $page_about->name }}">
+                            <img class="img-fluid" src="{{ asset('upload/A.jpg') }}" alt="">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>{{ $page_about->name }}</h5>
-                            <p class="text-primary">{{ $page_about->position }}</p>
+                            <h5>Official A</h5>
+                            <p class="text-primary">Barangay Captain</p>
                             <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://www.facebook.com/<FBProfile>"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/B.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official B</h5>
+                            <p class="text-primary">Barangay Kagawad</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/C.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official C</h5>
+                            <p class="text-primary">Barangay Secretary</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/D.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official D</h5>
+                            <p class="text-primary">Barangay Treasurer</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/E.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official E</h5>
+                            <p class="text-primary">Sangguniang Kabataan Chairperson</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/F.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official F</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/G.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official G</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('upload/H.jpg') }}" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Official H</h5>
+                            <p class="text-primary">Sangguniang Kabataan Member</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </div>
 </div>

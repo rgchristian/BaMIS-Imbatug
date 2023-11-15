@@ -41,7 +41,7 @@
                     <a href="{{ route('calendar') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="calendar" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View calendar"></i><p class="tx-12">Calendar</p></a>
                   </div>
                   <div class="col-3 text-center">
-                    <a href="https://mail.google.com/mail/u/0/#inbox" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="mail" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View mail"></i><p class="tx-12">Email</p></a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="mail" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View email"></i><p class="tx-12">Email</p></a>
                   </div>
                   <div class="col-3 text-center">
                     <a href="{{ route('admin.profile') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="user" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View profile"></i><p class="tx-12">Profile</p></a>
@@ -55,6 +55,9 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i data-feather="mail" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages"></i>
+                <div class="indicator">
+									<div class="circle"></div>
+								</div>
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
 								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
@@ -128,9 +131,9 @@
                     </div>	
                   </a>
                 </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+								<!-- <div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
 									<a href="#">View all</a>
-								</div>
+								</div> -->
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -193,9 +196,9 @@
                     </div>	
                   </a>
                 </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
+								<!-- <div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
 									<a href="#">View all</a>
-								</div>
+								</div> -->
 							</div>
 						</li>
 

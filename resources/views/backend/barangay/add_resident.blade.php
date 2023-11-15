@@ -90,7 +90,7 @@
                         <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
                         <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="A resident photo is required. Hover and click on the image frame to browse the file."></i>
                             </div>
-                        <h5 class="text-muted mb-3"><a>Personal Information</a></h5>
+                        <h5 class="text-muted mb-3"><a>Barangay Resident Information</a></h5>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="mb-3 form-group">
@@ -313,7 +313,9 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                    <label class="form-label">Relation to the HH Head</label>
+                                    <label class="form-label">
+                                        Relation to the HH Head <a data-bs-toggle="tooltip" data-bs-placement="top" title="..." href="#" class="text-primary">(?)</a>
+                                    </label>
                                     <input type="number" name="relation_to_the_hh_head" class="form-control" placeholder="Enter number">
                                 </div>
                             </div>
@@ -346,6 +348,32 @@
                             <!-- Col -->
                         </div>
                         <!-- Row -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                <label for="moral" class="form-label">
+                                    Registered Voter
+                                    </label>
+                                    <select name="registered_voter" class="form-select mb-3 form-control">
+                                        <option value="" selected disabled>Select answer</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div><!-- Col -->
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                <label for="moral" class="form-label">
+                                    Household Representative <a data-bs-toggle="tooltip" data-bs-placement="top" title="There must be at least one household representative per household. A household representative is someone who will be participating in the barangay meeting(s)." href="#" class="text-primary">(?)</a>
+                                    </label>
+                                    <select name="household_representative" class="form-select mb-3 form-control">
+                                        <option value="" selected disabled>Select answer</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div><!-- Col -->
+                        </div><!-- Row -->
                         <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>
                         <div class="row">
                             <div class="col-sm-4">
@@ -595,7 +623,7 @@
                     required : 'Please enter citizenship.',
                 },
                 address: {
-                    required : 'Please enter address.',
+                    required : 'Please enter full address.',
                 },
                 educational_attainment: {
                     required : 'Please select educational attainment.',

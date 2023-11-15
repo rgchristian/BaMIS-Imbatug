@@ -3,12 +3,20 @@
 
 <div class="page-content">
 
+<nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Earnings</li>
+            <li class="breadcrumb-item active" aria-current="page">Revenues</li>
+        </ol>
+    </nav>
+
 <div class="row">
           <div class="col-12 col-xl-12 grid-margin stretch-card">
             <div class="card overflow-hidden">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-baseline mb-4 mb-md-3">
-                  <h6 class="card-title mb-0">Revenue</h6>
+                  <h6 class="card-title mb-0">Revenues</h6>
                   <div class="dropdown">
                     <a type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal icon-lg text-muted pb-3px"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>

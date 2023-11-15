@@ -2,6 +2,14 @@
 @section('admin')
 
 <div class="page-content">
+
+<nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Calendar</li>
+        </ol>
+    </nav>
+
     <div class="row">
         <div class="col-md-12">
             <div class="row">
@@ -45,7 +53,7 @@
                 <div id="modalBody1" class="modal-body"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary">Event Page</button>
+                    <!-- <button class="btn btn-primary">Event Page</button> -->
                 </div>
             </div>
         </div>

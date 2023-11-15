@@ -80,41 +80,55 @@
             </div>
           </div>
           <!-- left wrapper end -->
+
     <!-- middle wrapper start -->
-    <div class="col-md-8 col-xl-7 middle-wrapper">
-      <div class="row">
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title">Change Password</h6>
+    <div class="col-md-8">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-title">Change Admin Password</h6>
 
             <form id="myForm" method="POST" action="{{ route('admin.update.password') }}" class="forms-sample">
-              @csrf
+                @csrf
+                
+              
 
-              <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">Old Password</label>
-                <input type="password" name="old_password" class="form-control @error('old_password') is-invalid @enderror" id="old_password" autocomplete="off">
-                @error('old_password')
-                <span class="text-danger"> {{ $message }}</span>
-                @enderror
-              </div>
-              <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">New Password</label>
-                <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror" id="new_password" autocomplete="off">
-                @error('new_password')
-                <span class="text-danger"> {{ $message }}</span>
-                @enderror
-              </div>
-              <div class="mb-3 form-group">
-                <label for="exampleInputEmail1" class="form-label">Confirm New Password</label>
-                <input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation" autocomplete="off">
-              </div>
+                <h5 class="text-muted mb-3"><a>Barangay Admin Password</a></h5>
 
-              <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Old Password</label>
+                            <input type="password" name="old_password" class="form-control" id="old_password" autocomplete="off">
+                        </div>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group mb-3">
+                            <label class="form-label">New Password</label>
+                            <input type="password" name="new_password" class="form-control" id="new_password" autocomplete="off">
+                        </div>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="mb-3 form-group">
+                            <label for="term_start" class="form-label">Confirm New Password</label>
+                            <div class="input-group">
+                                <input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation" autocomplete="off">
+                            </div>
+                        </div>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+
+                <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
             </form>
-          </div>
         </div>
-      </div>
     </div>
+</div>
+
     <!-- middle wrapper end -->
     <!-- right wrapper start -->
 

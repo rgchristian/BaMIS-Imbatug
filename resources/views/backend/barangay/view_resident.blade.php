@@ -83,9 +83,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">View Barangay Resident</h6>
-                        <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
-                        <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="A resident photo is required. Hover and click on the image frame to browse the file."></i>
-                            </div>
+                        
                         <h5 class="text-muted mb-3"><a>Personal Information</a></h5>
                         <div class="row">
                             <div class="col-sm-12">
@@ -337,6 +335,32 @@
                                 </div>
                             </div>
                             <!-- Col -->
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                <label for="moral" class="form-label">
+                                    Registered Voter
+                                    </label>
+                                    <select name="registered_voter" class="form-select mb-3 form-control">
+                                        <option value="" selected disabled>Select </option>
+                                        <option value="Yes" disabled {{ $view_resident->registered_voter == 'Yes' ? 'selected' : '' }}>Yes</option>
+                                        <option value="No" disabled {{ $view_resident->registered_voter == 'No' ? 'selected' : '' }}>No</option>
+                                    </select>
+                                </div>
+                            </div><!-- Col -->
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                <label for="moral" class="form-label">
+                                    House Representative <a data-bs-toggle="tooltip" data-bs-placement="top" title="A household representative is someone who will be participating the barangay meeting(s)." href="#" class="text-primary">(?)</a>
+                                    </label>
+                                    <select name="household_representative" class="form-select mb-3 form-control">
+                                        <option value="" selected disabled>Select </option>
+                                        <option value="Yes" disabled {{ $view_resident->household_representative == 'Yes' ? 'selected' : '' }}>Yes</option>
+                                        <option value="No" disabled {{ $view_resident->household_representative == 'No' ? 'selected' : '' }}>No</option>
+                                    </select>
+                                </div>
+                            </div><!-- Col -->
                         </div>
                         <!-- Row -->
                         <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>

@@ -13,11 +13,11 @@ use App\Http\Controllers\Backend\BarangayOfficialsStaffController;
 
 class BarangayOfficialPageController extends Controller
 {
-    public function FetchToOfficialPage() {
+    // public function FetchToOfficialPage() {
 
-        $page_barangay_officials = BarangayOfficials::latest()->get();
+    //     $page_barangay_officials = BarangayOfficials::latest()->get();
 
-        return view('frontend.officials', compact('page_barangay_officials'));
+    //     return view('frontend.officials', compact('page_barangay_officials'));
         
-    }
+    // }
 }

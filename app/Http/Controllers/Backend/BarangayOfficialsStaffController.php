@@ -77,6 +77,9 @@ class BarangayOfficialsStaffController extends Controller
         $official->municipality = $request->municipality;
         $official->barangay = $request->barangay;
         $official->purok = $request->purok;
+        $official->fb_url = $request->fb_url;
+        $official->twitter_url = $request->twitter_url;
+        $official->ig_url = $request->ig_url;
     
         if ($request->hasFile('photo')) {
             // Handle the photo update

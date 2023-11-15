@@ -13,7 +13,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{ route('create.attendance.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Create barangay attendance record">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+            <a href="{{ route('create.attendance.record') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Create barangay attendance record">Create</a> &nbsp;&nbsp;&nbsp;&nbsp; 
       <a href="" class="btn btn-inverse-light btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
             <a href="" class="btn btn-inverse-info btn-icon-text align-float-left" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
         </ol>
@@ -26,7 +26,7 @@
                 <h6 class="card-title">Attendance Records</h6>
                 <p class="text-muted mb-3">Barangay Imbatug <a href="#"> attendance records</a>.</p>
                 <div class="table-responsive">
-                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover table-striped">
+                  <table id="dataTableExample" class="table border-secondary border-top table-bordered table-hover">
                     <thead>
                       <tr>
                         <th style="text-align: center;">ID</th>
@@ -42,7 +42,7 @@
                         <td style="text-align: center;">{{ $key+1 }}</td>
                         <td style="text-align: center;">{{ $attendance_rec->event_name }}</td>
                         <td style="text-align: center;">{{ $attendance_rec->event_location }}</td>
-                        <td style="text-align: center;">{{ $attendance_rec->event_date_time }}</td>
+                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($attendance_rec->event_date_time)) }}</td>
                         <td>
                         <div style="text-align: center;">
                         <a href="{{ route('view.attendance.record', $attendance_rec->id) }}">

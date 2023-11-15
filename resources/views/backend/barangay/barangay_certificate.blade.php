@@ -6,7 +6,13 @@
 
 <div class="page-content">
 
-   
+<nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Forms</li>
+            <li class="breadcrumb-item active" aria-current="page">Barangay Certificate</li>
+        </ol>
+    </nav>
 
     <div class="row">
         <div class="col-md-6">
