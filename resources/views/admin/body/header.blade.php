@@ -35,7 +35,7 @@
 								</div>
                 <div class="row g-0 p-1">
                   <div class="col-3 text-center">
-                    <a href="{{ route('barangay.announcements') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="send" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Send announcement"></i><p class="tx-12">Send</p></a>
+                    <a href="{{ route('create.announcement') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="send" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Send announcement"></i><p class="tx-12">Send</p></a>
                   </div>
                   <div class="col-3 text-center">
                     <a href="{{ route('calendar') }}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="calendar" class="icon-lg mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="View calendar"></i><p class="tx-12">Calendar</p></a>

@@ -40,6 +40,8 @@ use App\Http\Controllers\Backend\BarangayContactPageController;
 // wala naman ata niay pulos
 use App\Http\Controllers\Backend\BarangayAllPageViewerController;
 
+use App\Http\Controllers\Backend\AnnouncementsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +96,7 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 
 
 //Landing page type all route walay pulos
-Route::get('/barangay/contact', [BarangayContactPageController::class, 'BarangayContact'])->name('barangay.contact');
+// Route::get('/barangay/contact', [BarangayContactPageController::class, 'BarangayContact'])->name('barangay.contact');
 
 Route::get('/barangay/home', [BarangayAllPageViewerController::class, 'BarangayHome'])->name('barangay.home');
 
@@ -105,6 +107,18 @@ Route::get('/barangay/service', [BarangayAllPageViewerController::class, 'Barang
 Route::get('/barangay/contact', [BarangayAllPageViewerController::class, 'BarangayContact'])->name('barangay.contact');
 
 Route::get('/officials', [BarangayAllPageViewerController::class, 'BarangayOfficials'])->name('officials');
+
+Route::get('/announcements', [BarangayAllPageViewerController::class, 'BarangayAnnouncements'])->name('announcements');
+
+Route::get('/barangay/appointment', [BarangayAllPageViewerController::class, 'BarangayAppointment'])->name('barangay.appointment');
+
+Route::get('/barangay/features', [BarangayAllPageViewerController::class, 'BarangayFeatures'])->name('barangay.features');
+
+
+//
+// Route::get('/announcements', [AnnouncementsController::class, 'BarangayAnnouncements'])->name('announcements');
+
+
 
 // Admin group middleware
 Route::middleware(['auth', 'role:admin'])->group(function(){

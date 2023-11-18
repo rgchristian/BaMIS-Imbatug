@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <head>
     <meta charset="utf-8">
     <title>Barangay Imbatug | Officials</title>
@@ -88,10 +91,10 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">Features</a>
+                        <a href="{{ route('barangay.features') }}" class="dropdown-item">Features</a>
                         <a href="{{ route('officials') }}" class="dropdown-item active">Officials</a>
-                        <a href="#" class="dropdown-item">Appointment</a>
-                        <a href="#" class="dropdown-item">Announcements</a>
+                        <a href="{{ route('barangay.appointment') }}" class="dropdown-item">Appointment</a>
+                        <a href="{{ route('announcements') }}" class="dropdown-item">Announcements</a>
                         <a href="#" class="dropdown-item">Ordinance</a>
                     </div>
                 </div>

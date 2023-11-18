@@ -38,4 +38,24 @@ class BarangayAllPageViewerController extends Controller
         return view('frontend.officials');
 
     } // End method
+
+    public function BarangayAnnouncements(){
+
+        return view('frontend.announcements');
+
+    } // End method
+
+    public function BarangayAppointment(){
+
+        return view('frontend.appointment');
+
+    } // End method
+    
+    public function BarangayFeatures(){
+
+        return view('frontend.features');
+
+    } // End method
+    
+    
 }

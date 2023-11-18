@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Barangay Imbatug | Contact</title>
+    <title>Barangay Imbatug | Announcements</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -89,16 +89,16 @@
                 <a href="{{ route('barangay.about') }}" class="nav-item nav-link">About</a>
                 <a href="{{ route('barangay.service') }}" class="nav-item nav-link">Services</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="{{ route('barangay.features') }}" class="dropdown-item">Features</a>
                         <a href="{{ route('officials') }}" class="dropdown-item">Officials</a>
                         <a href="{{ route('barangay.appointment') }}" class="dropdown-item">Appointment</a>
-                        <a href="{{ route('announcements') }}" class="dropdown-item">Announcements</a>
+                        <a href="{{ route('announcements') }}" class="dropdown-item active">Announcements</a>
                         <a href="#" class="dropdown-item">Ordinance</a>
                     </div>
                 </div>
-                <a href="{{ route('barangay.contact') }}" class="nav-item nav-link active">Contact</a>
+                <a href="{{ route('barangay.contact') }}" class="nav-item nav-link">Contact</a>
             </div>
             <a href="{{ route('admin.login') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
@@ -109,12 +109,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Contact Us</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Announcements</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb text-uppercase mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
                     <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact</li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Announcements</li>
                 </ol>
             </nav>
         </div>
@@ -122,94 +122,43 @@
     <!-- Page Header End -->
 
 
-    <!-- Contact Start -->
+    <!-- Testimonial Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
-                            <i class="fa fa-map-marker-alt text-primary"></i>
-                        </div>
-                        <div class="ms-4">
-                            <p class="mb-2">Address</p>
-                            <h5 class="mb-0">Imbatug, Baungon, Bukidnon</h5>
-                        </div>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Announcements</p>
+                <h1>Public Disclosure</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/A.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-01 18:00 Barangay Covered Court, we will be having a feast. See you all there!</p>
+                        <h5 class="mb-1">“Araw ng Barangay”</h5>
+                        <span class="fst-italic">Official A</span>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
-                            <i class="fa fa-phone-alt text-primary"></i>
-                        </div>
-                        <div class="ms-4">
-                            <p class="mb-2">Call Us Now</p>
-                            <h5 class="mb-0">+012 345 6789</h5>
-                        </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/B.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-02 13:00 Barangay Covered Court, we will be having a Barangay Liga. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Liga”</h5>
+                        <span class="fst-italic">Official B</span>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
-                            <i class="fa fa-envelope-open text-primary"></i>
-                        </div>
-                        <div class="ms-4">
-                            <p class="mb-2">Mail Us Now</p>
-                            <h5 class="mb-0">info@example.com</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-light rounded p-5">
-                        <p class="d-inline-block border rounded-pill py-1 px-4">Contact Us</p>
-                        <h1 class="mb-4">Have Any Query? Please Contact Us!</h1>
-                        <p class="mb-4">If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your name">
-                                        <label for="name">Your name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your email">
-                                        <label for="email">Your email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="h-100" style="min-height: 400px;">
-                        <iframe class="rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63165.2359239353!2d124.6361684784629!3d8.319959279123248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ff8ff8ff86d157%3A0xcea3f0bce09d11ad!2sImbatug%2C%20Baungon%2C%20Bukidnon!5e0!3m2!1sen!2sph!4v1698260445036!5m2!1sen!2sph"
-                        frameborder="0" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{ asset('upload/C.jpg') }}" alt="" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>At 2023-12-15 18:00 Barangay Hall, we will be having a meeting. See you all there!</p>
+                        <h5 class="mb-1">“Barangay Meeting”</h5>
+                        <span class="fst-italic">Official C</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
-
+    <!-- Testimonial End -->
+        
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -221,27 +170,27 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/Imbatug16"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="">Service 1</a>
-                    <a class="btn btn-link" href="">Service 2</a>
-                    <a class="btn btn-link" href="">Service 3</a>
-                    <a class="btn btn-link" href="">Service 4</a>
-                    <a class="btn btn-link" href="">Service 5</a>
+                    <a class="btn btn-link" href="#">Service 1</a>
+                    <a class="btn btn-link" href="#">Service 2</a>
+                    <a class="btn btn-link" href="#">Service 3</a>
+                    <a class="btn btn-link" href="#">Service 4</a>
+                    <a class="btn btn-link" href="#">Service 5</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="{{ route( 'barangay.about' ) }}">About Us</a>
                     <a class="btn btn-link" href="{{ route( 'barangay.contact' ) }}">Contact Us</a>
                     <a class="btn btn-link" href="{{ route( 'barangay.service' ) }}">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-light mb-4">Feedback</h5>

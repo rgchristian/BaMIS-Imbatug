@@ -91,10 +91,10 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">Features</a>
+                        <a href="{{ route('barangay.features') }}" class="dropdown-item">Features</a>
                         <a href="{{ route('officials') }}" class="dropdown-item">Officials</a>
-                        <a href="#" class="dropdown-item">Appointment</a>
-                        <a href="#" class="dropdown-item">Announcements</a>
+                        <a href="{{ route('barangay.appointment') }}" class="dropdown-item">Appointment</a>
+                        <a href="{{ route('announcements') }}" class="dropdown-item">Announcements</a>
                         <a href="#" class="dropdown-item">Ordinance</a>
                     </div>
                 </div>
