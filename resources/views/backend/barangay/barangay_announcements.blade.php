@@ -50,7 +50,7 @@
                         <td>
                         <div style="text-align: center;">
                         <a href="#">
-                        <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+                        <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
                           <i data-feather="eye"></i>
                         </button>
                         </a>

@@ -135,14 +135,15 @@
           </div>
         </div> -->
         <div class="theme-wrapper">
-          <h6 class="text-muted mb-2">Light</h6>
+        <h6 class="text-muted mb-2">Dark</h6>
           <a class="theme-item active" href="">
+            <img src="{{ asset('backend/assets/images/screenshots/dark.jpg') }}" alt="dark theme">
+          </a>
+          <h6 class="text-muted mb-2">Light</h6>
+          <a class="theme-item" href="">
             <img src="{{ asset('backend/assets/images/screenshots/light.jpg') }}" alt="light theme">
           </a>
-          <h6 class="text-muted mb-2">Dark</h6>
-          <a class="theme-item" href="">
-            <img src="{{ asset('backend/assets/images/screenshots/dark.jpg') }}" alt="light theme">
-          </a>
+          
         </div>
       </div>
     </nav>

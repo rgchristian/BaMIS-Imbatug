@@ -18,7 +18,7 @@
                         <div class="card-body">
                             <h6 class="card-title mb-4">Calendar</h6>
                             <div id='external-events' class='external-events'>
-                                <h6 class="mb-2 text-muted">Events Lists</h6>
+                                <h6 class="mb-2 text-muted">Notes & Events Lists</h6>
                                 <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
                                     <div class='fc-event-main'>Event 1</div>
                                 </div>
@@ -63,18 +63,18 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 id="modalTitle2" class="modal-title">Add Event</h4>
+                    <h4 id="modalTitle2" class="modal-title">Add Notes & Events</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"><span class="visually-hidden">Close</span></button>
                 </div>
                 <div id="modalBody2" class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter event label">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter label">
                         </div>
                         <div class="mb-3">
                             <label for="formGroupExampleInput2" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter event description">
+                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter description">
                         </div>
                     </form>
                 </div>

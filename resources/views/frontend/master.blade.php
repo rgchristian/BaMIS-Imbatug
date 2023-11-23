@@ -118,19 +118,19 @@
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
                             <h2 class="text-white mb-1" data-toggle="counter-up">26</h2>
-                            <p class="text-light mb-0">Total Population</p>
+                            <p class="text-light mb-0">Population</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
                             <h2 class="text-white mb-1" data-toggle="counter-up">24</h2>
-                            <p class="text-light mb-0">Registered Voters</p>
+                            <p class="text-light mb-0">Household</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">8</h2>
-                            <p class="text-light mb-0">Barangay Officials</p>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">9</h2>
+                            <p class="text-light mb-0">Purok</p>
                         </div>
                     </div>
                 </div>

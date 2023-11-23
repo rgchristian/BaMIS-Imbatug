@@ -241,6 +241,36 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
     // Fetch data to admin dashboard 
     Route::get('/admin/dashboard', [BarangayAdminController::class, 'FetchToDashbard'])->name('admin.dashboard');
 
+    Route::get('/male/residents', [BarangayAdminController::class, 'TotalMale'])->name('total.male.residents');
+
+    Route::get('/female/residents', [BarangayAdminController::class, 'TotalFemale'])->name('total.female.residents');
+
+    Route::get('/pwd/residents', [BarangayAdminController::class, 'TotalPWD'])->name('total.pwd.residents');
+
+    Route::get('/widow/residents', [BarangayAdminController::class, 'TotalSoloParent'])->name('total.soloparent.residents');
+
+    Route::get('/registeredvoters/residents', [BarangayAdminController::class, 'TotalRegisteredVoters'])->name('total.registeredvoters.residents');
+
+    Route::get('/purok', [BarangayAdminController::class, 'TotalPurok'])->name('total.purok');
+
+    Route::get('/purok/one', [BarangayAdminController::class, 'PurokOneResidents'])->name('purok.one.residents');
+
+    Route::get('/purok/two', [BarangayAdminController::class, 'PurokTwoResidents'])->name('purok.two.residents');
+
+    Route::get('/purok/three', [BarangayAdminController::class, 'PurokThreeResidents'])->name('purok.three.residents');
+
+    Route::get('/purok/four', [BarangayAdminController::class, 'PurokFourResidents'])->name('purok.four.residents');
+
+    Route::get('/purok/five', [BarangayAdminController::class, 'PurokFiveResidents'])->name('purok.five.residents');
+
+    Route::get('/purok/six', [BarangayAdminController::class, 'PurokSixResidents'])->name('purok.six.residents');
+
+    Route::get('/purok/seven', [BarangayAdminController::class, 'PurokSevenResidents'])->name('purok.seven.residents');
+
+    Route::get('/purok/eight', [BarangayAdminController::class, 'PurokEightResidents'])->name('purok.eight.residents');
+
+    Route::get('/purok/nine', [BarangayAdminController::class, 'PurokNineResidents'])->name('purok.nine.residents');
+
     // Fetch data to landing page
     // Route::get('/barangay/home', [BarangayHomeController::class, 'FetchToHome'])->name('barangay.home');
 

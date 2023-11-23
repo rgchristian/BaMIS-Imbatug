@@ -22,27 +22,26 @@
 <nav class="page-breadcrumb">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Community</li>
-						<li class="breadcrumb-item active" aria-current="page">Residents</li>
+                        <li class="breadcrumb-item active" aria-current="page">Community</li>
+            <li class="breadcrumb-item active" aria-current="page">Purok</li>
+						<li class="breadcrumb-item active" aria-current="page">2</li>
 					</ol>
 				</nav>
 
+        <nav class="page-breadcrumb">
+        <ol class="breadcrumb">
+            <a href="{{ route('total.purok') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Back">Back</a>
+        </ol>
+    </nav>
 
-<nav class="page-breadcrumb">
-					<ol class="breadcrumb">
-            <a href="{{ route('add.resident') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add barangay resident">Add</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="" class="btn btn-inverse-light btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
-            <a href="" class="btn btn-inverse-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
-					</ol>
-				</nav>
 
 				<div class="row">
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Barangay Residents</h6>
+                <h6 class="card-title">Purok 2</h6>
                 <!-- <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p> -->
-                <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p>
+                <p class="text-muted mb-3">Barangay Imbatug<a href="#"> Purok 2 residents</a>.</p>
                 <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
                             <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="The color coding system is used to denote different resident statuses: White signifies a well-behaved resident, Yellow represents an inactive resident, Red indicates a resident with unresolved case(s), and Orange signifies an inactive resident with unsettled case(s)."></i>
                             </div>
@@ -61,11 +60,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                    @foreach($residents as $key => $barangay_residents)
+                    @foreach($purokTwoResidents as $key => $barangay_purok_two_residents)
                    
     @php
-        $hasCase = $barangay_residents->moral === 'Has Unsettled Case';
-        $inactive = $barangay_residents->active_participation === 'Inactive';
+        $hasCase = $barangay_purok_two_residents->moral === 'Has Unsettled Case';
+        $inactive = $barangay_purok_two_residents->active_participation === 'Inactive';
         $rowClass = '';
 
         if ($hasCase) {
@@ -89,25 +88,26 @@
   
   <tr class="{{ $rowClass }}">
     <td style="text-align: center;">{{ $key+1 }}</td>
-    <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
-    <td style="text-align: center;">{{ $barangay_residents->name }}</td>
-    <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile"></td>
-    <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_residents->birthdate)) }}</td>
-    <td style="text-align: center;">{{ $barangay_residents->age }}</td>
-    <td style="text-align: center;">{{ $barangay_residents->sex }}</td>
+    <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_purok_two_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
+    <td style="text-align: center;">{{ $barangay_purok_two_residents->name }}</td>
+    <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_purok_two_residents->photo) }}" alt="profile"></td>
+    <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_purok_two_residents->birthdate)) }}</td>
+    <td style="text-align: center;">{{ $barangay_purok_two_residents->age }}</td>
+    <td style="text-align: center;">{{ $barangay_purok_two_residents->sex }}</td>
     <td>
       <div style="text-align: center;">
-        <a href="{{ route('view.resident', $barangay_residents->id) }}">
-          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+        <a href="#">
+          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
             <i data-feather="eye"></i>
           </button>
         </a>
-        <a href="{{ route('edit.resident', $barangay_residents->id) }}">
+        <a href="#">
           <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
             <i data-feather="edit"></i>
           </button>
         </a>
-        <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="delete">
+    
+        <a href="#" id="delete"> 
           <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
             <i data-feather="trash"></i>
           </button>
@@ -127,3 +127,4 @@
 			</div>
 
 @endsection
+

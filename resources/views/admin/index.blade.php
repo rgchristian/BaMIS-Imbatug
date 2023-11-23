@@ -27,156 +27,128 @@
           <div class="col-12 col-xl-12 stretch-card">
             <div class="row flex-grow-1">
 
-            <div class="col-md-4 grid-margin stretch-card">
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Total Population</h6>
-        <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">{{ $residentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+              <div class="col-md-4 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-baseline">
+                        <h6 class="card-title mb-0">Population</h6>
+                        <div class="dropdown mb-2">
+                          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+                          </a> -->
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('barangay.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-12 col-xl-7">
+                          <h3 class="mb-2">{{ $residentsCount }}</h3>
+                          <p class="text-success">
+              <span>+{{ $newResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
-          <div class="mt-md-3 mt-xl-0"></div>
-        </div>
-        <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/total_population_1.png') }}" alt="Population Icon" class="img-fluid" width="70" height="70">
-          <div class="d-flex align-items-baseline">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            </p>
+                          <div class="mt-md-3 mt-xl-0"></div>
+                        </div>
+                        <div class="col-6 col-md-12 col-xl-5">
+                          <a href="{{ route('barangay.residents') }}" class="img-link">
+                            <img src="{{ asset('upload/total_population_1.png') }}" alt="Population Icon" class="img-fluid" width="70" height="70">
+                          </a>
+                          <div class="d-flex align-items-baseline">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
 
               <div class="col-md-4 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Household</h6>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <h3 class="mb-2">{{ $householdResidentsCount }}</h3>
+          <p class="text-success">
+              <span>+{{ $newHouseholdResidentsCount }}</span>
+              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
+            </p>
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <img src="{{ asset('upload/household_1.png') }}" alt="Household Icon" class="img-fluid" width="70" height="70">
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
+        <h6 class="card-title mb-0">Purok</h6>
+        <div class="dropdown mb-2">
+          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
+          </a> -->
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('total.purok') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-12 col-xl-7">
+          <h3 class="mb-2">9</h3>
+          <div class="mt-md-3 mt-xl-0"></div>
+        </div>
+        <div class="col-6 col-md-12 col-xl-5">
+          <a href="{{ route('total.purok') }}" class="img-link">
+          <img src="{{ asset('upload/purok_1.png') }}" alt="Purok Icon" class="img-fluid" width="70" height="70">
+          </a>
+          <div class="d-flex align-items-baseline">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-baseline">
         <h6 class="card-title mb-0">Male</h6>
         <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
+          </a> -->
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('total.male.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
           <h3 class="mb-2">{{ $maleResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+          <p class="text-success">
+              <span>+{{ $newMaleResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
+            </p>
           <div class="mt-md-3 mt-xl-0"></div>
         </div>
         <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
+        <a href="{{ route('total.male.residents') }}" class="img-link">
           <img src="{{ asset('upload/male_icon_1.png') }}" alt="Male Icon" class="img-fluid" width="70" height="70">
-          <div class="d-flex align-items-baseline">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="col-md-4 grid-margin stretch-card">
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Female</h6>
-        <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">{{ $femaleResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
-              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
-          <div class="mt-md-3 mt-xl-0"></div>
-        </div>
-        <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/female_icon_1.png') }}" alt="Female Icon" class="img-fluid" width="70" height="70">
-          <div class="d-flex align-items-baseline">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4 grid-margin stretch-card">
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Persons With Disability (PWD)</h6>
-        <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">{{ $pwdResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
-              <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
-          <div class="mt-md-3 mt-xl-0"></div>
-        </div>
-        <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/pwd_icon_1.png') }}" alt="PWD Icon" class="img-fluid" width="70" height="70">
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -189,33 +161,29 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Solo Parent</h6>
+        <h6 class="card-title mb-0">Female</h6>
         <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
+          </a> -->
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('total.female.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">{{ $widowResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+          <h3 class="mb-2">{{ $femaleResidentsCount }}</h3>
+          <p class="text-success">
+              <span>+{{ $newFemaleResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
+            </p>
           <div class="mt-md-3 mt-xl-0"></div>
         </div>
         <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/solo_parent_1.png') }}" alt="Solo Parent Icon" class="img-fluid" width="70" height="70">
+        <a href="{{ route('total.female.residents') }}" class="img-link">
+          <img src="{{ asset('upload/female_icon_1.png') }}" alt="Female Icon" class="img-fluid" width="70" height="70">
+          </a>
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -228,34 +196,31 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Household</h6>
+                      <h6 class="card-title mb-0">Persons With Disability (PWD)</h6>
                       <div class="dropdown mb-2">
-                        <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!-- <a type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-                        </a>
+                        </a> -->
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-                          <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+                          <a class="dropdown-item d-flex align-items-center" href="{{ route('total.pwd.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                     <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">{{ $householdResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+          <h3 class="mb-2">{{ $pwdResidentsCount }}</h3>
+          <p class="text-success">
+              <span>+{{ $newPwdResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
+            </p>
                           <div class="mt-md-3 mt-xl-0">
 
                           </div>
                       </div>
                       <div class="col-6 col-md-12 col-xl-5">
-                      <img src="{{ asset('upload/household_1.png') }}" alt="Household Icon" class="img-fluid" width="70" height="70">
+                      <a href="{{ route('total.pwd.residents') }}" class="img-link">
+                      <img src="{{ asset('upload/pwd_icon_1.png') }}" alt="PWD Icon" class="img-fluid" width="70" height="70">
+                      </a>
                       <div class="d-flex align-items-baseline">
                       </div>
                     </div>
@@ -270,33 +235,29 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Purok</h6>
+        <h6 class="card-title mb-0">solo Parent</h6>
         <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
+          </a> -->
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('total.soloparent.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
-          <h3 class="mb-2">9</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+          <h3 class="mb-2">{{ $widowResidentsCount }}</h3>
+          <p class="text-success">
+              <span>+{{ $newWidowResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
+            </p>
           <div class="mt-md-3 mt-xl-0"></div>
         </div>
         <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
-          <img src="{{ asset('upload/purok_1.png') }}" alt="Purok Icon" class="img-fluid" width="70" height="70">
+        <a href="{{ route('total.soloparent.residents') }}" class="img-link">
+          <img src="{{ asset('upload/solo_parent_1.png') }}" alt="Solo Parent Icon" class="img-fluid" width="70" height="70">
+          </a>
           <div class="d-flex align-items-baseline">
           </div>
         </div>
@@ -311,31 +272,27 @@
       <div class="d-flex justify-content-between align-items-baseline">
         <h6 class="card-title mb-0">Registered Voters</h6>
         <div class="dropdown mb-2">
-          <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
-          </a>
+          </a> -->
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="edit-2" class="icon-sm me-2"></i> <span class="">Edit</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="trash" class="icon-sm me-2"></i> <span class="">Delete</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="printer" class="icon-sm me-2"></i> <span class="">Print</span></a>
-            <a class="dropdown-item d-flex align-items-center" href="javascript:;"><i data-feather="download" class="icon-sm me-2"></i> <span class="">Download</span></a>
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('total.registeredvoters.residents') }}"><i data-feather="eye" class="icon-sm me-2"></i> <span class="">View</span></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
-          <!-- Move the image here (on the left) -->
           <h3 class="mb-2">{{ $voterResidentsCount }}</h3>
-          <!-- <p class="text-success">
-              <span>+3.3%</span>
+          <p class="text-success">
+              <span>+{{ $newVoterResidentsCount }}</span>
               <i data-feather="arrow-up" class="icon-sm mb-1"></i>
-            </p> -->
+            </p>
           <div class="mt-md-3 mt-xl-0"></div>
         </div>
         <div class="col-6 col-md-12 col-xl-5">
-          <!-- Swap the positions of the image and h3 -->
+        <a href="{{ route('total.registeredvoters.residents') }}" class="img-link">
           <img src="{{ asset('upload/ballot_1.png') }}" alt="Ballot Icon" class="img-fluid" width="70" height="70">
+          </a>
           <div class="d-flex align-items-baseline">
           </div>
         </div>
