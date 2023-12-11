@@ -10,3 +10,4 @@ class BarangayAttendanceRecords extends Model
     use HasFactory;
     protected $guarded = [];
 }
+

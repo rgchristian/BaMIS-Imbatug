@@ -100,7 +100,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
-                                    <label for="announcement_date_time_created" class="form-label">Announcement Date Created</label>
+                                    <label for="announcement_date_time_created" class="form-label">Announcement Date & Time Created</label>
                                     <div class="input-group">
                                         <input type="text" id="announcement_date_time_created" name="announcement_date_time_created" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly">
                                         <span class="input-group-text input-group-addon" data-toggle="">
@@ -116,7 +116,7 @@
                             </div><!-- Col -->
                             <div class="col-sm-6">
                                 <div class="mb-3 form-group">
-                                    <label for="announcement_date_time" class="form-label">Event Date</label>
+                                    <label for="announcement_date_time" class="form-label">Event Date & Time</label>
                                     <div class="input-group">
                                         <input type="text" id="announcement_date_time" name="announcement_date_time" class="form-control flatpickr-input active" placeholder="Select date" readonly="readonly">
                                         <span class="input-group-text input-group-addon" data-toggle="">
@@ -155,7 +155,7 @@
                                 </div>
                             </div><!-- Col -->
                         </div><!-- Row -->
-                        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Send">Send</button>
                     </div>
                 </div>
             </div>

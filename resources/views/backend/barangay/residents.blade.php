@@ -89,7 +89,13 @@
   
   <tr class="{{ $rowClass }}">
     <td style="text-align: center;">{{ $key+1 }}</td>
-    <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
+    <td style="text-align: center;">
+    @if ($barangay_residents->household_representative == 'Yes')
+        {!! DNS2D::getBarcodeSVG($barangay_residents->qr_code, 'QRCODE', 1.7, 1.7, 'white') !!}
+    @else
+        
+    @endif
+</td>
     <td style="text-align: center;">{{ $barangay_residents->name }}</td>
     <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile"></td>
     <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_residents->birthdate)) }}</td>

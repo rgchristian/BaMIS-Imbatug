@@ -39,7 +39,9 @@ class BarangayAttendanceRecordsController extends Controller
             'event_details' => 'required',
             'event_location' => 'required',
             'event_date_time' => 'required',
-            'list_attendees' => 'required'
+            'list_attendees' => 'required',
+            'attendance_record_date_time_created' => 'required'
+
 
         ]);
 
@@ -50,12 +52,14 @@ class BarangayAttendanceRecordsController extends Controller
             'event_details' => $request->event_details,
             'event_location' => $request->event_location,
             'event_date_time' => $request->event_date_time,
-            'list_attendees' => $request->list_attendees
+            'list_attendees' => $request->list_attendees,
+            'attendance_record_date_time_created' => $request->attendance_record_date_time_created
+            
 
         ]);
 
         $notification = array(
-            'message' => 'Attendance record created successfully',
+            'message' => 'Barangay attendance record created successfully.',
             'alert-type' => 'success'
         );
 
@@ -81,12 +85,13 @@ class BarangayAttendanceRecordsController extends Controller
             'event_details' => $request->event_details,
             'event_location' => $request->event_location,
             'event_date_time' => $request->event_date_time,
-            'list_attendees' => $request->list_attendees
+            'list_attendees' => $request->list_attendees,
+            'attendance_record_date_time_created' => $request->attendance_record_date_time_created
 
         ]);
 
         $notification = array(
-            'message' => 'Attendance record updated successfully',
+            'message' => 'Barangay attendance record updated successfully.',
             'alert-type' => 'success'
         );
 
@@ -99,7 +104,7 @@ class BarangayAttendanceRecordsController extends Controller
         BarangayAttendanceRecords::findOrFail($id)->delete();
 
         $notification = array(
-            'message' => 'Attendance record deleted successfully',
+            'message' => 'Barangay attendance record deleted successfully.',
             'alert-type' => 'success'
         );
 

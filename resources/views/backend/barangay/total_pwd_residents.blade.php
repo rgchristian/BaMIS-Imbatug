@@ -84,7 +84,13 @@
   
   <tr class="{{ $rowClass }}">
     <td style="text-align: center;">{{ $key+1 }}</td>
-    <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_pwd_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
+    <td style="text-align: center;">
+    @if ($barangay_pwd_residents->household_representative == 'Yes')
+        {!! DNS2D::getBarcodeSVG($barangay_pwd_residents->qr_code, 'QRCODE', 1.7, 1.7, 'white') !!}
+    @else
+        
+    @endif
+</td>
     <td style="text-align: center;">{{ $barangay_pwd_residents->name }}</td>
     <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_pwd_residents->photo) }}" alt="profile"></td>
     <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_pwd_residents->birthdate)) }}</td>
@@ -92,18 +98,18 @@
     <td style="text-align: center;">{{ $barangay_pwd_residents->sex }}</td>
     <td>
       <div style="text-align: center;">
-        <a href="#">
-          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+        <a href="{{ route('view.pwd.resident', $barangay_pwd_residents->id) }}">
+          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
             <i data-feather="eye"></i>
           </button>
         </a>
-        <a href="#">
+        <a href="{{ route('edit.pwd.resident', $barangay_pwd_residents->id) }}">
           <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
             <i data-feather="edit"></i>
           </button>
         </a>
     
-        <a href="#" id="delete"> 
+        <a href="{{ route('delete.pwd.resident', $barangay_pwd_residents->id) }}" id="delete"> 
           <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
             <i data-feather="trash"></i>
           </button>

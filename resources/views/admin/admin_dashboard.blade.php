@@ -228,6 +228,12 @@
         
     });
 
+    flatpickr("#attendance_date_created", {
+        dateFormat: "Y-m-d H:i",
+        enableTime: true,
+        
+    });
+
     flatpickr("#attendance_date", {
         dateFormat: "Y-m-d H:i",
         enableTime: true,

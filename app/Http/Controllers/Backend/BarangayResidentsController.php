@@ -46,6 +46,17 @@ class BarangayResidentsController extends Controller
          ]);
 
          $requestData = $request->all();
+
+         // Check if the resident is a household representative
+    if ($request->input('household_representative') == 'Yes') {
+        $number = mt_rand(1000000000, 9999999999);
+
+        if ($this->qrCodeExists($number)) {
+            $number = mt_rand(1000000000, 9999999999);
+        }
+
+        $requestData['qr_code'] = $number;
+    }
     
          if ($request->hasFile('photo')) {
              $file = $request->file('photo');
@@ -59,7 +70,7 @@ class BarangayResidentsController extends Controller
         
         $notification = array(
 
-            'message' => 'Barangay resident added successfully',
+            'message' => 'Barangay resident added successfully.',
             'alert-type' => 'success'
             
         );
@@ -184,6 +195,8 @@ class BarangayResidentsController extends Controller
         return view('backend.barangay.view_resident', compact('view_resident'));
 
    } // End method
+
+   
     
 
 

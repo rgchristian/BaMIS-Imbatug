@@ -36,6 +36,7 @@
                         <th style="text-align: center;">Blotter Status</th>
                         <th style="text-align: center;">Incident Date</th>
                         <th style="text-align: center;">Date Recorded</th>
+                        <th style="text-align: center;">Settlement Schedule</th>
                         <th style="text-align: center;">Actions</th>
                       </tr>
                     </thead>
@@ -67,6 +68,7 @@
 
                         <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->incident_date)) }}</td>
                         <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->incident_date_recorded)) }}</td>
+                        <td style="text-align: center;">{{ date('Y-m-d H:i', strtotime($blotter_rec->settlement_schedule)) }}</td>
                         <td>
                         <div style="text-align: center;">
                         

@@ -230,9 +230,9 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                    <label class="form-label">Tribe</label>
+                                    <label class="form-label">Ethnicity</label>
                                     <select name="tribe" class="form-select mb-3 form-control">
-                                        <option value="" selected disabled>Select tribe</option>
+                                        <option value="" selected disabled>Select ethnicity</option>
                                         <!-- <optgroup label="Common Ethnolinguistic Groups in Bukidnon"> -->
                                             <option value="Talaandig">Talaandig</option>
                                             <option value="Higaonon">Higaonon</option>

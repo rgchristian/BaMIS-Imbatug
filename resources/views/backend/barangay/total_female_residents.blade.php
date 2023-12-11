@@ -84,7 +84,13 @@
   
   <tr class="{{ $rowClass }}">
     <td style="text-align: center;">{{ $key+1 }}</td>
-    <td style="text-align: center;">{!! DNS2D::getBarcodeSVG("$barangay_female_residents->qr_code", 'QRCODE', 1.7, 1.7, 'white') !!}</td>
+    <td style="text-align: center;">
+    @if ($barangay_female_residents->household_representative == 'Yes')
+        {!! DNS2D::getBarcodeSVG($barangay_female_residents->qr_code, 'QRCODE', 1.7, 1.7, 'white') !!}
+    @else
+        
+    @endif
+</td>
     <td style="text-align: center;">{{ $barangay_female_residents->name }}</td>
     <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_female_residents->photo) }}" alt="profile"></td>
     <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_female_residents->birthdate)) }}</td>
@@ -92,17 +98,17 @@
     <td style="text-align: center;">{{ $barangay_female_residents->sex }}</td>
     <td>
       <div style="text-align: center;">
-        <a href="#">
-          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View more">
+        <a href="{{ route('view.female.resident', $barangay_female_residents->id) }}">
+          <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
             <i data-feather="eye"></i>
           </button>
         </a>
-        <a href="#">
+        <a href="{{ route('edit.female.resident', $barangay_female_residents->id) }}">
           <button type="button" class="btn btn-inverse-warning btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
             <i data-feather="edit"></i>
           </button>
         </a>
-        <a href="#" id="delete">
+        <a href="{{ route('delete.female.resident', $barangay_female_residents->id) }}" id="delete">
           <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
             <i data-feather="trash"></i>
           </button>
