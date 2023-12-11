@@ -474,7 +474,7 @@
                                 </div> -->
                         </div>
                         <!-- Row -->
-                        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save">Save</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Save Changes">Save Changes</button>
     </form>
     </div>
     </div>

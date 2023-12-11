@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\Models\BarangayResidents;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ResidentsPhoneExport;
 
 class BarangayResidentsController extends Controller
 {
@@ -193,6 +195,18 @@ class BarangayResidentsController extends Controller
         $view_resident = BarangayResidents::findOrFail($id);
 
         return view('backend.barangay.view_resident', compact('view_resident'));
+
+   } // End method
+
+   public function ImportResidentsPhone(){
+
+
+
+   } // End method
+
+   public function ExportResidentsPhone(){
+
+        return Excel::download(new ResidentsPhoneExport, 'residents_phone_numbers.csv');
 
    } // End method
 
