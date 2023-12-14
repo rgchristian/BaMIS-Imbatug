@@ -10,6 +10,10 @@ use App\Models\BarangayResidents;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ResidentsPhoneExport;
+use DNS2D;
+
+
+
 
 class BarangayResidentsController extends Controller
 {
@@ -209,6 +213,33 @@ class BarangayResidentsController extends Controller
         return Excel::download(new ResidentsPhoneExport, 'residents_phone_numbers.csv');
 
    } // End method
+
+   public function DownloadQRCode($id)
+    {
+        $resident = BarangayResidents::findOrFail($id);
+
+        // Ensure the resident is a household representative and has a QR Code
+        if ($resident->household_representative == 'Yes' && $resident->qr_code) {
+            // Generate the QR Code SVG markup
+            $qrCodeSVG = DNS2D::getBarcodeSVG($resident->qr_code, 'QRCODE', 1.7, 1.7, 'black');
+
+            // Set headers for file download
+            $headers = [
+                'Content-Type' => 'image/svg+xml',
+                'Content-Disposition' => 'attachment; filename="qr_code.svg"',
+            ];
+
+            // Return the SVG markup as a downloadable file
+            return response($qrCodeSVG, 200, $headers);
+        }
+
+        // If QR Code doesn't exist or household_representative is 'No', show an error message
+        return redirect()->back()->with(['message' => 'QR Code not found or resident is not a household representative.', 'alert-type' => 'error']);
+        
+    } // End method
+
+
+   
 
    
     

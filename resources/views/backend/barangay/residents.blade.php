@@ -103,6 +103,11 @@
     <td style="text-align: center;">{{ $barangay_residents->sex }}</td>
     <td>
       <div style="text-align: center;">
+      <a href="{{ route('download.qr', $barangay_residents->id) }}">
+          <button type="button" class="btn btn-inverse-secondary btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Download QR Code">
+            <i data-feather="download"></i>
+          </button>
+        </a>
         <a href="{{ route('view.resident', $barangay_residents->id) }}">
           <button type="button" class="btn btn-inverse-info btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
             <i data-feather="eye"></i>

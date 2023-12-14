@@ -163,6 +163,8 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
         Route::get('/export/residents/phone', 'ExportResidentsPhone')->name('export.residents.phone');
 
+        Route::get('/download/qr/{id}', 'DownloadQRCode')->name('download.qr');
+
     });
 
     // Barangay certificates type all route
