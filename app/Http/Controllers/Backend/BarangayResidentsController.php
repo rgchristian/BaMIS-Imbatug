@@ -6,14 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+
 use App\Models\BarangayResidents;
+
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ResidentsPhoneExport;
+use App\Imports\ResidentsPhoneImport;
 use DNS2D;
-
-
-
 
 class BarangayResidentsController extends Controller
 {
@@ -108,38 +108,40 @@ class BarangayResidentsController extends Controller
         $resident = BarangayResidents::findOrFail($request->id);
     
         
-        // $resident->qr_code = $request->qr_code;
-        $resident->photoStore = $request->photoStore;
-	    $resident->region = $request->region;
-        $resident->province = $request->province;
-        $resident->municipality = $request->municipality;
-        $resident->barangay = $request->barangay;
-        $resident->purok = $request->purok;
-        $resident->household_no = $request->household_no;
-        $resident->date_filed_resident_profile = $request->date_filed_resident_profile;
-        $resident->signature = $request->signature;
-        $resident->name = $request->name;
-        // $resident->photo = $request->photo;
-        $resident->first_name = $request->first_name;
-        $resident->middle_name = $request->middle_name;
-        $resident->last_name = $request->last_name;
-        $resident->phone = $request->phone;
-        $resident->sex = $request->sex;
-        $resident->birthdate = $request->birthdate;
-        $resident->age = $request->age;
-        $resident->status = $request->status;
-        $resident->pwd = $request->pwd;
-        $resident->tribe = $request->tribe;
-        $resident->religion = $request->religion;
-        $resident->address = $request->address;
-        $resident->citizenship = $request->citizenship;
-        $resident->educational_attainment = $request->educational_attainment;
-        $resident->occupation = $request->occupation;
-        $resident->relation_to_the_hh_head = $request->relation_to_the_hh_head;
-        $resident->moral = $request->moral;
-        $resident->active_participation = $request->active_participation;
-        $resident->registered_voter = $request->registered_voter;
-        $resident->household_representative = $request->household_representative;
+        $resident->update([
+            'region' => $request->region,
+            'province' => $request->province,
+            'municipality' => $request->municipality,
+            'barangay' => $request->barangay,
+            'purok' => $request->purok,
+            'household_no' => $request->household_no,
+            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'phone' => $request->phone,
+            'sex' => $request->sex,
+            'birthdate' => $request->birthdate,
+            'age' => $request->age,
+            'status' => $request->status,
+            'pwd' => $request->pwd,
+            'specified_pwd' => $request->specified_pwd,
+            'tribe' => $request->tribe,
+            'specified_tribe' => $request->specified_tribe,
+            'religion' => $request->religion,
+            'specified_religion' => $request->specified_religion,
+            'address' => $request->address,
+            'citizenship' => $request->citizenship,
+            'educational_attainment' => $request->educational_attainment,
+            'occupation' => $request->occupation,
+            'relation_to_the_hh_head' => $request->relation_to_the_hh_head,
+            'family_status' => $request->family_status,
+            'specified_family_status' => $request->specified_family_status,
+            'moral' => $request->moral,
+            'active_participation' => $request->active_participation,
+            'registered_voter' => $request->registered_voter,
+            'household_representative' => $request->household_representative,
+        ]);
     
         if ($request->hasFile('photo')) {
             // Handle the photo update
@@ -170,6 +172,7 @@ class BarangayResidentsController extends Controller
         ];
     
         return redirect()->route('barangay.residents')->with($notification);
+
     } // End method
 
     public function DeleteResident($id){
@@ -192,6 +195,7 @@ class BarangayResidentsController extends Controller
         );
     
         return redirect()->back()->with($notification);
+
     } // End method
 
     public function ViewResident($id){
@@ -202,15 +206,22 @@ class BarangayResidentsController extends Controller
 
    } // End method
 
-   public function ImportResidentsPhone(){
+   public function ImportResidentsPhone(Request $request){
 
+        Excel::import(new ResidentsPhoneImport, $request->file('import_residents_phone_numbers'));
 
+        $notification = array(
+            'message' => 'Barangay residents phone numbers imported successfully.',
+            'alert-type' => 'success'
+        );
+    
+        return redirect()->back()->with($notification);
 
    } // End method
 
    public function ExportResidentsPhone(){
 
-        return Excel::download(new ResidentsPhoneExport, 'residents_phone_numbers.csv');
+        return Excel::download(new ResidentsPhoneExport, 'barangay_imbatug_residents.csv');
 
    } // End method
 

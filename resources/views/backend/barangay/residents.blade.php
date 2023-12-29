@@ -31,10 +31,34 @@
 <nav class="page-breadcrumb">
 					<ol class="breadcrumb">
             <a href="{{ route('add.resident') }}" class="btn btn-inverse-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add barangay resident">Add</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="{{ route('import.residents.phone') }}" class="btn btn-inverse-light btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Import"><i class="btn-icon-prepend" data-feather="download"></i>Import</a> &nbsp;&nbsp;
+            <a href="#" class="btn btn-inverse-light btn-icon-text" data-bs-toggle="modal" data-bs-target="#importModal" data-bs-placement="top" title="Import">
+                <i class="btn-icon-prepend" data-feather="download"></i>Import
+            </a> &nbsp;&nbsp;
             <a href="{{ route('export.residents.phone') }}" class="btn btn-inverse-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
 					</ol>
 				</nav>
+
+        <!-- Modal -->
+        <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="importModalLabel">Import Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Add your import form or content here -->
+                <form action="{{ route('import.residents.phone') }}" method="post" enctype="multipart/form-data">
+                  @csrf
+                  <!-- Add your form fields here, e.g., file input -->
+                  <input type="file" name="import_residents_phone_numbers" class="form-control" required>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Import</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
 				<div class="row">
 					<div class="col-md-12 grid-margin stretch-card">
@@ -97,9 +121,21 @@
     @endif
 </td>
     <td style="text-align: center;">{{ $barangay_residents->name }}</td>
-    <td style="text-align: center;"><img class="rounded-circle resident-image" src="{{ asset($barangay_residents->photo) }}" alt="profile"></td>
-    <td style="text-align: center;">{{ date('Y-m-d', strtotime($barangay_residents->birthdate)) }}</td>
-    <td style="text-align: center;">{{ $barangay_residents->age }}</td>
+    <td style="text-align: center;">
+      <img class="rounded-circle resident-image" 
+          src="{{ (!empty($barangay_residents->photo)) ? asset($barangay_residents->photo) : url('upload/no_image.png') }}" 
+          alt="{{ (!empty($barangay_residents->photo)) ? '' : 'default_profile' }}">
+    </td>
+    <td style="text-align: center;">
+      @if(!empty($barangay_residents->birthdate))
+          {{ date('Y-m-d', strtotime($barangay_residents->birthdate)) }}
+      @endif
+    </td>
+    <td style="text-align: center;">
+    @if(!empty($barangay_residents->age))
+        {{ $barangay_residents->age }}
+    @endif
+    </td>
     <td style="text-align: center;">{{ $barangay_residents->sex }}</td>
     <td>
       <div style="text-align: center;">

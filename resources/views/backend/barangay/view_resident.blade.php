@@ -36,7 +36,12 @@
     <div class="resident-image add-photo-container" style="width: 300px; height: 300px; overflow: hidden; border-radius: 50%;">
         <div class="d-flex justify-content-center" style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden;">
             <video id="webCam" autoplay playsinline style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%; display: none;"></video>
-            <img class="rounded-circle changed-image" id="photoImage" name="photo" src="{{ asset($view_resident->photo) }}" alt="{{ $view_resident->photo }}" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;" onclick="openFileBrowser()" readonly>
+            <img class="rounded-circle changed-image" id="photoImage" name="photo" 
+                 src="{{ (!empty($view_resident->photo)) ? asset($view_resident->photo) : url('upload/no_image.png') }}" 
+                 alt="{{ (!empty($view_resident->photo)) ? $view_resident->photo : 'default_image_path' }}" 
+                 style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;" 
+                 onclick="openFileBrowser()" 
+                 readonly>
             <input type="file" name="photo" id="photoInput" style="display: none;" onchange="displaySelectedImage(this)">
             
         </div>
@@ -177,9 +182,9 @@
                             <!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                    <label class="form-label">Status</label>
+                                    <label class="form-label">Marital Status</label>
                                     <select name="status" class="form-select mb-3 form-control" readonly>
-                                        <option value="" selected disabled>Select status</option>
+                                        <option value="" selected disabled>Select marital status</option>
                                         <option value="Single" disabled {{ $view_resident->status == 'Single' ? 'selected' : '' }}>Single</option>
                                         <option value="Married" disabled {{ $view_resident->status == 'Married' ? 'selected' : '' }}>Married</option>
                                         <option value="Separated" disabled {{ $view_resident->status == 'Separated' ? 'selected' : '' }}>Separated</option>
@@ -190,69 +195,74 @@
                             </div>
                             <!-- Col -->
                             <div class="col-sm-4">
-                                <div class="mb-3 form-group">
-                                    <label class="form-label">PWD - Person with Disability</label>
-                                    <select name="" class="form-select mb-3 form-control" id="pwd-select" readonly>
-                                        <option value="" selected disabled>Select answer</option>
-                                        <option value="Yes" disabled {{ $view_resident->pwd == 'Yes' ? 'selected' : '' }}>Yes</option>
-                                        <option value="No" disabled {{ $view_resident->pwd == 'No' ? 'selected' : '' }}>No</option>
-                                    </select>
-                                    <div id="pwd-details" style="display: none;">
-                                        <label class="form-label">Specify Disability</label>
-                                        <select name="pwd" id="yes-pwd" class="form-select mb-3 form-control" readonly>
-                                            <option value="" selected disabled>Select type of disability</option>
-                                            <option value="Deaf or Hard of Hearing" disabled {{ $view_resident->pwd == 'Deaf or Hard of Hearing' ? 'selected' : '' }}>Deaf or Hard of Hearing</option>
-                                            <option value="Intellectual Disability" disabled {{ $view_resident->pwd == 'Intellectual Disability' ? 'selected' : '' }}>Intellectual Disability</option>
-                                            <option value="Learning Disability" disabled {{ $view_resident->pwd == 'Learning Disability' ? 'selected' : '' }}>Learning Disability</option>
-                                            <option value="Mental Disability" disabled {{ $view_resident->pwd == 'Mental Disability' ? 'selected' : '' }}>Mental Disability</option>
-                                            <option value="Physical Disability" disabled {{ $view_resident->pwd == 'Physical Disability' ? 'selected' : '' }}>Physical Disability</option>
-                                            <option value="Psychosocial Disability" disabled {{ $view_resident->pwd == 'Psychosocial Disability' ? 'selected' : '' }}>Psychosocial Disability</option>
-                                            <option value="Speech and Language Impairment" disabled {{ $view_resident->pwd == 'Speech and Language Impairment' ? 'selected' : '' }}>Speech and Language Impairment</option>
-                                            <option value="Visual Disability" disabled {{ $view_resident->pwd == 'Visual Disability' ? 'selected' : '' }}>Visual Disability</option>
-                                            <option value="Cancer" disabled {{ $view_resident->pwd == 'Cancer (RA11215)' ? 'selected' : '' }}>Cancer (RA11215)</option>
-                                            <option value="Rare Disease" disabled {{ $view_resident->pwd == 'Rare Disease (RA10747)' ? 'selected' : '' }}>Rare Disease (RA10747)</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">PWD - Person with Disability</label>
+        <select name="pwd" class="form-select mb-3 form-control" id="pwd-select" readonly>
+            <option value="" selected disabled>Select answer</option>
+            <option value="Yes" disabled {{ $view_resident->pwd == 'Yes' ? 'selected' : '' }}>Yes</option>
+            <option value="No" disabled {{ $view_resident->pwd == 'No' ? 'selected' : '' }}>No</option>
+        </select>
+        <div id="pwd-details" style="{{ $view_resident->pwd == 'Yes' ? 'display: block;' : 'display: none;' }}">
+            <label class="form-label">Specify Disability</label>
+            <select name="specified_pwd" id="yes-pwd" class="form-select mb-3 form-control" readonly>
+                <option value="" selected disabled>Select type of disability</option>
+                <option value="Deaf or Hard of Hearing" disabled {{ $view_resident->specified_pwd == 'Deaf or Hard of Hearing' ? 'selected' : '' }}>Deaf or Hard of Hearing</option>
+                <option value="Intellectual Disability" disabled {{ $view_resident->specified_pwd == 'Intellectual Disability' ? 'selected' : '' }}>Intellectual Disability</option>
+                <option value="Learning Disability" disabled {{ $view_resident->specified_pwd == 'Learning Disability' ? 'selected' : '' }}>Learning Disability</option>
+                <option value="Mental Disability" disabled {{ $view_resident->specified_pwd == 'Mental Disability' ? 'selected' : '' }}>Mental Disability</option>
+                <option value="Physical Disability" disabled {{ $view_resident->specified_pwd == 'Physical Disability' ? 'selected' : '' }}>Physical Disability</option>
+                <option value="Psychosocial Disability" disabled {{ $view_resident->specified_pwd == 'Psychosocial Disability' ? 'selected' : '' }}>Psychosocial Disability</option>
+                <option value="Speech and Language Impairment" disabled {{ $view_resident->specified_pwd == 'Speech and Language Impairment' ? 'selected' : '' }}>Speech and Language Impairment</option>
+                <option value="Visual Disability" disabled {{ $view_resident->specified_pwd == 'Visual Disability' ? 'selected' : '' }}>Visual Disability</option>
+                <option value="Cancer (RA11215)" disabled {{ $view_resident->specified_pwd == 'Cancer (RA11215)' ? 'selected' : '' }}>Cancer (RA11215)</option>
+                <option value="Rare Disease (RA10747)" disabled {{ $view_resident->specified_pwd == 'Rare Disease (RA10747)' ? 'selected' : '' }}>Rare Disease (RA10747)</option>
+            </select>
+        </div>
+    </div>
+</div>
                             <!-- Col -->
                         </div>
                         <!-- Row -->
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="mb-3 form-group">
-                                    <label class="form-label">Tribe</label>
-                                    <select name="tribe" class="form-select mb-3 form-control" readonly>
-                                        <option value="" selected disabled>Select tribe</option>
-                                        <optgroup label="Common Ethnolinguistic Groups in Bukidnon" disabled>
-                                        <option value="Talaandig" disabled {{ $view_resident->tribe == 'Talaandig' ? 'selected' : '' }}>Talaandig</option>
-                                        <option value="Higaonon" disabled {{ $view_resident->tribe == 'Higaonon' ? 'selected' : '' }}>Higaonon</option>
-                                        <option value="Bukidnon" disabled {{ $view_resident->tribe == 'Bukidnon' ? 'selected' : '' }}>Bukidnon</option>
-                                        <option value="Umayamnon" disabled {{ $view_resident->tribe == 'Umayamnon' ? 'selected' : '' }}>Umayamnon</option>
-                                        <option value="Matigsalug" disabled {{ $view_resident->tribe == 'Matigsalug' ? 'selected' : '' }}>Matigsalug</option>
-                                        <option value="Manobo" disabled {{ $view_resident->tribe == 'Manobo' ? 'selected' : '' }}>Manobo</option>
-                                        <option value="Tigwahanon" disabled {{ $view_resident->tribe == 'Tigwahanon' ? 'selected' : '' }}>Tigwahanon</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="col-sm-4">
+    <div class="mb-3 form-group">
+        <label class="form-label">Ethnicity</label>
+        <select name="tribe" class="form-select mb-3 form-control" readonly>
+            <option value="" selected disabled>Select ethnicity</option>
+            <option value="Talaandig" disabled {{ $view_resident->tribe == 'Talaandig' ? 'selected' : '' }}>Talaandig</option>
+            <option value="Higaonon" disabled {{ $view_resident->tribe == 'Higaonon' ? 'selected' : '' }}>Higaonon</option>
+            <option value="Bukidnon" disabled {{ $view_resident->tribe == 'Bukidnon' ? 'selected' : '' }}>Bukidnon</option>
+            <option value="Umayamnon" disabled {{ $view_resident->tribe == 'Umayamnon' ? 'selected' : '' }}>Umayamnon</option>
+            <option value="Matigsalug" disabled {{ $view_resident->tribe == 'Matigsalug' ? 'selected' : '' }}>Matigsalug</option>
+            <option value="Manobo" disabled {{ $view_resident->tribe == 'Manobo' ? 'selected' : '' }}>Manobo</option>
+            <option value="Tigwahanon" disabled {{ $view_resident->tribe == 'Tigwahanon' ? 'selected' : '' }}>Tigwahanon</option>
+            <option value="Other" disabled {{ $view_resident->tribe == 'Other' ? 'selected' : '' }}>Other</option>
+        </select>
+        <div class="mb-3 form-group" id="other-ethnicity-input" style="display: {{ $view_resident->tribe == 'Other' ? 'block' : 'none' }};">
+            <label class="form-label">Specified Ethnicity</label>
+            <input type="text" name="specified_tribe" id="other-ethnicity" class="form-control" value="{{ $view_resident->specified_tribe }}" readonly>
+        </div>
+    </div>
+</div>
+
                             <!-- Col -->
                             <div class="col-sm-4">
-                                <div class="mb-3 form-group">
-                                    <label class="form-label">Religion</label>
-                                    <select name="religion" class="form-select mb-3 form-control" id="religion-select" readonly>
-                                        <option value="" selected disabled>Select religion</option>
-                                        <option value="Roman Catholicism" disabled {{ $view_resident->religion == 'Roman Catholic' ? 'selected' : '' }}>Roman Catholic</option>
-                                        <option value="Islam" disabled {{ $view_resident->religion == 'Islam' ? 'selected' : '' }}>Islam</option>
-                                        <option value="Iglesia ni Cristo" disabled {{ $view_resident->religion == 'Iglesia ni Cristo' ? 'selected' : '' }}>Iglesia ni Cristo</option>
-                                        <option value="Others" disabled {{ $view_resident->religion == 'Others' ? 'selected' : '' }}>Others</option>
-                                    </select>
-                                    <div class="mb-3 form-group" id="other-religion-input" style="display: none;">
-                                        <label class="form-label">Specify Religion</label>
-                                        <input type="text" name="religion" id="other-religion" class="form-control" value="{{ $view_resident->religion }}" readonly>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="mb-3 form-group">
+        <label class="form-label">Religion</label>
+        <select name="religion" class="form-select mb-3 form-control" id="religion-select" readonly>
+            <option value="" selected disabled>Select religion</option>
+            <option value="Roman Catholicism" disabled {{ $view_resident->religion == 'Roman Catholicism' ? 'selected' : '' }}>Roman Catholicism</option>
+            <option value="Islam" disabled {{ $view_resident->religion == 'Islam' ? 'selected' : '' }}>Islam</option>
+            <option value="Iglesia ni Cristo" disabled {{ $view_resident->religion == 'Iglesia ni Cristo' ? 'selected' : '' }}>Iglesia ni Cristo</option>
+            <option value="Other" disabled {{ $view_resident->religion == 'Other' ? 'selected' : '' }}>Other</option>
+        </select>
+        <div class="mb-3 form-group" id="other-religion-input" style="display: {{ $view_resident->religion == 'Other' ? 'block' : 'none' }};">
+            <label class="form-label">Specified Religion</label>
+            <input type="text" name="specified_religion" id="other-religion" class="form-control" value="{{ $view_resident->specified_religion }}" readonly>
+        </div>
+    </div>
+</div>
+
                             <!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
@@ -304,8 +314,10 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                    <label class="form-label">Relation to the HH Head</label>
-                                    <input type="number" name="relation_to_the_hh_head" class="form-control" value="{{ $view_resident->relation_to_the_hh_head }}" readonly>
+                                    <label class="form-label">
+                                        Relationship to the HH <a data-bs-toggle="tooltip" data-bs-placement="top" title="Examples: Spouse, Child, Sibling, Parent, Grandparent, In-law, etc." href="#" class="text-primary">(?)</a>
+                                    </label>
+                                    <input type="text" name="relation_to_the_hh_head" class="form-control" value="{{ $view_resident->relation_to_the_hh_head }}" readonly>
                                 </div>
                             </div>
                             <!-- Col -->
@@ -337,7 +349,7 @@
                             <!-- Col -->
                             </div>
                             <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group mb-3">
                                 <label for="moral" class="form-label">
                                     Registered Voter
@@ -349,10 +361,10 @@
                                     </select>
                                 </div>
                             </div><!-- Col -->
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group mb-3">
                                 <label for="moral" class="form-label">
-                                    House Representative <a data-bs-toggle="tooltip" data-bs-placement="top" title="A household representative is someone who will be participating the barangay meeting(s)." href="#" class="text-primary">(?)</a>
+                                    Household Representative <a data-bs-toggle="tooltip" data-bs-placement="top" title="A household representative is someone who will be participating the barangay meeting(s)." href="#" class="text-primary">(?)</a>
                                     </label>
                                     <select name="household_representative" class="form-select mb-3 form-control">
                                         <option value="" selected disabled>Select </option>
@@ -361,6 +373,25 @@
                                     </select>
                                 </div>
                             </div><!-- Col -->
+                            <div class="col-sm-4">
+    <div class="form-group mb-3">
+        <label for="moral" class="form-label">Family Status</label>
+        <select name="family_status" class="form-select mb-3 form-control" readonly>
+            <option value="" selected disabled>Select family status</option>
+            <option value="Nuclear Family" disabled {{ $view_resident->family_status == 'Nuclear Family' ? 'selected' : '' }}>Nuclear Family</option>
+            <option value="Single Family" disabled {{ $view_resident->family_status == 'Single Family' ? 'selected' : '' }}>Single Family</option>
+            <option value="Extended Family" disabled {{ $view_resident->family_status == 'Extended Family' ? 'selected' : '' }}>Extended Family</option>
+            <option value="Childless Family" disabled {{ $view_resident->family_status == 'Childless Family' ? 'selected' : '' }}>Childless Family</option>
+            <option value="Grandparent Family" disabled {{ $view_resident->family_status == 'Grandparent Family' ? 'selected' : '' }}>Grandparent Family</option>
+            <option value="Other" disabled {{ $view_resident->family_status == 'Other' ? 'selected' : '' }}>Other</option>
+        </select>
+        <div class="mb-3 form-group" id="other-familystatus-input" style="display: {{ $view_resident->family_status == 'Other' ? 'block' : 'none' }};">
+            <label class="form-label">Specified Family Status</label>
+            <input type="text" name="specified_family_status" id="other-familystatus" class="form-control" value="{{ $view_resident->specified_family_status }}" readonly>
+        </div>
+    </div>
+</div>
+
                         </div>
                         <!-- Row -->
                         <h5 class="text-muted mb-3"><a>Barangay & Location Information</a></h5>
@@ -464,6 +495,8 @@
                                 </div> -->
                         </div>
                         <!-- Row -->
+
+                        
                         
     </div>
     </div>
@@ -472,6 +505,50 @@
 </div>
 
 
+<!-- Set age -->
+<script>
+    $(document).ready(function() {
+        // Function to calculate and set age
+        function calculateAndSetAge() {
+            // Get the selected birthdate value
+            var birthdate = $('#birthdate').val();
 
+            // Check if the birthdate is not empty
+            if (birthdate) {
+                // Calculate the age
+                var today = new Date();
+                var birthDate = new Date(birthdate);
+                var age = today.getFullYear() - birthDate.getFullYear();
+
+                // Set the calculated age in the 'age' input field
+                $('#age').val(age);
+            } else {
+                // If the birthdate is empty, clear the age field
+                $('#age').val('');
+            }
+        }
+
+        // Trigger the age calculation on page load and birthdate change
+        calculateAndSetAge();
+
+        $('#birthdate').on('change', function() {
+            // Calculate and set age on birthdate change
+            calculateAndSetAge();
+        });
+    });
+</script>
+<!-- End Set age -->
+
+<!-- Please be specify PWD-->
+<script>
+    document.getElementById('pwd-select').addEventListener('change', function () {
+        var select = this;
+        var pwdDetails = document.getElementById('pwd-details');
+    
+        // Toggle visibility based on the selected value
+        pwdDetails.style.display = select.value === 'Yes' ? 'block' : 'none';
+    });
+</script>
+<!-- End Please be specify PWD-->
 
 @endsection

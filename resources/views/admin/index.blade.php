@@ -68,7 +68,7 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Household</h6>
+        <h6 class="card-title mb-0">Households</h6>
       </div>
       <div class="row">
         <div class="col-6 col-md-12 col-xl-7">
@@ -126,7 +126,7 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Male</h6>
+        <h6 class="card-title mb-0">Males</h6>
         <div class="dropdown mb-2">
           <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -161,7 +161,7 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">Female</h6>
+        <h6 class="card-title mb-0">Females</h6>
         <div class="dropdown mb-2">
           <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -235,7 +235,7 @@
   <div class="card">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-baseline">
-        <h6 class="card-title mb-0">solo Parent</h6>
+        <h6 class="card-title mb-0">Solo Parents</h6>
         <div class="dropdown mb-2">
           <!-- <a type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -477,7 +477,7 @@
                 </div>
                 <div class="d-flex flex-column">
                 @foreach ($dashboard_announcements as $key => $dash_announcement)
-                  <a href="#" class="d-flex align-items-center {{ $key === count($dashboard_announcements) - 1 ? '' : 'border-bottom pb-3 mb-3' }}">
+                  <a href="{{ route('barangay.announcements') }}" class="d-flex align-items-center {{ $key === count($dashboard_announcements) - 1 ? '' : 'border-bottom pb-3 mb-3' }}">
                     <div class="me-3">
                       <img src="{{ asset($dash_announcement->announcement_photo) }}" alt="{{ $dash_announcement->announcement_name }}" class="wd-30 ht-30 rounded-circle" alt="user">
                     </div>

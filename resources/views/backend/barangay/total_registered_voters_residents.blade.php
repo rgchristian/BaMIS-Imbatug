@@ -23,7 +23,7 @@
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Community</li>
-            <li class="breadcrumb-item active" aria-current="page">Registered Voters</li>
+            <li class="breadcrumb-item active" aria-current="page">Registered Voter</li>
 						<li class="breadcrumb-item active" aria-current="page">Residents</li>
 					</ol>
 				</nav>
@@ -35,9 +35,9 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Registered Voters Residents</h6>
+                <h6 class="card-title">Registered Voters</h6>
                 <!-- <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p> -->
-                <p class="text-muted mb-3">Barangay Imbatug<a href="#"> registered voters residents</a>.</p>
+                <p class="text-muted mb-3">Barangay Imbatug<a href="#"> registered voter residents</a>.</p>
                 <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">
                             <i class="link-icon" data-feather="help-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="The color coding system is used to denote different resident statuses: White signifies a well-behaved resident, Yellow represents an inactive resident, Red indicates a resident with unresolved case(s), and Orange signifies an inactive resident with unsettled case(s)."></i>
                             </div>

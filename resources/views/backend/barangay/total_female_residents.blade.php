@@ -35,7 +35,7 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Female Residents</h6>
+                <h6 class="card-title">Females</h6>
                 <!-- <p class="text-muted mb-3">Barangay Imbatug<a href="#"> residents</a>.</p> -->
                 <p class="text-muted mb-3">Barangay Imbatug<a href="#"> female residents</a>.</p>
                 <div class="d-flex align-items-baseline position-absolute top-0 end-0 m-3">

@@ -159,7 +159,7 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
         Route::get('/view/resident/{id}', 'ViewResident')->name('view.resident');
 
-        Route::get('/import/residents/phone', 'ImportResidentsPhone')->name('import.residents.phone');
+        Route::post('/import/residents/phone', 'ImportResidentsPhone')->name('import.residents.phone');
 
         Route::get('/export/residents/phone', 'ExportResidentsPhone')->name('export.residents.phone');
 

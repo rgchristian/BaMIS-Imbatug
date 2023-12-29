@@ -186,9 +186,9 @@
                             <!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
-                                    <label class="form-label">Status</label>
+                                    <label class="form-label">Marital Status</label>
                                     <select name="status" class="form-select mb-3 form-control">
-                                        <option value="" selected disabled>Select status</option>
+                                        <option value="" selected disabled>Select marital status</option>
                                         <option value="Single">Single</option>
                                         <option value="Married">Married</option>
                                         <option value="Separated">Separated</option>
@@ -208,9 +208,9 @@
                                     </select>
                                     <div id="pwd-details" style="display: none;">
                                         <label class="form-label">Specify Disability</label>
-                                        <select name="pwd" id="yes-pwd" class="form-select mb-3 form-control">
+                                        <select name="specified_pwd" id="yes-pwd" class="form-select mb-3 form-control">
                                             <option value="" selected disabled>Select type of disability</option>
-                                            <option value="Deaf">Deaf or Hard of Hearing</option>
+                                            <option value="Deaf or Hard of Hearing">Deaf or Hard of Hearing</option>
                                             <option value="Intellectual Disability">Intellectual Disability</option>
                                             <option value="Learning Disability">Learning Disability</option>
                                             <option value="Mental Disability">Mental Disability</option>
@@ -218,8 +218,8 @@
                                             <option value="Psychosocial Disability">Psychosocial Disability</option>
                                             <option value="Speech and Language Impairment">Speech and Language Impairment</option>
                                             <option value="Visual Disability">Visual Disability</option>
-                                            <option value="Cancer">Cancer (RA11215)</option>
-                                            <option value="Rare Disease">Rare Disease (RA10747)</option>
+                                            <option value="Cancer (RA11215)">Cancer (RA11215)</option>
+                                            <option value="Rare Disease (RA10747)">Rare Disease (RA10747)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Ethnicity</label>
-                                    <select name="tribe" class="form-select mb-3 form-control">
+                                    <select name="tribe" class="form-select mb-3 form-control" id="ethnicity-select">
                                         <option value="" selected disabled>Select ethnicity</option>
                                         <!-- <optgroup label="Common Ethnolinguistic Groups in Bukidnon"> -->
                                             <option value="Talaandig">Talaandig</option>
@@ -241,8 +241,13 @@
                                             <option value="Matigsalug">Matigsalug</option>
                                             <option value="Manobo">Manobo</option>
                                             <option value="Tigwahanon">Tigwahanon</option>
+                                            <option value="Other">Other</option>
                                         </optgroup>
                                     </select>
+                                    <div class="mb-3 form-group" id="other-ethnicity-input" style="display: none;">
+                                        <label class="form-label">Specify Ethnicity</label>
+                                        <input type="text" name="specified_tribe" id="other-ethnicity" class="form-control">
+                                    </div>
                                 </div>
                             </div>
                             <!-- Col -->
@@ -254,15 +259,15 @@
                                         <option value="Roman Catholicism">Roman Catholic</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Iglesia ni Cristo">Iglesia ni Cristo</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     <div class="mb-3 form-group" id="other-religion-input" style="display: none;">
                                         <label class="form-label">Specify Religion</label>
-                                        <input type="text" name="religion" id="other-religion" class="form-control">
+                                        <input type="text" name="specified_religion" id="other-religion" class="form-control">
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Col -->
+                            </div><!-- Col -->
+                            
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Citizenship</label>
@@ -314,9 +319,9 @@
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">
-                                        Relation to the HH Head <a data-bs-toggle="tooltip" data-bs-placement="top" title="..." href="#" class="text-primary">(?)</a>
+                                        Relationship to the HH <a data-bs-toggle="tooltip" data-bs-placement="top" title="Examples: Spouse, Child, Sibling, Parent, Grandparent, In-law, etc." href="#" class="text-primary">(?)</a>
                                     </label>
-                                    <input type="number" name="relation_to_the_hh_head" class="form-control" placeholder="Enter number">
+                                    <input type="text" name="relation_to_the_hh_head" class="form-control" placeholder="Enter relationship">
                                 </div>
                             </div>
                             <!-- Col -->
@@ -349,7 +354,7 @@
                         </div>
                         <!-- Row -->
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group mb-3">
                                 <label for="moral" class="form-label">
                                     Registered Voter
@@ -361,7 +366,7 @@
                                     </select>
                                 </div>
                             </div><!-- Col -->
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group mb-3">
                                 <label for="moral" class="form-label">
                                     Household Representative <a data-bs-toggle="tooltip" data-bs-placement="top" title="There must be at least one household representative per household. A household representative is someone who will be participating in the barangay meeting(s)." href="#" class="text-primary">(?)</a>
@@ -371,6 +376,26 @@
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
+                                </div>
+                            </div><!-- Col -->
+                            <div class="col-sm-4">
+                                <div class="form-group mb-3">
+                                <label for="moral" class="form-label">
+                                    Family Status
+                                    </label>
+                                    <select name="family_status" class="form-select mb-3 form-control" id="familystatus-select">
+                                        <option value="" selected disabled>Select family status</option>
+                                        <option value="Nuclear Family">Nuclear Family</option>
+                                        <option value="Single Family">Single Family</option>
+                                        <option value="Extended Family">Extended Family</option>
+                                        <option value="Childless Family">Childless Family</option>
+                                        <option value="Grandparent Family">Grandparent Family</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="mb-3 form-group" id="other-familystatus-input" style="display: none;">
+                                        <label class="form-label">Specify Family Status</label>
+                                        <input type="text" name="specified_family_status" id="other-familystatus" class="form-control">
+                                    </div>
                                 </div>
                             </div><!-- Col -->
                         </div><!-- Row -->
@@ -725,22 +750,37 @@
 </script>
 <!-- End Set age -->
 
-<!-- Please be specify -->
+<!-- Please be specify Ethnicity-->
 <script>
-    document.getElementById('religion-select').addEventListener('change', function () {
+    document.getElementById('ethnicity-select').addEventListener('change', function () {
         var select = this;
-        var inputDiv = document.getElementById('other-religion-input');
+        var inputDiv = document.getElementById('other-ethnicity-input');
     
-        if (select.value === 'Others') {
+        if (select.value === 'Other') {
             inputDiv.style.display = 'block';
         } else {
             inputDiv.style.display = 'none';
         }
     });
 </script>
-<!-- End Please be specify -->
+<!-- End Please be specify Ethnicity-->
 
-<!-- Please be specify -->
+<!-- Please be specify Religion-->
+<script>
+    document.getElementById('religion-select').addEventListener('change', function () {
+        var select = this;
+        var inputDiv = document.getElementById('other-religion-input');
+    
+        if (select.value === 'Other') {
+            inputDiv.style.display = 'block';
+        } else {
+            inputDiv.style.display = 'none';
+        }
+    });
+</script>
+<!-- End Please be specify Religion-->
+
+<!-- Please be specify PWD-->
 <script>
     document.getElementById('pwd-select').addEventListener('change', function () {
         var select = this;
@@ -753,7 +793,22 @@
         }
     });
 </script>
-<!-- End Please be specify -->
+<!-- End Please be specify PWD-->
+
+<!-- Please be specify Family Status-->
+<script>
+    document.getElementById('familystatus-select').addEventListener('change', function () {
+        var select = this;
+        var inputDiv = document.getElementById('other-familystatus-input');
+    
+        if (select.value === 'Other') {
+            inputDiv.style.display = 'block';
+        } else {
+            inputDiv.style.display = 'none';
+        }
+    });
+</script>
+<!-- End Please be specify Family Status-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

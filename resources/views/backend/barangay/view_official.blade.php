@@ -161,19 +161,19 @@
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Facebook</label>
-                                    <input type="text" name="fb_url" class="form-control" value="{{ $view_official->fb_url }}">
+                                    <input type="text" name="fb_url" class="form-control" value="{{ $view_official->fb_url }}" readonly>
                                 </div>
                             </div><!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">X</label>
-                                    <input type="text" name="twitter_url" class="form-control" value="{{ $view_official->twitter_url }}">
+                                    <input type="text" name="twitter_url" class="form-control" value="{{ $view_official->twitter_url }}" readonly>
                                 </div>
                             </div><!-- Col -->
                             <div class="col-sm-4">
                                 <div class="mb-3 form-group">
                                     <label class="form-label">Instagram</label>
-                                    <input type="text" name="ig_url" class="form-control" value="{{ $view_official->ig_url }}">
+                                    <input type="text" name="ig_url" class="form-control" value="{{ $view_official->ig_url }}" readonly>
                                 </div>
                             </div><!-- Col -->
                         </div><!-- Row -->

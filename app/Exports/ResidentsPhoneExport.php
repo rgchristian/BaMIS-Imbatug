@@ -13,7 +13,7 @@ class ResidentsPhoneExport implements FromCollection, WithMapping
     */
     public function collection()
     {
-        return BarangayResidents::select('phone')->get();
+        return BarangayResidents::select('phone', 'name', 'sex', 'birthdate', 'age', 'first_name', 'middle_name', 'last_name')->get();
 
     } // End method
 
@@ -25,6 +25,13 @@ class ResidentsPhoneExport implements FromCollection, WithMapping
     {
         return [
             'phone' => "'" . $resident->phone, // Prefixing with "'" ensures Excel treats it as text
+            'name' => $resident->name,
+            'sex' => $resident->sex,
+            'birthdate' => $resident->birthdate ? (new \DateTime($resident->birthdate))->format('m/d/Y') : '',
+            'age' => $resident->age,
+            'first_name' => $resident->first_name,
+            'middle_name' => $resident->middle_name,
+            'last_name' => $resident->last_name,
         ];
 
     } // End method
