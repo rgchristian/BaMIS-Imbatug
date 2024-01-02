@@ -20,6 +20,7 @@ class BarangayResidentsController extends Controller
     public function Residents(){
 
         $residents = BarangayResidents::latest()->get();
+        
         return view('backend.barangay.residents', compact('residents'));
 
     } // End Method
@@ -54,22 +55,22 @@ class BarangayResidentsController extends Controller
          $requestData = $request->all();
 
          // Check if the resident is a household representative
-    if ($request->input('household_representative') == 'Yes') {
-        $number = mt_rand(1000000000, 9999999999);
-
-        if ($this->qrCodeExists($number)) {
+        if ($request->input('household_representative') == 'Yes') {
             $number = mt_rand(1000000000, 9999999999);
-        }
 
-        $requestData['qr_code'] = $number;
-    }
-    
-         if ($request->hasFile('photo')) {
-             $file = $request->file('photo');
-             $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Generate a unique filename
-             $file->move(public_path('upload/resident_images'), $filename);
-             $requestData["photo"] = 'upload/resident_images/' . $filename;
-         }
+            if ($this->qrCodeExists($number)) {
+                $number = mt_rand(1000000000, 9999999999);
+            }
+
+            $requestData['qr_code'] = $number;
+        }
+        
+            if ($request->hasFile('photo')) {
+                $file = $request->file('photo');
+                $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension(); // Generate a unique filename
+                $file->move(public_path('upload/resident_images'), $filename);
+                $requestData["photo"] = 'upload/resident_images/' . $filename;
+            }
     
         BarangayResidents::create($requestData);
 
@@ -94,6 +95,7 @@ class BarangayResidentsController extends Controller
     public function EditResident($id){
 
         $edit_resident = BarangayResidents::findOrFail($id);
+
         return view('backend.barangay.edit_resident', compact('edit_resident'));
 
     } // End method
@@ -190,7 +192,7 @@ class BarangayResidentsController extends Controller
         }
     
         $notification = array(
-            'message' => 'Barangay resident deleted successfully.',
+            'message' => 'Barangay resident archived successfully.',
             'alert-type' => 'success'
         );
     
@@ -247,6 +249,54 @@ class BarangayResidentsController extends Controller
         // If QR Code doesn't exist or household_representative is 'No', show an error message
         return redirect()->back()->with(['message' => 'QR Code not found or resident is not a household representative.', 'alert-type' => 'error']);
         
+    } // End method
+
+    public function ArchiveResidents(){
+
+        $archive_residents = BarangayResidents::onlyTrashed()->latest()->get();
+
+        return view('backend.barangay.archive_residents', compact('archive_residents'));
+
+    } // End Method
+
+    public function RestoreResident($id){
+
+        $resident = BarangayResidents::withTrashed()->find($id);
+
+        if ($resident) {
+            // Restore the soft-deleted (archived) resident
+            $resident->restore();
+
+            $notification = [
+                'message' => 'Barangay resident restored successfully.',
+                'alert-type' => 'success',
+            ];
+
+            return redirect()->back()->with($notification);
+        }
+
+        abort(404); // Resident not found
+
+    } // End Method
+
+    public function DeletePermanent($id)
+    {
+        $resident = BarangayResidents::withTrashed()->find($id);
+
+        if ($resident) {
+            // Permanently delete the resident
+            $resident->forceDelete();
+
+            $notification = [
+                'message' => 'Barangay resident deleted successfully.',
+                'alert-type' => 'success',
+            ];
+
+            return redirect()->back()->with($notification);
+        }
+
+        abort(404); // Resident not found
+
     } // End method
 
 

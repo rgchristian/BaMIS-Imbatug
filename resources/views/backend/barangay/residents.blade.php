@@ -34,7 +34,8 @@
             <a href="#" class="btn btn-inverse-light btn-icon-text" data-bs-toggle="modal" data-bs-target="#importModal" data-bs-placement="top" title="Import">
                 <i class="btn-icon-prepend" data-feather="download"></i>Import
             </a> &nbsp;&nbsp;
-            <a href="{{ route('export.residents.phone') }}" class="btn btn-inverse-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a>
+            <a href="{{ route('export.residents.phone') }}" class="btn btn-inverse-info btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Export"><i class="btn-icon-prepend" data-feather="upload"></i>Export</a> &nbsp;&nbsp;
+            <a href="{{ route('archive.residents') }}" class="btn btn-inverse-danger btn-icon-text" data-bs-toggle="tooltip" data-bs-placement="top" title="Archive"><i class="btn-icon-prepend" data-feather="archive"></i>Archive</a>
 					</ol>
 				</nav>
 
@@ -44,7 +45,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="importModalLabel">Import Data</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-bs-toggle="tooltip" data-bs-placement="top" title="Close"></button>
               </div>
               <div class="modal-body">
                 <!-- Add your import form or content here -->
@@ -53,7 +54,7 @@
                   <!-- Add your form fields here, e.g., file input -->
                   <input type="file" name="import_residents_phone_numbers" class="form-control" required>
                   <br>
-                  <button type="submit" class="btn btn-primary">Import</button>
+                  <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Import">Import</button>
                 </form>
               </div>
             </div>
@@ -154,7 +155,7 @@
             <i data-feather="edit"></i>
           </button>
         </a>
-        <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="delete">
+        <a href="{{ route('delete.resident', $barangay_residents->id) }}" id="archive">
           <button type="button" class="btn btn-inverse-danger btn-icon btn-xs" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
             <i data-feather="trash"></i>
           </button>

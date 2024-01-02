@@ -33,20 +33,8 @@ class BarangayAdminController extends Controller
         $newMaleResidentsCount = $this->getNewMaleResidentsCount();
         $femaleResidentsCount = BarangayResidents::where('sex', 'Female')->count();
         $newFemaleResidentsCount = $this->getNewFemaleResidentsCount();
-        $pwdValues = [
-            'Deaf', 
-            'Intellectual Disability', 
-            'Learning Disability', 
-            'Mental Disability', 
-            'Physical Disability', 
-            'Psychosocial Disability', 
-            'Speech and Language Impairment', 
-            'Visual Disability', 
-            'Cancer', 
-            'Rare Disease'
-        ];
-        $pwdResidentsCount = BarangayResidents::whereIn('pwd', $pwdValues)->count();
-        $newPwdResidentsCount = $this->getNewPwdResidentsCount($pwdValues);
+        $pwdResidentsCount = BarangayResidents::where('pwd', 'Yes')->count();
+        $newPwdResidentsCount = $this->getNewPwdResidentsCount();
         $widowResidentsCount = BarangayResidents::whereIn('status', ['Widow/er'])->count();
         $newWidowResidentsCount = $this->getNewWidowResidentsCount();
         $voterResidentsCount = BarangayResidents::where('registered_voter', 'Yes')->count();
@@ -64,7 +52,6 @@ class BarangayAdminController extends Controller
                                             'newMaleResidentsCount',
                                             'femaleResidentsCount',
                                             'newFemaleResidentsCount',
-                                            'pwdValues',
                                             'pwdResidentsCount',
                                             'newPwdResidentsCount',
                                             'widowResidentsCount',
@@ -116,15 +103,13 @@ class BarangayAdminController extends Controller
 
     } //End method
 
-    private function getNewPwdResidentsCount($pwdValues) {
-
+    private function getNewPwdResidentsCount() {
         $lastWeek = now()->subWeek();
-
-        return BarangayResidents::whereIn('pwd', $pwdValues)
+    
+        return BarangayResidents::where('pwd', 'Yes')
             ->where('created_at', '>=', $lastWeek)
             ->count();
-
-    } //End method
+    }
 
     private function getNewWidowResidentsCount() {
 
@@ -391,25 +376,11 @@ class BarangayAdminController extends Controller
     } // End method
 
     public function TotalPWD() {
-
-        $totalpwdValues = [
-            'Deaf', 
-            'Intellectual Disability', 
-            'Learning Disability', 
-            'Mental Disability', 
-            'Physical Disability', 
-            'Psychosocial Disability', 
-            'Speech and Language Impairment', 
-            'Visual Disability', 
-            'Cancer', 
-            'Rare Disease'
-        ];
-        $pwdResidents = BarangayResidents::whereIn('pwd', $totalpwdValues)->get();
-
+        $pwdResidents = BarangayResidents::where('pwd', 'Yes')->get();
+        
         return view('backend.barangay.total_pwd_residents', compact('pwdResidents'));
-    
-    } //End method
-
+    }
+     
     public function ViewPWDResident($id){
 
         $view_pwd_resident = BarangayResidents::findOrFail($id);

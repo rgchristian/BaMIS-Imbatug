@@ -165,6 +165,12 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
         Route::get('/download/qr/{id}', 'DownloadQRCode')->name('download.qr');
 
+        Route::get('barangay/residents/archive', 'ArchiveResidents')->name('archive.residents');
+
+        Route::get('barangay/residents/restore/{id}', [BarangayResidentsController::class, 'RestoreResident'])->name('restore.resident');
+
+        Route::get('barangay/residents/delete-permanent/{id}', [BarangayResidentsController::class, 'DeletePermanent'])->name('delete.permanent');
+
     });
 
     // Barangay certificates type all route

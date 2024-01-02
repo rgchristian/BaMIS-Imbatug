@@ -82,7 +82,7 @@
           <li class="nav-item nav-category">Records</li>
           <li class="nav-item">
           <a href="{{ route('barangay.attendance.records') }}" class="nav-link">
-              <i class="link-icon" data-feather="archive"></i>
+              <i class="link-icon" data-feather="book"></i>
               <span class="link-title">Attendance</span>
             </a>
             <div class="collapse" id="general-pages">
@@ -92,7 +92,7 @@
           </li>
           <li class="nav-item">
           <a href="{{ route('barangay.blotter.records') }}" class="nav-link">
-              <i class="link-icon" data-feather="archive"></i>
+              <i class="link-icon" data-feather="book"></i>
               <span class="link-title">Blotter</span>
             </a>
           </li>
